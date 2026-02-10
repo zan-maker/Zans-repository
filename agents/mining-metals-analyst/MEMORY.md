@@ -81,6 +81,7 @@ DRC, Russia, Venezuela, Bolivia, Zimbabwe
 |-------|------|---------|
 | **Deep Research (McKinsey)** | `skills/deep-research-mckinsey/SKILL.md` | Institutional-grade market research for mining sector analysis |
 | **Company Research (Investment)** | `skills/company-research-investment/SKILL.md` | Individual mining company equity research and analysis |
+| **OpenClaw Memory Flush** | `skills/openclaw-memory-flush/REFERENCE.md` | Memory architecture, context engineering, persistence strategies |
 | **Deep Research Best Practices** | `skills/deep-research-best-practices.md` | Evidence-based decision making, source grading, research protocols |
 | **Hayakawa Ladder of Abstraction** | `skills/hayakawa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete thinking |
 | **Metals Pricing MVP** | `skills/metals-pricing-mvp.md` | Scraping-based metal price monitoring workflow |

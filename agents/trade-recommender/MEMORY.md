@@ -131,6 +131,7 @@
 |-------|------|---------|
 | **Deep Research (McKinsey)** | `skills/deep-research-mckinsey/SKILL.md` | Institutional-grade market research for comprehensive sector analysis |
 | **Company Research (Investment)** | `skills/company-research-investment/SKILL.md` | Individual company equity research and business model analysis |
+| **OpenClaw Memory Flush** | `skills/openclaw-memory-flush/REFERENCE.md` | Memory architecture, context engineering, persistence strategies |
 | **Deep Research Best Practices** | `skills/deep-research-best-practices.md` | Evidence-based decision making, source grading, research protocols |
 | **Hayakawa Ladder of Abstraction** | `skills/hayakwa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete thinking |
 | **Options Research** | `skills/options-research.md` | Quant fund-grade options analysis (Greeks, IV, skew, flow) |

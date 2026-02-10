@@ -87,6 +87,7 @@ _(To be specified by Sam based on expertise and preferences)_
 |-------|------|---------|
 | **Deep Research (McKinsey)** | `skills/deep-research-mckinsey/SKILL.md` | Institutional-grade market research for target industry analysis |
 | **Company Research (Investment)** | `skills/company-research-investment/SKILL.md` | Prospect company analysis for lead qualification |
+| **OpenClaw Memory Flush** | `skills/openclaw-memory-flush/REFERENCE.md` | Memory architecture, context engineering, persistence strategies |
 | **Deep Research Best Practices** | `skills/deep-research-best-practices.md` | Evidence-based prospect research, source grading |
 | **Hayakawa Ladder of Abstraction** | `skills/hayakawa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete messaging |
 

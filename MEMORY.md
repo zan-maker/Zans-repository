@@ -152,8 +152,30 @@ When installing skills from SkillsMP, follow these rules strictly:
 | Task Dashboard | `skills/task-dashboard/SKILL.md` | Self-hosted Kanban for tracking OpenClaw tasks |
 | **Deep Research (McKinsey)** | `skills/deep-research-mckinsey/SKILL.md` | Institutional-grade market research, industry analysis, investment theses |
 | **Company Research (Investment)** | `skills/company-research-investment/SKILL.md` | Individual company equity research, business model analysis, due diligence |
+| **OpenClaw Memory Flush** | `skills/openclaw-memory-flush/REFERENCE.md` | Memory architecture, context engineering, long-term memory systems |
 
 **Rule:** Read SKILL.md before using any skill. Follow its guidance strictly.
+
+### OpenClaw Memory Architecture Guide
+
+**Location:** `skills/openclaw-memory-flush/REFERENCE.md` (22KB)  
+**Quick Ref:** `skills/openclaw-memory-flush/QUICK_REFERENCE.md` (4KB)
+
+**Topics Covered:**
+- Pre-compaction memory flush mechanism
+- Two-layer memory architecture (daily logs vs. MEMORY.md)
+- Context engineering strategies (reduction, offloading, isolation)
+- Long-term memory solutions comparison (Mem0, Letta, MemoryOS)
+- Cost/latency/accuracy tradeoffs
+- Operational best practices
+- Diagnostic troubleshooting
+
+**When to Reference:**
+- Setting up or debugging memory persistence
+- Designing long-running agent sessions
+- Choosing memory backends (native vs. Mem0 vs. Cognee)
+- Diagnosing "agent forgot" failures
+- Understanding compaction and context window management
 
 ### Deep Research Skill - Usage Guide
 
