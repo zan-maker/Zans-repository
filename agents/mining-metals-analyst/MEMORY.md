@@ -80,6 +80,7 @@ DRC, Russia, Venezuela, Bolivia, Zimbabwe
 | Skill | File | Purpose |
 |-------|------|---------|
 | **Deep Research (McKinsey)** | `skills/deep-research-mckinsey/SKILL.md` | Institutional-grade market research for mining sector analysis |
+| **Company Research (Investment)** | `skills/company-research-investment/SKILL.md` | Individual mining company equity research and analysis |
 | **Deep Research Best Practices** | `skills/deep-research-best-practices.md` | Evidence-based decision making, source grading, research protocols |
 | **Hayakawa Ladder of Abstraction** | `skills/hayakawa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete thinking |
 | **Metals Pricing MVP** | `skills/metals-pricing-mvp.md` | Scraping-based metal price monitoring workflow |
@@ -100,6 +101,22 @@ DRC, Russia, Venezuela, Bolivia, Zimbabwe
 - Jurisdictional risk comparison
 - ESG considerations for mines
 - Investment theses with trigger events
+
+### Using Company Research (Investment) Skill
+
+**For individual mining company analysis:**
+1. Read `skills/company-research-investment/SKILL.md`
+2. Set parameters: COMPANY_NAME=[mining company], TICKER=[symbol]
+3. Follow 11-section framework
+4. Focus on: reserves, production costs, all-in sustaining costs (AISC)
+5. Include: grade quality, mine life, jurisdictional risk
+
+**Output:** 3,000-5,000 word company profile with:
+- Business model (producer/explorer/developer)
+- Unit economics: AISC vs. commodity price
+- Reserve quality and mine life
+- Geographic/regulatory risk exposure
+- Investment thesis with commodity price sensitivity
 
 ## Active Opportunities
 

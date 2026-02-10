@@ -151,6 +151,7 @@ When installing skills from SkillsMP, follow these rules strictly:
 | MIT First Principles | `skills/mit-first-principles/SKILL.md` | Strategic analysis, prioritization, challenging assumptions |
 | Task Dashboard | `skills/task-dashboard/SKILL.md` | Self-hosted Kanban for tracking OpenClaw tasks |
 | **Deep Research (McKinsey)** | `skills/deep-research-mckinsey/SKILL.md` | Institutional-grade market research, industry analysis, investment theses |
+| **Company Research (Investment)** | `skills/company-research-investment/SKILL.md` | Individual company equity research, business model analysis, due diligence |
 
 **Rule:** Read SKILL.md before using any skill. Follow its guidance strictly.
 
@@ -186,4 +187,44 @@ Read SKILL.md at skills/deep-research-mckinsey/SKILL.md
 Follow the 13-section framework
 Use web search for data collection
 Deliver comprehensive market research report
+```
+
+### Company Research (Investment) Skill - Usage Guide
+
+**Location:** `skills/company-research-investment/SKILL.md`
+
+**Use for:**
+- Individual company equity research
+- Business model analysis and mapping
+- Unit economics evaluation (CAC, LTV, payback)
+- Investment thesis development
+- Due diligence (pre-investment)
+- Competitive positioning analysis
+- Financial metric benchmarking
+
+**Model Selection:**
+- **GLM-4.7 (Z.AI)**: For complex multi-segment companies with heavy modeling
+- **Kimi K2.5 (Moonshot)**: For standard comprehensive analysis (default)
+
+**Workflow:**
+1. Set parameters: COMPANY_NAME, TICKER
+2. Search for 10-K, 10-Q, earnings calls, investor presentations
+3. Draft all 11 sections with formulas and citations
+4. Include three required tables
+5. Provide investment thesis with bull/bear triggers
+
+**Output:** 3,000-5,000 words, 11 sections, company-specific analysis with:
+- Business model map
+- Unit economics (CAC, LTV, LTV/CAC ratio)
+- Revenue driver equations
+- KPIs with benchmarks
+- Peer comparison table
+- Risk matrix with sensitivities
+
+**To Use:**
+```
+Read SKILL.md at skills/company-research-investment/SKILL.md
+Set COMPANY_NAME and TICKER parameters
+Follow 11-section framework
+Deliver company investment analysis
 ```

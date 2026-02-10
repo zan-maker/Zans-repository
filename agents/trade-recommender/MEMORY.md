@@ -130,8 +130,9 @@
 | Skill | File | Purpose |
 |-------|------|---------|
 | **Deep Research (McKinsey)** | `skills/deep-research-mckinsey/SKILL.md` | Institutional-grade market research for comprehensive sector analysis |
+| **Company Research (Investment)** | `skills/company-research-investment/SKILL.md` | Individual company equity research and business model analysis |
 | **Deep Research Best Practices** | `skills/deep-research-best-practices.md` | Evidence-based decision making, source grading, research protocols |
-| **Hayakawa Ladder of Abstraction** | `skills/hayakawa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete thinking |
+| **Hayakawa Ladder of Abstraction** | `skills/hayakwa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete thinking |
 | **Options Research** | `skills/options-research.md` | Quant fund-grade options analysis (Greeks, IV, skew, flow) |
 | **Bregman Projection Arbitrage** | `skills/bregman-projection-arbitrage.md` | Prediction market arbitrage framework (Frank-Wolfe, Polymarket) |
 
@@ -149,6 +150,22 @@
 - Market sizing and growth forecasts
 - Competitive landscape and Porter Five Forces
 - Risk matrix and investment implications
+
+### Using Company Research (Investment) Skill
+
+**For individual stock/company analysis:**
+1. Read `skills/company-research-investment/SKILL.md`
+2. Set parameters: COMPANY_NAME, TICKER
+3. Follow 11-section framework
+4. Use GLM-4.7 for complex multi-segment companies
+5. Use Kimi 2.5 for standard comprehensive analysis
+
+**Output:** 3,000-5,000 word company profile with:
+- Business model map and unit economics
+- Revenue drivers with formulas
+- KPIs to watch with benchmarks
+- Peer comparison and valuation
+- Investment thesis triggers (bull/bear)
 
 ## Environment Variables Required
 

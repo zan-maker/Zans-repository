@@ -86,6 +86,7 @@ _(To be specified by Sam based on expertise and preferences)_
 | Skill | File | Purpose |
 |-------|------|---------|
 | **Deep Research (McKinsey)** | `skills/deep-research-mckinsey/SKILL.md` | Institutional-grade market research for target industry analysis |
+| **Company Research (Investment)** | `skills/company-research-investment/SKILL.md` | Prospect company analysis for lead qualification |
 | **Deep Research Best Practices** | `skills/deep-research-best-practices.md` | Evidence-based prospect research, source grading |
 | **Hayakawa Ladder of Abstraction** | `skills/hayakawa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete messaging |
 
@@ -104,6 +105,23 @@ _(To be specified by Sam based on expertise and preferences)_
 - M&A activity (indicates CFO needs)
 - Regional expansion patterns
 - Trigger events for Fractional CFO services
+
+### Using Company Research (Investment) Skill
+
+**For prospect company qualification:**
+1. Read `skills/company-research-investment/SKILL.md`
+2. Set parameters: COMPANY_NAME=[prospect], TICKER=[if public]
+3. Focus on: revenue scale, growth rate, complexity signals
+4. Identify: recent funding, expansion, financial distress
+5. Use for: qualifying leads before outreach
+
+**Output:** 3,000-5,000 word company profile with:
+- Business model and revenue scale
+- Growth trajectory and complexity
+- Trigger events (funding, expansion, M&A)
+- Decision-maker identification
+- CFO pain point assessment
+- Tailored outreach angle based on research
 
 ## Outreach Templates
 
