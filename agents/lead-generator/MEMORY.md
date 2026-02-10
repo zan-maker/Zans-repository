@@ -41,6 +41,13 @@ _(To be specified by Sam based on expertise and preferences)_
 - Recurring revenue model
 - Board reporting needs
 
+## Installed Skills
+
+| Skill | File | Purpose |
+|-------|------|---------|
+| **Deep Research Best Practices** | `skills/deep-research-best-practices.md` | Evidence-based prospect research, source grading |
+| **Hayakawa Ladder of Abstraction** | `skills/hayakawa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete messaging |
+
 ## Outreach Templates
 
 ### Cold Email Structure

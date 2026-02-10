@@ -40,6 +40,15 @@
 - Max drawdown limits
 - Volatility assessment
 
+## Installed Skills
+
+| Skill | File | Purpose |
+|-------|------|---------|
+| **Deep Research Best Practices** | `skills/deep-research-best-practices.md` | Evidence-based decision making, source grading, research protocols |
+| **Hayakawa Ladder of Abstraction** | `skills/hayakawa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete thinking |
+| **Options Research** | `skills/options-research.md` | Quant fund-grade options analysis (Greeks, IV, skew, flow) |
+| **Bregman Projection Arbitrage** | `skills/bregman-projection-arbitrage.md` | Prediction market arbitrage framework (Frank-Wolfe, Polymarket) |
+
 ## Active Opportunities
 
 _(Tracked in memory files as identified)_

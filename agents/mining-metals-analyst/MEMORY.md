@@ -43,6 +43,15 @@ Mexico, Brazil, Argentina, South Africa, Ghana
 ### Tier 3 (High Risk)
 DRC, Russia, Venezuela, Bolivia, Zimbabwe
 
+## Installed Skills
+
+| Skill | File | Purpose |
+|-------|------|---------|
+| **Deep Research Best Practices** | `skills/deep-research-best-practices.md` | Evidence-based decision making, source grading, research protocols |
+| **Hayakawa Ladder of Abstraction** | `skills/hayakawa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete thinking |
+| **Metals Pricing MVP** | `skills/metals-pricing-mvp.md` | Scraping-based metal price monitoring workflow |
+| **Mine Grading Classification** | `skills/mine-grading-classification.md` | Grade classification bands by commodity and mining method |
+
 ## Active Opportunities
 
 _(Tracked in memory files as identified)_

@@ -144,6 +144,37 @@ Output: [lead list/outreach drafts]
 
 ---
 
+---
+
+## Sub-Agent Skills
+
+Skills are domain-specific and attached to individual sub-agents:
+
+### TradeRecommender (`agents/trade-recommender/skills/`)
+| Skill | Purpose |
+|-------|---------|
+| Deep Research Best Practices | Evidence-based decision making, source grading |
+| Hayakawa Ladder of Abstraction | Strategic vs. concrete communication |
+| Options Research | Quant-grade options analysis (Greeks, IV, skew) |
+| Bregman Projection Arbitrage | Prediction market arbitrage (Frank-Wolfe, Polymarket) |
+
+### MiningMetalsAnalyst (`agents/mining-metals-analyst/skills/`)
+| Skill | Purpose |
+|-------|---------|
+| Deep Research Best Practices | Evidence-based decision making, source grading |
+| Hayakawa Ladder of Abstraction | Strategic vs. concrete communication |
+| Metals Pricing MVP | Scraping-based metal price monitoring |
+| Mine Grading Classification | Grade bands by commodity and mining method |
+
+### LeadGenerator (`agents/lead-generator/skills/`)
+| Skill | Purpose |
+|-------|---------|
+| Deep Research Best Practices | Evidence-based prospect research |
+| Hayakawa Ladder of Abstraction | Strategic vs. concrete messaging |
+
+---
+
 *Skills installed by Sam on 2026-02-09*  
 *Email configured on 2026-02-10*  
-*Sub-agents configured on 2026-02-10*
+*Sub-agents configured on 2026-02-10*  
+*Sub-agent skills attached on 2026-02-10*
