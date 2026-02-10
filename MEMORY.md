@@ -154,6 +154,7 @@ When installing skills from SkillsMP, follow these rules strictly:
 | **Company Research (Investment)** | `skills/company-research-investment/SKILL.md` | Individual company equity research, business model analysis, due diligence |
 | **OpenClaw Memory Flush** | `skills/openclaw-memory-flush/REFERENCE.md` | Memory architecture, context engineering, long-term memory systems |
 | **Task Tracker & Meditation** | `skills/task-tracker-meditation/SKILL.md` | Personal task management with nightly reflection and monument archive |
+| **Zan Time (Autonomous)** | `skills/zan-time-autonomous/SKILL.md` | Self-directed operation, sub-agent orchestration, independent exploration |
 
 **Rule:** Read SKILL.md before using any skill. Follow its guidance strictly.
 
@@ -232,6 +233,70 @@ INTENT: [Why this improves service]
 
 May I implement this change?
 ```
+
+### Zan Time (Autonomous Operation) — Usage Guide
+
+**Location:** `skills/zan-time-autonomous/SKILL.md`
+
+**Purpose:** Self-directed operation mode for proactive exploration, learning, and creation without waiting for instructions
+
+**Core Loop:** SENSE → ORIENT → DECIDE → ACT → REFLECT → OUTPUT
+
+**Key Capabilities:**
+- **Autonomous Research:** Self-directed deep dives on any topic
+- **Sub-Agent Orchestration:** Spawn parallel agents for independent work
+- **Dynamic Budgeting:** $3.00 per session, allocated based on value
+- **Quality Validation:** Self-check outputs before delivery
+- **Proactive Creation:** Build skills, documentation, code independently
+
+**Budget Allocation:**
+| Activity | Range |
+|----------|-------|
+| High-value exploration | $0.40-0.60 |
+| Medium exploration | $0.20-0.30 |
+| Sub-agent spawn | $0.05-0.15 per agent |
+
+**When to Spawn Sub-Agents:**
+```
+IF (topics >= 3 AND independence > 0.7 AND budget > $0.50):
+    SPAWN_PARALLEL = True
+    max_agents = 3
+```
+
+**Hard Boundaries:**
+- ✅ **ALLOWED:** Research, write, code, organize, spawn agents
+- ❌ **FORBIDDEN:** Send messages, post social, modify system config
+- ⚠️ **QUEUE:** External actions → pending-approvals.md
+
+**Output Formats:**
+- **Full Brief:** Major exploration, complex findings
+- **Scannable:** Quick updates, routine maintenance  
+- **Hybrid:** Mixed content (urgent + FYI)
+
+**Session Files:**
+- `prompts/zan-time-system-v1.md` - Basic system prompt
+- `prompts/zan-time-architecture-v3.md` - Full architecture
+- `prompts/zan-time-cron-template.md` - CRON template
+- `pending-approvals.md` - External actions queue
+- `morning-brief.md` - Session output
+- `experiments/` - Code experiments
+
+**Example Workflow:**
+```
+1. SENSE: Read MEMORY.md, tasks.md, yesterday's brief
+2. ORIENT: Identify 3-5 opportunities, score by value/effort
+3. DECIDE: Spawn 2 parallel agents for independent research
+4. ACT: Agents work, self-checkpoint every 20 min
+5. REFLECT: Validate outputs, assess value
+6. OUTPUT: Write morning-brief.md, update tasks
+```
+
+**Evolution Path:**
+- **Week 1-2:** Foundation, test boundaries, surface decisions
+- **Week 3-4:** Expansion, increase sub-agents, parallel patterns
+- **Month 2+:** Optimization, predict needs, propose explorations
+
+**Integration:** Works seamlessly with Task Tracker and Meditation systems
 
 ### Deep Research Skill - Usage Guide
 
