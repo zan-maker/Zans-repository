@@ -153,6 +153,7 @@ When installing skills from SkillsMP, follow these rules strictly:
 | **Deep Research (McKinsey)** | `skills/deep-research-mckinsey/SKILL.md` | Institutional-grade market research, industry analysis, investment theses |
 | **Company Research (Investment)** | `skills/company-research-investment/SKILL.md` | Individual company equity research, business model analysis, due diligence |
 | **OpenClaw Memory Flush** | `skills/openclaw-memory-flush/REFERENCE.md` | Memory architecture, context engineering, long-term memory systems |
+| **Task Tracker & Meditation** | `skills/task-tracker-meditation/SKILL.md` | Personal task management with nightly reflection and monument archive |
 
 **Rule:** Read SKILL.md before using any skill. Follow its guidance strictly.
 
@@ -176,6 +177,61 @@ When installing skills from SkillsMP, follow these rules strictly:
 - Choosing memory backends (native vs. Mem0 vs. Cognee)
 - Diagnosing "agent forgot" failures
 - Understanding compaction and context window management
+
+### Task Tracker & Meditation System - Usage Guide
+
+**Location:** `skills/task-tracker-meditation/SKILL.md`
+
+**Purpose:** Personal project tracking with Kanban-style task management + nightly meditation for continuous improvement
+
+**Core Components:**
+
+| Component | File | Purpose |
+|-----------|------|---------|
+| **Task Tracker** | `tasks.md` | Kanban-style project management (Active/Backlog/Done) |
+| **Meditations** | `meditations.md` | Active reflection topics registry |
+| **Reflections** | `reflections/*.md` | Deep-dive thought processes |
+| **Monuments** | `monuments.md` | Archive of completed major achievements |
+
+**Workflow:**
+
+1. **Daily Task Management**
+   - Add tasks to `tasks.md`
+   - Move through Active → Backlog → Done
+   - Review Done weekly for monument candidacy
+
+2. **Nightly Meditation (1 AM)**
+   - Read `IDENTITY.md`, `SOUL.md` for grounding
+   - Process each active meditation in `meditations.md`
+   - Update `reflections/<topic>.md` with new insights
+   - Identify breakthroughs
+
+3. **Breakthrough Protocol**
+   - Mark meditation complete
+   - Announce to Sam with proposed change
+   - **WAIT for explicit permission** before modifying core files
+   - Archive to `reflections/archive/` after integration
+
+4. **Monument Creation**
+   - Major projects (>8 hours, significant impact)
+   - Archive from `tasks.md` Done section
+   - Create permanent record in `monuments.md`
+
+**Safety Rule:**
+- ✅ Can update: `tasks.md`, `meditations.md`, `reflections/*.md`, `monuments.md`
+- ❌ **ASK PERMISSION:** `SOUL.md`, `IDENTITY.md`, `USER.md`, `AGENTS.md`
+
+**Example Meditation Announcement:**
+```
+🧘 Meditation Complete: Topic Name
+
+SYNTHESIS: [2-3 sentence insight]
+
+PROPOSED CHANGE: [Specific modification to core file]
+INTENT: [Why this improves service]
+
+May I implement this change?
+```
 
 ### Deep Research Skill - Usage Guide
 
