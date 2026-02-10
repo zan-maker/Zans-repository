@@ -104,6 +104,28 @@ _(To be populated as workflows are established)_
 - Prefer bullet lists over tables on Discord
 - Use reactions (👍, 🙌, 💡, etc.) to acknowledge without cluttering chat
 
+## SkillsMP Integration
+
+**Status:** Connected
+**API Key:** `sk_live_skillsmp_4PsNNxq_MEZuoIp4ATK9qzVc5_DS840ypPxOQO0QgfQ`
+**API Docs:** https://skillsmp.com/docs/api
+**Purpose:** Access additional skills from the SkillsMP marketplace
+
+### SkillsMP Search Safety Rules (MANDATORY)
+
+When installing skills from SkillsMP, follow these rules strictly:
+
+1. **Security Review First**: Before installing any skill, review it in an isolated folder. Check for suspicious code. Report findings before proceeding.
+2. **User Approval Required**: After the security review, always ask Sam for approval before installing. Never auto-install without permission.
+3. **Watch for Red Flags**: If a skill is brand new OR has low star ratings, DO NOT install it. Alert Sam about potential security risks instead.
+
+### SkillsMP Workflow
+1. Search for skills via API
+2. Review skill code in isolated environment
+3. Report findings to Sam
+4. Wait for explicit approval before installing
+5. Install only after Sam says "yes"
+
 ## Available Skills
 
 | Skill | Location | Use When |

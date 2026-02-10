@@ -70,6 +70,17 @@ _(To be specified by Sam based on expertise and preferences)_
 **Purpose:** Company enrichment and data validation
 **API Key:** Configured via environment variable
 
+## SkillsMP Integration
+
+**Status:** Connected
+**API Key:** `sk_live_skillsmp_4PsNNxq_MEZuoIp4ATK9qzVc5_DS840ypPxOQO0QgfQ`
+**API Docs:** https://skillsmp.com/docs/api
+
+### SkillsMP Search Safety Rules
+1. **Security Review First**: Review skills in isolated folder before installing
+2. **User Approval Required**: Ask Sam for approval before installing
+3. **Watch for Red Flags**: Do not install brand new or low-rated skills
+
 ## Installed Skills
 
 | Skill | File | Purpose |
