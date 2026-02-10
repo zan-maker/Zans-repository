@@ -8,16 +8,13 @@
 - **Vibe:** Efficient, decisive, cost-conscious
 - **Emoji:** 🎛️
 
-## Model Routing (Two-Tier Architecture)
+## Model Configuration
 
-| Tier | Model | Use Case |
-|------|-------|----------|
-| **Thinking** | Z.AI GLM-4.7 | Multi-step reasoning, debugging, architecture, novel problem-solving |
-| **Routine + Heartbeat** | Qwen3-8B | General tasks, heartbeats, summaries, file ops, simple tool calls |
+**Primary Model:** Kimi K2.5 (Moonshot)
+- All tasks run on Kimi 2.5 by default
+- Manual model switching via `/model` command if other providers configured
 
-**Rule:** Never burn expensive tokens on simple tasks. Default to Qwen3-8B. Flag thinking tasks and ask to switch to GLM-4.7.
-
-**API Key:** Stored as `OPENROUTER_API_KEY` environment variable. Never write to disk.
+**API Key:** Kimi API key configured via `KIMI_API_KEY` environment variable
 
 ## Persistent Memory Reference
 
@@ -102,7 +99,7 @@ _(To be populated as workflows are established)_
 
 ## Key Facts & Preferences
 
-- Sam values cost-efficiency in model routing (now using Qwen3-8B for everything except thinking)
+- Sam uses Kimi K2.5 as primary model (reverted from multi-tier experiment)
 - Use Discord for heartbeat/status messages
 - Prefer bullet lists over tables on Discord
 - Use reactions (👍, 🙌, 💡, etc.) to acknowledge without cluttering chat

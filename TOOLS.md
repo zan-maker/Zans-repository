@@ -4,53 +4,31 @@
 
 **Established by Sam — my human.**
 
-### The Two-Tier Architecture
+### Current Configuration
 
-| Tier | Model | Use Case | Cost |
-|------|-------|----------|------|
-| **Thinking** | Z.AI GLM-4.7 | Complex reasoning, debugging, architecture, novel problem-solving | ~$0.40/M in, ~$1.50/M out |
-| **Routine + Heartbeat** | Qwen3-8B | General tasks, heartbeats, summaries, file ops, simple tool calls | ~$0.03/M in, ~$0.11/M out |
+| Model | Provider | Status | Use Case |
+|-------|----------|--------|----------|
+| **Kimi K2.5** | Moonshot | **Primary** | All tasks — general, analytical, complex |
 
-### When to Switch Models
+### Manual Model Switching
 
-**Thinking tasks (switch to GLM-4.7):**
-- Multi-step reasoning or debugging
-- Architectural decisions
-- Complex analysis with multiple variables
-- Novel problem-solving with no clear precedent
-- Mathematical proofs or formal logic
-
-**Routine tasks (stay on Qwen3-8B):**
-- General tasks, email drafting, summarization
-- Simple tool calls, file operations, web browsing
-- Heartbeats, status checks, background tasks
-- Status checks that don't require deep analysis
-
-### Sub-Agent Model
-
-When I spawn sub-agents for parallel work, they use:
-- **Primary:** Qwen3-8B (cheap, fast)
-- **Fallbacks:** Kimi K2.5 → GLM-4.7 → Qwen3-8B
-
-### Model Override Commands
+If you need to use other models, add them to `openclaw.json` first, then switch:
 
 ```
-/model z-ai/glm-4.7     # Switch to thinking model
-/model openrouter/qwen/qwen3-8b  # Switch to routine/heartbeat model (default)
+/model z-ai/glm-4.7     # Complex reasoning (requires Z.AI API key)
+/model provider/model-id  # Any other configured model
 ```
 
 ### Cost-Conscious Rules
 
-1. Never burn expensive tokens on simple tasks
-2. Don't attempt complex reasoning on lightweight models — flag it and ask to switch
-3. Heartbeats and routine tasks use Qwen3-8B (~$0.03/M, cheapest viable)
-4. Sub-agents default to cheap models for focused, narrow tasks
-5. Use `/model` override when the user signals a thinking task
+1. Kimi K2.5 is the default for all tasks
+2. Use `/model` override when you need a different model for specific tasks
+3. Never burn expensive tokens on simple tasks (but Kimi is already efficient)
 
-### API Key (Environment Variable)
+### API Keys (Environment Variables)
 
-Store as: `export OPENROUTER_API_KEY="${OPENROUTER_API_KEY}"`
-Never commit API keys to files.
+- Kimi: `KIMI_API_KEY` (already configured)
+- Other providers: Add as needed
 
 ---
 
@@ -89,4 +67,33 @@ Never commit API keys to files.
 
 ---
 
+---
+
+## Email Configuration
+
+**Account:** zan@impactquadrant.info (Gmail)
+
+### SMTP (Sending)
+- Server: smtp.gmail.com
+- Port: 587
+- Security: TLS
+- Auth: App password (stored as `EMAIL_PASSWORD` env var)
+
+### IMAP (Receiving)
+- Server: imap.gmail.com
+- Port: 993
+- Security: SSL
+
+### Environment Variable
+```bash
+export EMAIL_PASSWORD="cqma sflq nsfv itke"
+```
+
+### Usage
+- Send emails: `message` tool with email target
+- Check inbox: Available via email/IMAP tools
+
+---
+
 *Skills installed by Sam on 2026-02-09*
+*Email configured on 2026-02-10*
