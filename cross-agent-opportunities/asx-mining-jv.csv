@@ -1,0 +1,2 @@
+mine_id,name,location,commodity,grade,asking_price,jv_structure,asx_buyer_candidate,match_score,status,notes,date_added
+ASX001,Example High-Grade Gold,Nevada USA,Gold,5.2 g/t,8500000,Yes - 51% for $5M + drill,Not assigned,0,template,Template entry for ASX JV tracking,2026-02-10

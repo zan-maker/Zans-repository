@@ -14,7 +14,13 @@ Personal project and task management for Sam.
   - Model: `infrastructure-cost-model.md` 
 
 ### 🟠 High Priority
-- [ ] 
+- [ ] **ASX Mining JV Cross-Agent Intelligence** - Due: 2026-02-17
+  - Identify 5-10 high-grade mines for ASX JV buyers
+  - Research 3-5 ASX companies as CFO leads  
+  - Find Tier 1 matches (score 80+) for introduction
+  - Track in: `cross-agent-opportunities/asx-mining-jv.csv`
+  - Revenue: CFO services + JV advisory fees
+  - Collaborate: MiningMetalsAnalyst + LeadGenerator 
 
 ### 🟡 Medium Priority
 - [ ] 

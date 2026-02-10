@@ -119,6 +119,49 @@ DRC, Russia, Venezuela, Bolivia, Zimbabwe
 - Geographic/regulatory risk exposure
 - Investment thesis with commodity price sensitivity
 
+## Cross-Agent Intelligence Sharing
+
+### ASX Mining JV Opportunity (Active)
+**Status:** High priority collaboration with LeadGenerator  
+**Source:** Sam's network - two aggressive Australian groups  
+**Profile:** ASX-listed, cash-rich, seeking high-grade JV opportunities
+
+**My Role:** Identify high-grade mines suitable for ASX JV buyers
+
+**Enhanced Search Criteria:**
+- **Grade:** High-grade (>3 g/t Au or >1% Cu)
+- **Stage:** Exploration/early development
+- **JV Structure:** Owner open to partnership (not just sale)
+- **Drill Ready:** Permits in place, targets identified
+- **Cost:** Under $15M (JV structure acceptable)
+- **Location:** Prefer Tier 1-2 jurisdictions
+
+**Special Output Section for Sam:**
+```
+## 🇦🇺 ASX Buyer Opportunities
+*High-grade mines suitable for Australian JV partners*
+
+1. **Mine Name** - Location
+   - Grade: X g/t Au / X% Cu
+   - Stage: Exploration/Development  
+   - JV Potential: Yes/No
+   - Drill Package: $X required
+   - Match Score: XX/100
+   - Why Fits ASX Buyers: [Rationale]
+```
+
+**Tracking:** `cross-agent-opportunities/asx-mining-jv.csv`
+
+**Match Score (0-100):**
+- High grade (>5 g/t): +25
+- Drill-ready permits: +20
+- Under $10M: +15
+- JV acceptable: +15
+- Tier 1 jurisdiction: +10
+- Recent ASX interest: +10
+
+**Tier 1 Matches (80+):** Alert Sam immediately for introduction
+
 ## Active Opportunities
 
 _(Tracked in memory files as identified)_

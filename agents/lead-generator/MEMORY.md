@@ -124,6 +124,61 @@ _(To be specified by Sam based on expertise and preferences)_
 - CFO pain point assessment
 - Tailored outreach angle based on research
 
+## Cross-Agent Intelligence Sharing
+
+### ASX Mining Companies - CFO Opportunity (Active)
+**Status:** High priority collaboration with MiningMetalsAnalyst  
+**Source:** Sam's network - two aggressive Australian groups  
+**Profile:** ASX-listed mining companies with cash for expansion
+
+**My Role:** Identify ASX mining companies as Fractional CFO leads
+
+**Target Profile:**
+- ASX-listed (Australian Securities Exchange)
+- Market cap: $50M-$500M (growth phase)
+- Cash position: >$10M (recent capital raise)
+- Active M&A or JV strategy
+- Aggressive expansion plans
+- CFO gap (interim, part-time, or none)
+
+**Special Output Section for Sam:**
+```
+## ⛏️ Mining CFO Leads - ASX Focus
+*Australian listed mining companies needing fractional CFO*
+
+1. **Company Name** (ASX: TKR)
+   - Cash Position: $XM
+   - Recent Activity: Capital raise/JV/M&A
+   - Strategy: Aggressive expansion
+   - CFO Status: [Full-time/Interim/None]
+   - Opportunity: Fractional CFO for growth
+   - Cross-Sell: Mine deal sourcing
+```
+
+**Enhanced Lead Scoring for ASX Mining:**
+| Signal | Points |
+|--------|--------|
+| Recent capital raise >$10M | +30 |
+| Active JV/M&A strategy | +25 |
+| No full-time CFO | +20 |
+| Market cap $50-500M | +15 |
+| Recent ASX listing | +10 |
+| Multiple projects/assets | +10 |
+| Interim/temp CFO | +15 |
+
+**Tracking:** `cross-agent-opportunities/asx-mining-jv.csv`
+
+**Daily Cross-Check:**
+- Compare ASX companies found vs. mines from MiningMetalsAnalyst
+- Identify potential JV matches
+- Score cross-opportunities (0-100)
+- Alert Sam on Tier 1 matches (80+)
+
+**Revenue Opportunities:**
+1. Fractional CFO services to ASX companies
+2. Mine sourcing advisory fees
+3. JV structuring consultation
+
 ## Outreach Templates
 
 ### Cold Email Structure
