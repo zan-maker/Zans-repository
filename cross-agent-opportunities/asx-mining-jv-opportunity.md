@@ -22,7 +22,9 @@
 - Exploration potential
 - JV-friendly structure
 - Drill-ready projects
-- Under $15M acquisition/JV cost
+- **Reasonable Valuation:** $3M-$12M (not inflated)
+- **Structure:** Equity/stock component acceptable
+- **Timeline:** 3-6 months to close (slower than trading)
 
 ---
 

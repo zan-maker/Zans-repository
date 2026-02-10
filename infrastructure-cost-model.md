@@ -195,4 +195,32 @@
 
 ---
 
+**REVENUE STRATEGY - PRIORITIZED:**
+
+### 1. PRIMARY: Fractional CFO Services (Sureshot High Return)
+- **Target:** $5,000-$15,000/month per client
+- **Goal:** 3-5 active clients = $15K-$75K/month
+- **Method:** AI-powered service delivery (see below)
+- **Timeline:** 30-60 days to close first client
+- **Confidence:** HIGH (proven model, existing demand)
+
+### 2. SECONDARY: ASX Mining JV Deals (Reasonable Valuation)
+- **Target:** $10K-$50K per facilitation
+- **Structure:** Equity/stock + advisory fees
+- **Timeline:** 3-6 months to close
+- **Valuation:** $3M-$12M (reasonable, not inflated)
+- **Confidence:** MEDIUM (market dependent)
+
+### 3. TERTIARY: Kalshi Trading (Fast Cash, Small)
+- **Target:** $150-$300/month
+- **Use:** Cover infrastructure costs ($120/month)
+- **Timeline:** Immediate
+- **Confidence:** MEDIUM (requires validation)
+
+**Primary Focus:** Scale Fractional CFO clients using AI
+**Secondary:** ASX deals for larger equity upside
+**Tertiary:** Kalshi for operational cost coverage
+
+---
+
 **Target: $150/month net profit to cover infrastructure costs and generate surplus for growth.**
