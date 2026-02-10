@@ -44,15 +44,30 @@
 - `GET /portfolio/balance` - Account balance
 - `POST /orders` - Place orders (paper trading mode recommended)
 
-### Web Search (Brave/Tavily)
-**Purpose:** Real-time market intelligence, news, sentiment
-**Primary:** Brave Search API
-**Backup:** Tavily API
+### NewsAPI
+**Status:** Connected
+**API Key:** `fe52ac365edf464c9dca774544a40da3`
+**Base URL:** https://newsapi.org/v2
 **Use Cases:**
 - Breaking news affecting markets
 - Earnings announcements
 - Regulatory changes
-- Sentiment analysis
+- Economic indicator releases
+- Event-driven market movements
+
+**Key Endpoints:**
+- `GET /everything` - Search news articles
+- `GET /top-headlines` - Breaking news
+
+### Web Search (Brave/Tavily)
+**Purpose:** Real-time market intelligence, sentiment, alternative data
+**Primary:** Brave Search API
+**Backup:** Tavily API
+**Use Cases:**
+- Alternative data sources
+- Social sentiment
+- Deep research validation
+- Cross-reference news accuracy
 
 ## Analysis Frameworks
 

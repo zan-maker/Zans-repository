@@ -41,6 +41,35 @@ _(To be specified by Sam based on expertise and preferences)_
 - Recurring revenue model
 - Board reporting needs
 
+## API Integrations
+
+### NewsAPI
+**Status:** Connected
+**API Key:** `fe52ac365edf464c9dca774544a40da3`
+**Base URL:** https://newsapi.org/v2
+**Use Cases:**
+- Startup funding announcements
+- CFO appointment/departure news
+- Industry growth signals
+- Company expansion news
+
+**Key Endpoints:**
+- `GET /everything` - Search news articles
+- `GET /top-headlines` - Breaking news
+
+### Web Search (Brave/Tavily)
+**Purpose:** Company research, lead identification, trigger event detection
+**Primary:** Brave Search API
+**Backup:** Tavily API
+
+### Hunter.io
+**Purpose:** Email finder for prospect outreach
+**API Key:** Configured via environment variable
+
+### Abstract API
+**Purpose:** Company enrichment and data validation
+**API Key:** Configured via environment variable
+
 ## Installed Skills
 
 | Skill | File | Purpose |

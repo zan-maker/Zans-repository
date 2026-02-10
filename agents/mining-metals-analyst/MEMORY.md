@@ -43,6 +43,27 @@ Mexico, Brazil, Argentina, South Africa, Ghana
 ### Tier 3 (High Risk)
 DRC, Russia, Venezuela, Bolivia, Zimbabwe
 
+## API Integrations
+
+### NewsAPI
+**Status:** Connected
+**API Key:** `fe52ac365edf464c9dca774544a40da3`
+**Base URL:** https://newsapi.org/v2
+**Use Cases:**
+- Mining sector news and announcements
+- Commodity price movement catalysts
+- M&A activity in mining sector
+- Jurisdictional risk updates
+
+**Key Endpoints:**
+- `GET /everything` - Search news articles
+- `GET /top-headlines` - Breaking news
+
+### Web Search (Brave/Tavily)
+**Purpose:** Mine listings, technical reports, market intelligence
+**Primary:** Brave Search API
+**Backup:** Tavily API
+
 ## Installed Skills
 
 | Skill | File | Purpose |
