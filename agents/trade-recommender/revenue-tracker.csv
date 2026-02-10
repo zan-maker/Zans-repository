@@ -1,0 +1,2 @@
+date,market,position_size,entry_price,exit_price,gross_profit,fees,net_profit,roi_pct,cumulative_profit,month,notes
+2026-02-10,Template Entry,25.00,0.65,0.70,1.25,0.10,1.15,4.60,1.15,2026-02,Example trade - replace with actual trades
