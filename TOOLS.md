@@ -9,14 +9,13 @@
 | Model | Provider | Status | Use Case |
 |-------|----------|--------|----------|
 | **Kimi K2.5** | Moonshot | **Primary** | All tasks — general, analytical, complex |
+| Nemotron 3 Nano 30B | NVIDIA NIM | Available | Inference tasks |
 
 ### Manual Model Switching
 
-If you need to use other models, add them to `openclaw.json` first, then switch:
-
 ```
-/model z-ai/glm-4.7     # Complex reasoning (requires Z.AI API key)
-/model provider/model-id  # Any other configured model
+/model moonshot/kimi-k2.5              # Default (Kimi)
+/model nvidia/nemotron-3-nano-30b-a3b  # NVIDIA NIM (inference tasks)
 ```
 
 ### Cost-Conscious Rules
@@ -28,6 +27,7 @@ If you need to use other models, add them to `openclaw.json` first, then switch:
 ### API Keys (Environment Variables)
 
 - Kimi: `KIMI_API_KEY` (already configured)
+- NVIDIA: `NVIDIA_API_KEY` (configured for NIM)
 - Other providers: Add as needed
 
 ---
