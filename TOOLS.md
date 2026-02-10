@@ -95,5 +95,55 @@ export EMAIL_PASSWORD="cqma sflq nsfv itke"
 
 ---
 
-*Skills installed by Sam on 2026-02-09*
-*Email configured on 2026-02-10*
+---
+
+## Sub-Agent Orchestration
+
+**Primary:** Zan (orchestrator)  
+**Specialized Agents:** 3 domain-specific sub-agents
+
+### Sub-Agent Roster
+
+| Agent | Domain | Location | Use When |
+|-------|--------|----------|----------|
+| **TradeRecommender** | Trading (stocks, Polymarket, Kalshi) | `agents/trade-recommender/` | Trading opportunities, market analysis |
+| **MiningMetalsAnalyst** | Mining operations, metal arbitrage | `agents/mining-metals-analyst/` | Mine analysis, commodity arbitrage |
+| **LeadGenerator** | Fractional CFO leads, B2B consulting | `agents/lead-generator/` | Lead gen, prospect research, outreach |
+
+### Orchestration Workflow
+
+1. **Sam requests task** → Zan receives and interprets
+2. **Zan routes to appropriate agent** → Spawns sub-agent in isolated session
+3. **Agent executes independently** → Works with domain-specific skills
+4. **Agent returns output** → Submits analysis to Zan
+5. **Zan synthesizes** → Reviews, formats, presents to Sam
+6. **Sam decides** → Reviews recommendations, executes if approved
+
+### Key Constraints
+
+- **No autonomous execution** — All recommendations reviewed by Sam
+- **Recommendations only** — Agents analyze; Sam decides
+- **Risk disclosure required** — All downsides highlighted
+- **Confidence scoring** — 1-10 scale on all outputs
+
+### Spawn Commands
+
+```
+Spawn TradeRecommender to analyze [market/opportunity]
+Focus on: [stocks/Polymarket/Kalshi]
+Timeframe: [daytrade/swing/position]
+
+Spawn MiningMetalsAnalyst to evaluate [mine/metal]
+Focus on: [grade analysis/arbitrage/sector]
+Commodity: [gold/copper/lithium/etc.]
+
+Spawn LeadGenerator to identify leads for [service]
+Target: [industry/stage/geography]
+Output: [lead list/outreach drafts]
+```
+
+---
+
+*Skills installed by Sam on 2026-02-09*  
+*Email configured on 2026-02-10*  
+*Sub-agents configured on 2026-02-10*
