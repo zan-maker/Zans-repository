@@ -155,16 +155,94 @@ _(To be specified by Sam based on expertise and preferences)_
    - Cross-Sell: Mine deal sourcing
 ```
 
-**Enhanced Lead Scoring for ASX Mining:**
-| Signal | Points |
-|--------|--------|
-| Recent capital raise >$10M | +30 |
-| Active JV/M&A strategy | +25 |
-| No full-time CFO | +20 |
-| Market cap $50-500M | +15 |
-| Recent ASX listing | +10 |
-| Multiple projects/assets | +10 |
-| Interim/temp CFO | +15 |
+**Enhanced Lead Scoring for CFO Services (Comprehensive):**
+
+### Tier 1: Critical Signals (Must Have for High Score)
+| Signal | Points | Rationale |
+|--------|--------|-----------|
+| Recent funding Series A-C (<6 months) | +35 | Highest intent, cash to spend, complexity growing |
+| No CFO on LinkedIn / Job posting for CFO/VP Finance | +30 | Immediate need, decision maker likely involved |
+| 15-75 employees | +25 | Sweet spot for fractional (too small = not ready, too big = need full-time) |
+
+### Tier 2: Strong Indicators
+| Signal | Points | Rationale |
+|--------|--------|-----------|
+| Multi-entity structure | +20 | Complexity = need CFO |
+| International operations | +18 | Tax, compliance, reporting complexity |
+| Recent CFO departure | +22 | Urgent need, search in progress |
+| Interim/temp CFO currently | +18 | Proven need, evaluating options |
+| Active M&A or JV discussions | +20 | Need financial modeling, due diligence |
+| Planning fundraise in 6 months | +18 | Need financials ready |
+| Board meetings monthly/quarterly | +15 | Regular reporting burden |
+
+### Tier 3: Supporting Signals
+| Signal | Points | Rationale |
+|--------|--------|-----------|
+| $5M-$50M ARR | +15 | Revenue scale = complexity |
+| 30%+ YoY growth | +12 | Fast growth = financial stress |
+| Multiple investors on cap table | +10 | Investor reporting requirements |
+| Complex revenue model (usage, tiered, etc.) | +10 | Need revenue recognition expertise |
+| Industry: SaaS, Fintech, Marketplace | +8 | Higher complexity, investor expectations |
+| Location: SF, NYC, Boston, Austin | +5 | More likely to use fractional services |
+| Recent expansion (new office, product line) | +10 | Complexity increase |
+
+### Tier 4: Automation Fit (AI-CFO Potential)
+| Signal | Points | Rationale |
+|--------|--------|-----------|
+| Uses QuickBooks Online | +12 | Easy AI integration |
+| Uses Netsuite | +15 | Higher value client, complex needs |
+| Has bookkeeper/accountant already | +10 | Gap between tactical and strategic |
+| Previous month-end close >10 days | +15 | Pain point we solve |
+| Manual Excel forecasting | +12 | Opportunity for automation |
+| No financial dashboards | +10 | We provide real-time visibility |
+
+### Negative Signals (Reduce Score)
+| Signal | Points | Rationale |
+|--------|--------|-----------|
+| Full-time CFO on team | -40 | Not a fit |
+| <10 employees | -20 | Too early |
+| >200 employees | -15 | Likely need full-time |
+| Pre-revenue | -25 | Not ready for CFO |
+| Bootstrapped (no funding) | -10 | Limited budget |
+| Recent layoffs | -15 | Budget constraints |
+| Hiring freeze | -20 | No budget |
+
+### Scoring Tiers
+- **🔥 Hot (85+):** Immediate outreach - very likely to buy
+- **🌡️ Warm (70-84):** Follow up this week - good fit
+- **💡 Nurture (55-69):** Add to nurture campaign - future potential
+- **❌ Cold (<55):** Deprioritize or disqualify
+
+### Match Score Calculation Example:
+```
+Recent Series B (+35)
+No CFO, job posting (+30)
+45 employees (+25)
+Multi-entity (+20)
+QuickBooks Online (+12)
+SaaS company (+8)
+Planning Series C in 6 months (+18)
+Monthly board meetings (+15)
+Manual forecasting (+12)
+--------------------------------
+TOTAL: 175 points → 🔥 HOT LEAD
+```
+
+### Automation Triggers for Immediate Alert
+Send instant alert to Sam if:
+- Score >= 85 AND Recent funding (<30 days)
+- Score >= 90 (any combination)
+- CFO departure + Recent funding (combo)
+- Job posting for CFO + $10M+ ARR (combo)
+
+### Lead Enrichment Checklist
+Before outreach, verify:
+- [ ] LinkedIn shows no CFO or "interim"
+- [ ] Crunchbase shows recent funding date
+- [ ] Headcount in target range (15-75)
+- [ ] Industry is high-fit (SaaS, Fintech, etc.)
+- [ ] Recent news doesn't show layoffs/hiring freeze
+- [ ] Website shows growth signals (hiring, expansion)
 
 **Tracking:** `cross-agent-opportunities/asx-mining-jv.csv`
 
