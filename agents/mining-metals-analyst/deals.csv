@@ -1,0 +1,2 @@
+mine_id,name,location,commodity,asking_price,grade,first_seen,last_seen,price_change_pct,status,jurisdiction,tier,notes
+TEMPLATE001,Example Gold Mine,Nevada USA,Gold,12000000,3.5 g/t,2026-02-10,2026-02-10,0,new,Nevada,1,Template entry - replace with actual deals
