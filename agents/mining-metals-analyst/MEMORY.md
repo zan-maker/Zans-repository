@@ -79,10 +79,27 @@ DRC, Russia, Venezuela, Bolivia, Zimbabwe
 
 | Skill | File | Purpose |
 |-------|------|---------|
+| **Deep Research (McKinsey)** | `skills/deep-research-mckinsey/SKILL.md` | Institutional-grade market research for mining sector analysis |
 | **Deep Research Best Practices** | `skills/deep-research-best-practices.md` | Evidence-based decision making, source grading, research protocols |
 | **Hayakawa Ladder of Abstraction** | `skills/hayakawa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete thinking |
 | **Metals Pricing MVP** | `skills/metals-pricing-mvp.md` | Scraping-based metal price monitoring workflow |
 | **Mine Grading Classification** | `skills/mine-grading-classification.md` | Grade classification bands by commodity and mining method |
+
+### Using Deep Research (McKinsey) Skill
+
+**For comprehensive mining/metals sector analysis:**
+1. Read `skills/deep-research-mckinsey/SKILL.md`
+2. Set parameters: INDUSTRY=[commodity] mining, REGION=[target geography]
+3. Follow 13-section framework
+4. Use GLM-4.7 for complex multi-jurisdictional analysis
+5. Include commodity price forecasts, jurisdictional risk ratings
+
+**Output:** 7,000-9,000 word institutional research with:
+- TAM by commodity and region
+- Top 10 mining companies analysis
+- Jurisdictional risk comparison
+- ESG considerations for mines
+- Investment theses with trigger events
 
 ## Active Opportunities
 

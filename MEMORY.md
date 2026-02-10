@@ -14,7 +14,24 @@
 - All tasks run on Kimi 2.5 by default
 - Manual model switching via `/model` command if other providers configured
 
-**API Key:** Kimi API key configured via `KIMI_API_KEY` environment variable
+**API Keys:**
+- **Kimi:** Configured via `KIMI_API_KEY`
+- **Z.AI (GLM-4.7):** Configured via `ZAI_API_KEY` - Added 2026-02-10
+- **NVIDIA:** Configured via `NVIDIA_API_KEY`
+
+**Model Selection Guide:**
+| Task Type | Recommended Model | Context Window |
+|-----------|------------------|----------------|
+| General tasks | Kimi K2.5 | 256K |
+| Deep research (>7K words) | GLM-4.7 | 203K |
+| Quick inference | Nemotron Nano | 128K |
+
+**Switch Models:**
+```
+/model moonshot/kimi-k2.5          # Default
+/model zai/glm-4.7                 # Deep research
+/model nvidia/nemotron-3-nano-30b-a3b  # Inference
+```
 
 ## Persistent Memory Reference
 
@@ -133,5 +150,40 @@ When installing skills from SkillsMP, follow these rules strictly:
 | Problem-Solving Frameworks | `skills/problem-solving-frameworks/SKILL.md` | Structured analysis, root cause, decisions, risk assessment |
 | MIT First Principles | `skills/mit-first-principles/SKILL.md` | Strategic analysis, prioritization, challenging assumptions |
 | Task Dashboard | `skills/task-dashboard/SKILL.md` | Self-hosted Kanban for tracking OpenClaw tasks |
+| **Deep Research (McKinsey)** | `skills/deep-research-mckinsey/SKILL.md` | Institutional-grade market research, industry analysis, investment theses |
 
 **Rule:** Read SKILL.md before using any skill. Follow its guidance strictly.
+
+### Deep Research Skill - Usage Guide
+
+**Location:** `skills/deep-research-mckinsey/SKILL.md`
+
+**Use for:**
+- Industry deep-dives and sector analysis
+- Market sizing (TAM/SAM/SOM) and growth forecasting  
+- Competitive landscape and market share analysis
+- Investment thesis development
+- Porter Five Forces analysis
+- M&A and private equity activity tracking
+
+**Model Selection:**
+- **GLM-4.7 (Z.AI)**: Recommended for complex 7,000+ word reports
+- **Kimi K2.5 (Moonshot)**: Excellent for 5,000-7,000 word reports
+- **Default**: Kimi K2.5 configured as primary
+
+**Workflow:**
+1. Set parameters: INDUSTRY, REGION, TIME_HORIZON, CURRENCY
+2. Conduct iterative web research (>90% data coverage)
+3. Draft all 13 sections in order
+4. Insert tables immediately after introduction paragraphs
+5. End with full bibliography
+
+**Output:** 7,000-9,000 words, 13 sections, institutional-grade analysis
+
+**To Use:**
+```
+Read SKILL.md at skills/deep-research-mckinsey/SKILL.md
+Follow the 13-section framework
+Use web search for data collection
+Deliver comprehensive market research report
+```

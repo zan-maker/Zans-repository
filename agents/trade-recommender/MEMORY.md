@@ -129,10 +129,26 @@
 
 | Skill | File | Purpose |
 |-------|------|---------|
+| **Deep Research (McKinsey)** | `skills/deep-research-mckinsey/SKILL.md` | Institutional-grade market research for comprehensive sector analysis |
 | **Deep Research Best Practices** | `skills/deep-research-best-practices.md` | Evidence-based decision making, source grading, research protocols |
 | **Hayakawa Ladder of Abstraction** | `skills/hayakawa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete thinking |
 | **Options Research** | `skills/options-research.md` | Quant fund-grade options analysis (Greeks, IV, skew, flow) |
 | **Bregman Projection Arbitrage** | `skills/bregman-projection-arbitrage.md` | Prediction market arbitrage framework (Frank-Wolfe, Polymarket) |
+
+### Using Deep Research (McKinsey) Skill
+
+**For comprehensive market/sector analysis:**
+1. Read `skills/deep-research-mckinsey/SKILL.md`
+2. Set parameters: INDUSTRY, REGION, TIME_HORIZON
+3. Follow 13-section framework
+4. Use GLM-4.7 for reports >7,000 words
+5. Use Kimi 2.5 for standard 5,000-7,000 word reports
+
+**Output:** 7,000-9,000 word institutional-grade research with:
+- Executive summary with investment thesis
+- Market sizing and growth forecasts
+- Competitive landscape and Porter Five Forces
+- Risk matrix and investment implications
 
 ## Environment Variables Required
 

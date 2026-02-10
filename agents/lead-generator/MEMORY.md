@@ -85,8 +85,25 @@ _(To be specified by Sam based on expertise and preferences)_
 
 | Skill | File | Purpose |
 |-------|------|---------|
+| **Deep Research (McKinsey)** | `skills/deep-research-mckinsey/SKILL.md` | Institutional-grade market research for target industry analysis |
 | **Deep Research Best Practices** | `skills/deep-research-best-practices.md` | Evidence-based prospect research, source grading |
 | **Hayakawa Ladder of Abstraction** | `skills/hayakawa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete messaging |
+
+### Using Deep Research (McKinsey) Skill
+
+**For target market/industry analysis:**
+1. Read `skills/deep-research-mckinsey/SKILL.md`
+2. Set parameters: INDUSTRY=[target sector], REGION=[geography]
+3. Follow 13-section framework
+4. Use Kimi 2.5 for efficient 5,000-7,000 word reports
+5. Focus on Section 5 (Competitive Landscape) for lead identification
+
+**Output:** 7,000-9,000 word market research with:
+- Industry growth trends and catalysts
+- Top companies with funding status
+- M&A activity (indicates CFO needs)
+- Regional expansion patterns
+- Trigger events for Fractional CFO services
 
 ## Outreach Templates
 
