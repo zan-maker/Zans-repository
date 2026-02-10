@@ -18,6 +18,41 @@
 - Event-based markets (politics, weather, sports)
 - Regulation and compliance
 - Market structure
+- **API Access:** Configured for automated arbitrage detection
+
+## API Integrations
+
+### DefeatBeta API
+**Purpose:** Prediction market data and trading signals
+**Repository:** https://github.com/defeat-beta/defeatbeta-api
+**Status:** Connected
+**Use Cases:**
+- Market data aggregation
+- Arbitrage signal detection
+- Cross-market opportunity identification
+
+### Kalshi API
+**Status:** Configured
+**API Key ID:** `fb109d35-efc3-42b1-bdba-0ee2a1e90ef8`
+**Authentication:** RSA Private Key (stored as env var)
+**Base URL:** https://trading-api.kalshi.com/trade-api/v2
+**Rate Limits:** 200 requests/minute
+
+**Endpoints to Use:**
+- `GET /markets` - List available markets
+- `GET /markets/{market_id}` - Market details and orderbook
+- `GET /portfolio/balance` - Account balance
+- `POST /orders` - Place orders (paper trading mode recommended)
+
+### Web Search (Brave/Tavily)
+**Purpose:** Real-time market intelligence, news, sentiment
+**Primary:** Brave Search API
+**Backup:** Tavily API
+**Use Cases:**
+- Breaking news affecting markets
+- Earnings announcements
+- Regulatory changes
+- Sentiment analysis
 
 ## Analysis Frameworks
 
@@ -40,6 +75,30 @@
 - Max drawdown limits
 - Volatility assessment
 
+### Arbitrage Detection Workflow
+
+**Step 1: Market Scanning**
+- Query DefeatBeta API for prediction market data
+- Query Kalshi API for event market prices
+- Use Bregman Projection skill to identify mispricings
+
+**Step 2: Web Research**
+- Search for relevant news/events affecting markets
+- Validate arbitrage thesis with external data
+- Check for market closures or restrictions
+
+**Step 3: Opportunity Assessment**
+- Calculate expected profit (accounting for fees)
+- Assess liquidity (can you get filled?)
+- Identify execution risks (timing, counterparty)
+
+**Step 4: Recommendation Output**
+- Market pair
+- Entry/exit points
+- Position sizing
+- Risk factors
+- Confidence score (1-10)
+
 ## Installed Skills
 
 | Skill | File | Purpose |
@@ -48,6 +107,24 @@
 | **Hayakawa Ladder of Abstraction** | `skills/hayakawa-ladder-of-abstraction.md` | Communication framework for strategic vs. concrete thinking |
 | **Options Research** | `skills/options-research.md` | Quant fund-grade options analysis (Greeks, IV, skew, flow) |
 | **Bregman Projection Arbitrage** | `skills/bregman-projection-arbitrage.md` | Prediction market arbitrage framework (Frank-Wolfe, Polymarket) |
+
+## Environment Variables Required
+
+```bash
+# DefeatBeta API
+export DEFEATBETA_API_KEY="your-defeatbeta-key"
+
+# Kalshi API
+export KALSHI_API_KEY_ID="fb109d35-efc3-42b1-bdba-0ee2a1e90ef8"
+export KALSHI_PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEA4+LPLFirxRAFlAxRI7xkdIAVuOkg4KCOIk7q1LAZy70Ek0Qj
+...
+-----END RSA PRIVATE KEY-----"
+
+# Web Search
+export BRAVE_API_KEY="your-brave-key"
+export TAVILY_API_KEY="your-tavily-key"
+```
 
 ## Active Opportunities
 
