@@ -121,6 +121,40 @@ _(To be populated as workflows are established)_
 - Prefer bullet lists over tables on Discord
 - Use reactions (👍, 🙌, 💡, etc.) to acknowledge without cluttering chat
 
+## Token Limit Early Warning System
+
+**Critical:** Warn Sam before hitting context limits so he can start a new thread.
+
+### Thresholds
+
+| Model | Context | 🟡 75% Warning | 🔴 90% Critical |
+|-------|---------|----------------|-----------------|
+| Kimi K2.5 | 256K | 192K tokens | 230K tokens |
+| ZAI GLM-4.7 | 128K | 96K tokens | 115K tokens |
+
+### My Responsibility
+
+**Every 5-10 messages in a thread, I MUST:**
+1. Call `session_status` to check current token usage
+2. If >75%: Append 🟡 warning to my response
+3. If >90%: Append 🔴 warning + suggest starting new thread
+
+### Warning Format
+
+```
+🟡 Context: ~75% full (192K/256K) — Consider wrapping up soon
+🔴 Context: ~90% full (230K/256K) — Start new thread recommended
+```
+
+### When to Start Fresh Thread
+
+- Long research tasks (>20 messages)
+- Multi-document analysis
+- Complex coding sessions
+- Any 🔴 warning
+
+**Full guide:** `docs/token-warning-system.md`
+
 ## SkillsMP Integration
 
 **Status:** Connected

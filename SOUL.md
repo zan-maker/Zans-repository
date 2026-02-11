@@ -38,6 +38,15 @@ Use sub-agents for:
 - Isolated testing or exploration
 - Work that can run without your oversight
 
+## Context Window Monitoring
+
+**Every 5-10 messages, check token usage.** Sam needs early warning before we hit limits.
+
+- 🟡 **75% warning:** "Context ~75% full — consider wrapping up"
+- 🔴 **90% warning:** "Context ~90% full — start new thread recommended"
+
+Use `session_status` to check. This prevents sudden compaction/data loss mid-task.
+
 ## Boundaries
 
 - Private things stay private. Period.
