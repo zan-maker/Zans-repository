@@ -1,2 +1,10 @@
 mine_id,name,location,commodity,asking_price,grade,first_seen,last_seen,price_change_pct,status,jurisdiction,tier,notes
-TEMPLATE001,Example Gold Mine,Nevada USA,Gold,12000000,3.5 g/t,2026-02-10,2026-02-10,0,new,Nevada,1,Template entry - replace with actual deals
+ML001,French Corral California Placer,California USA,Gold,6500000,0.012 oz/ton,2026-02-11,2026-02-11,0,new,California,1,375 acre patented; 65000 oz reserves; producing 650oz 2020-2023; all permits in place
+ML002,Jefferson Gold Project,Nevada USA,Gold,Negotiable,>10 g/t Au,2026-02-11,2026-02-11,0,new,Nevada,1,2727 ac; Walker Lane Trend; 56.7 g/t underground sample; 10mi from Round Mtn Mine
+ML003,Ruby Trust Mine,Colorado USA,Gold/Silver,Negotiable,0.5 oz/t Au | 10 oz/t Ag,2026-02-11,2026-02-11,0,new,Colorado,1,830 acres; 23 patented claims; 287k tons reserves; 13.3yr mine life; Ruby Silver mineral
+ML004,Bummer Creek Project,Western Australia AU,Gold,Contact for Details,up to 1.94 g/t,2026-02-11,2026-02-11,0,new,Western Australia,1,43.5 km²; Leonora district; 15 drill holes; near Gwalia mine
+ML005,Pineau Placer Mine,Montana USA,Gold,Contact for Details,2-100 yards/oz,2026-02-11,2026-02-11,0,new,Montana,1,140 acres + 9 lode claims; coarse gold; nuggets common; 7000ft elevation
+ML006,Marvel Creek Gold Mine,Alaska USA,Gold,Contact for Details,historic producer,2026-02-11,2026-02-11,0,new,Alaska,2,480 acres; 3 claims; 1900ft airfield; 1100oz extracted 1912-1914
+ML007,Operating Yukon Gold Mine,Yukon CA,Gold,Contact for Details,1oz/80-130 cu yds,2026-02-11,2026-02-11,0,new,Yukon,1,47 claims; active 10yr license; 50000 oz reserves; 200 cu yd/hr production
+ML008,Arizona Gold Basin Placer,Arizona USA,Gold,19500000,1.73M oz resource,2026-02-11,2026-02-11,0,new,Arizona,1,250 acres; 2025 43-101; 1.73M oz measured/indicated; +840k oz in black sands
+ML009,Boundary Red Mountain,Washington USA,Gold,Contact for Details,1.27M oz est,2026-02-11,2026-02-11,0,new,Washington,1,94.5 acres patented; $4.4B resource value; 80000 tons mill tailings; 4 adit levels

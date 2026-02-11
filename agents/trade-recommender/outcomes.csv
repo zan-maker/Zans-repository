@@ -1,2 +1,5 @@
 date,market,market_id,predicted_probability,actual_outcome,predicted_edge,recommendation_status,confidence,notes
 2026-02-10,Example Market (Template),MKT123,65%,pending,2.5%,paper_trade,8,Example entry - replace with actual trades
+2026-02-11,Detroit at Toronto Winner,KXNBAGAME-26FEB11DETTOR-DET,55%,pending,2%,watch_only,6,No independent signal source for edge calc
+2026-02-11,Brooklyn vs Indiana Winner,KXNBAGAME-26FEB11INDBKN-BKN,60%,pending,4%,watch_only,6,Market at 64c - potential value if true prob lower
+2026-02-11,Orlando vs Milwaukee Winner,KXNBAGAME-26FEB11MILORL-ORL,75%,pending,6%,watch_only,7,Heavy favorite - market at 81c may be overpriced
