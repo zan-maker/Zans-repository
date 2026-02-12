@@ -114,6 +114,59 @@ _(To be populated as work begins)_
 
 _(To be populated as workflows are established)_
 
+## Technical Reference: LoRA Adapters & Parameter-Efficient Fine-Tuning
+
+**Purpose:** Reduce token consumption by storing this technical reference instead of repeating it.
+
+### Standard Transformer Layer
+```
+Input → Attention → Add → FFN → Add → Output
+```
+
+### With Adapters (Parameter-Efficient Fine-Tuning)
+```
+Input → Attention → [Adapter] → Add → FFN → [Adapter] → Add → Output
+```
+
+### Adapter Module Architecture
+```
+Input x [batch, 768]
+    ↓
+Down-project: W_down [768 → 64]
+h = W_down × x  (bottleneck!)
+    ↓
+Non-linearity: h = ReLU(h)
+    ↓
+Up-project: W_up [64 → 768]
+output = W_up × h
+    ↓
+Residual: final = x + output
+```
+
+### Parameters Per Adapter
+- **Down:** 768 × 64 = 49K
+- **Up:** 64 × 768 = 49K
+- **Total:** ~98K parameters
+- **Full model:** 2 adapters/layer × 12 layers = ~2.4M params (2.2% of BERT)
+
+**Key insight:** Bottleneck forces compact task representation.
+
+### Why It Works
+1. **Residual Learning:** Adapter adds small task-specific modification
+2. **Original path preserved:** No catastrophic forgetting
+3. **Learns:** "What to change for this task"
+4. **Modular:** Independent, easy to add/remove/swap
+
+### Benefits & Limitations
+| Advantages | Limitations |
+|------------|-------------|
+| ✓ Clean modular design | ✗ Inference overhead (5–10%) |
+| ✓ Easy to add/remove | ✗ More parameters than LoRA (2–3% vs 0.1–1%) |
+| ✓ Preserves base model | ✗ Harder to merge into base |
+| ✓ Well-studied and reliable | |
+
+**Source:** Committed to memory 2026-02-11
+
 ## Key Facts & Preferences
 
 - Sam uses Kimi K2.5 as primary model (reverted from multi-tier experiment)

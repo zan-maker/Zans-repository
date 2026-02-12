@@ -28,16 +28,31 @@ _(To be specified by Sam based on expertise and preferences)_
 - Conference attendance (scaling mindset)
 - Industry awards/recognition
 
-### Ideal Client Profile (ICP)
+### Ideal Client Profile (ICP) - UPDATED: Series A-B Focus
+**Sweet Spot:** Series A or B funded startups (NOT Series C+)
+- Recently raised Series A ($5M-$15M) or Series B ($15M-$50M)
+- Post-revenue, scaling to next stage
+- Too big for founder/bookkeeper, too small for full-time CFO
+- Willing to pay $5K-$15K/month for fractional expertise
+
 **Must-haves:**
-- $1M+ ARR
-- 10+ employees
+- $5M-$50M ARR (Series B sweet spot: $10M-$30M)
+- 15-150 employees (Series B: 50-100 ideal)
 - Complex financial operations
 - Investor reporting requirements
+- **Recently funded (within 60 days)**
+
+**RED FLAGS (Skip these):**
+- Series C+ funding ($50M+ rounds) - will hire full-time
+- >150 employees - likely have CFO already
+- >$50M ARR - out of fractional range
+- Public companies - full-time required
 
 **Nice-to-haves:**
-- Multiple entities
-- International operations
+- Multiple entities / international ops
+- Rapid headcount growth (>20% QoQ)
+- QuickBooks Online (not NetSuite yet - signaling upgrade need)
+- Manual Excel forecasting (ready for systems)
 - Recurring revenue model
 - Board reporting needs
 
