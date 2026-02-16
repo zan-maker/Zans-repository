@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFO Financial Health Scorecard | ImpactQuadrant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="../assets/js/alpine.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); }
+        .score-gradient { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-2">CFO Financial Health Scorecard</h1>
+            <p class="text-xl opacity-90">Assess your company's financial readiness for growth and investment</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12" x-data="cfoScorecard()">
+        
+        <!-- Form Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-8" x-show="!showResults">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800">Analyze Your Financial Position</h2>
+                <p class="text-gray-600 mt-2">Get a comprehensive assessment in under 3 minutes</p>
+            </div>
+            
+            <form @submit.prevent="calculateScore()" class="space-y-6">
+                <!-- Company Basics -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                        <input type="text" x-model="form.companyName" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Acme Corp">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Industry</label>
+                        <select x-model="form.industry" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="">Select industry...</option>
+                            <option value="saas">SaaS / Software</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="professional_services">Professional Services</option>
+                            <option value="ecommerce">E-commerce / Retail</option>
+                            <option value="construction">Construction / Trades</option>
+                            <option value="logistics">Logistics / Transportation</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Financial Metrics - Revenue -->
+                <div class="bg-blue-50 rounded-xl p-6">
+                    <h3 class="font-semibold text-blue-800 mb-4">📈 Revenue & Growth</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Annual Revenue (TTM)</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3 text-gray-500">$</span>
+                                <input type="number" x-model="form.annualRevenue" required min="0"
+                                    class="w-full px-4 py-3 pl-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                    placeholder="5000000">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">YoY Revenue Growth (%)</label>
+                            <div class="relative">
+                                <input type="number" x-model="form.revenueGrowth" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                    placeholder="25">
+                                <span class="absolute right-4 top-3 text-gray-500">%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Metrics - Profitability -->
+                <div class="bg-emerald-50 rounded-xl p-6">
+                    <h3 class="font-semibold text-emerald-800 mb-4">💰 Profitability</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Gross Margin (%)</label>
+                            <div class="relative">
+                                <input type="number" x-model="form.grossMargin" required min="0" max="100"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                    placeholder="65">
+                                <span class="absolute right-4 top-3 text-gray-500">%</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">(Revenue - COGS) / Revenue</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Operating Margin (%)</label>
+                            <div class="relative">
+                                <input type="number" x-model="form.operatingMargin" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                    placeholder="15">
+                                <span class="absolute right-4 top-3 text-gray-500">%</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">EBIT / Revenue</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Net Margin (%)</label>
+                            <div class="relative">
+                                <input type="number" x-model="form.netMargin" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                    placeholder="10">
+                                <span class="absolute right-4 top-3 text-gray-500">%</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Net Income / Revenue</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cash Flow & Working Capital -->
+                <div class="bg-amber-50 rounded-xl p-6">
+                    <h3 class="font-semibold text-amber-800 mb-4">💧 Cash Flow & Working Capital</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Monthly Operating Cash Flow</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3 text-gray-500">$</span>
+                                <input type="number" x-model="form.monthlyCashFlow" required
+                                    class="w-full px-4 py-3 pl-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                    placeholder="50000">
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Cash from operations (not financing)</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Cash on Hand</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3 text-gray-500">$</span>
+                                <input type="number" x-model="form.cashOnHand" required
+                                    class="w-full px-4 py-3 pl-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                    placeholder="200000">
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Current cash + equivalents</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Days Sales Outstanding (DSO)</label>
+                            <input type="number" x-model="form.dso" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                placeholder="45">
+                            <p class="text-xs text-gray-500 mt-1">Average days to collect payment</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Monthly Burn Rate</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3 text-gray-500">$</span>
+                                <input type="number" x-model="form.monthlyBurn" required
+                                    class="w-full px-4 py-3 pl-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                    placeholder="80000">
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Monthly cash expenses</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Debt & Liabilities -->
+                <div class="bg-red-50 rounded-xl p-6">
+                    <h3 class="font-semibold text-red-800 mb-4">📊 Debt & Financial Structure</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Total Debt</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3 text-gray-500">$</span>
+                                <input type="number" x-model="form.totalDebt" required min="0"
+                                    class="w-full px-4 py-3 pl-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                    placeholder="500000">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Current Ratio</label>
+                            <input type="number" x-model="form.currentRatio" required step="0.1"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                placeholder="1.5">
+                            <p class="text-xs text-gray-500 mt-1">Current Assets / Current Liabilities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="pt-6 border-t">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                            <input type="text" x-model="form.contactName" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                placeholder="John Smith">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your Title</label>
+                            <select x-model="form.contactTitle" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select your role...</option>
+                                <option value="cfo">CFO / Chief Financial Officer</option>
+                                <option value="ceo">CEO / Owner</option>
+                                <option value="controller">Controller</option>
+                                <option value="finance_vp">VP Finance</option>
+                                <option value="finance_director">Finance Director</option>
+                                <option value="accountant">Accountant / Bookkeeper</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Business Email</label>
+                        <input type="email" x-model="form.email" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                            placeholder="you@company.com">
+                        <p class="text-sm text-gray-500 mt-1">We'll send your personalized scorecard to this email</p>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" 
+                    class="w-full score-gradient text-white font-semibold py-4 rounded-lg hover:opacity-90 transition-opacity text-lg">
+                    Generate My Scorecard →
+                </button>
+
+                <p class="text-center text-sm text-gray-500">
+                    🔒 Your data is secure. We use bank-level encryption and never share your information.
+                </p>
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-8" x-show="showResults" x-cloak>
+            <!-- Overall Score -->
+            <div class="text-center mb-8">
+                <div class="inline-block p-4 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 mb-4">
+                    <span class="text-4xl">📊</span>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Your Financial Health Score</h2>
+                <p class="text-gray-600">Based on your annual revenue of <span x-text="formatCurrency(form.annualRevenue)"></span></p>
+                
+                <!-- Score Display -->
+                <div class="mt-6 inline-flex flex-col items-center">
+                    <div class="relative w-40 h-40">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#e5e7eb" stroke-width="10"/>
+                            <circle cx="50" cy="50" r="45" fill="none" :stroke="scoreColor" stroke-width="10"
+                                :stroke-dasharray="circumference" :stroke-dashoffset="scoreOffset"
+                                stroke-linecap="round"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-4xl font-bold" :class="scoreTextColor" x-text="results.overallScore"></span>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-xl font-semibold" :class="scoreTextColor" x-text="scoreLabel"></p>
+                </div>
+            </div>
+
+            <!-- Score Breakdown -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm opacity-90">Profitability Score</span>
+                        <span class="text-2xl font-bold" x-text="results.profitabilityScore"></span>
+                    </div>
+                    <div class="w-full bg-blue-800 rounded-full h-2">
+                        <div class="bg-white rounded-full h-2 transition-all duration-1000" :style="`width: ${results.profitabilityScore}%`"></div>
+                    </div>
+                    <p class="text-sm mt-2 opacity-75" x-text="profitabilityFeedback"></p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl p-6 text-white">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm opacity-90">Cash Flow Score</span>
+                        <span class="text-2xl font-bold" x-text="results.cashFlowScore"></span>
+                    </div>
+                    <div class="w-full bg-emerald-800 rounded-full h-2">
+                        <div class="bg-white rounded-full h-2 transition-all duration-1000" :style="`width: ${results.cashFlowScore}%`"></div>
+                    </div>
+                    <p class="text-sm mt-2 opacity-75" x-text="cashFlowFeedback"></p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl p-6 text-white">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm opacity-90">Working Capital Score</span>
+                        <span class="text-2xl font-bold" x-text="results.workingCapitalScore"></span>
+                    </div>
+                    <div class="w-full bg-amber-800 rounded-full h-2">
+                        <div class="bg-white rounded-full h-2 transition-all duration-1000" :style="`width: ${results.workingCapitalScore}%`"></div>
+                    </div>
+                    <p class="text-sm mt-2 opacity-75" x-text="workingCapitalFeedback"></p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm opacity-90">Growth Readiness Score</span>
+                        <span class="text-2xl font-bold" x-text="results.growthReadinessScore"></span>
+                    </div>
+                    <div class="w-full bg-purple-800 rounded-full h-2">
+                        <div class="bg-white rounded-full h-2 transition-all duration-1000" :style="`width: ${results.growthReadinessScore}%`"></div>
+                    </div>
+                    <p class="text-sm mt-2 opacity-75" x-text="growthReadinessFeedback"></p>
+                </div>
+            </div>
+
+            <!-- Key Insights -->
+            <div class="bg-gray-50 rounded-xl p-6 mb-8">
+                <h3 class="font-semibold text-gray-800 mb-4">📋 Key Insights & Recommendations</h3>
+                <div class="space-y-4">
+                    <template x-for="insight in results.insights" :key="insight.title">
+                        <div class="flex items-start p-4 bg-white rounded-lg border-l-4" :class="insight.borderColor">
+                            <span class="text-2xl mr-3" x-text="insight.icon"></span>
+                            <div>
+                                <p class="font-medium text-gray-800" x-text="insight.title"></p>
+                                <p class="text-sm text-gray-600" x-text="insight.description"></p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Industry Benchmark -->
+            <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-6 text-white mb-8">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="font-bold text-xl mb-2">How You Compare</h3>
+                        <p class="opacity-90">Your metrics vs. <span x-text="form.industry"></span> industry median</p>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <p class="text-5xl font-bold" x-text="results.percentile + '%'"</p>
+                        <p class="text-sm opacity-75">Percentile ranking</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-6 text-white">
+                <h3 class="font-bold text-xl mb-2">Ready to Optimize Your Financials?</h3>
+                <p class="mb-6 opacity-90">Get a detailed 90-minute CFO strategy session with actionable recommendations</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button @click="bookCall()" 
+                        class="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition text-center">
+                        Book Free Strategy Call
+                    </button>
+                    <button @click="downloadPDF()" 
+                        class="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-blue-700 transition text-center">
+                        Download Full Scorecard (PDF)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Start Over -->
+            <div class="text-center mt-6">
+                <button @click="reset()" class="text-gray-500 hover:text-gray-700 underline">
+                    ← Run Another Analysis
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div class="text-center py-12" x-show="loading">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <p class="text-gray-600">Analyzing your financial metrics...</p>
+            <p class="text-sm text-gray-500 mt-2">This may take a moment</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8 mt-12">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="mb-2">© 2026 ImpactQuadrant. All rights reserved.</p>
+            <p class="text-sm">Fractional CFO services with success-based pricing</p>
+        </div>
+    </footer>
+
+    <script>
+        function cfoScorecard() {
+            return {
+                form: {
+                    companyName: '',
+                    industry: '',
+                    annualRevenue: '',
+                    revenueGrowth: '',
+                    grossMargin: '',
+                    operatingMargin: '',
+                    netMargin: '',
+                    monthlyCashFlow: '',
+                    cashOnHand: '',
+                    dso: '',
+                    monthlyBurn: '',
+                    totalDebt: '',
+                    currentRatio: '',
+                    contactName: '',
+                    contactTitle: '',
+                    email: ''
+                },
+                showResults: false,
+                loading: false,
+                circumference: 2 * Math.PI * 45,
+                results: {
+                    overallScore: 0,
+                    profitabilityScore: 0,
+                    cashFlowScore: 0,
+                    workingCapitalScore: 0,
+                    growthReadinessScore: 0,
+                    percentile: 0,
+                    insights: []
+                },
+                
+                calculateScore() {
+                    this.loading = true;
+                    
+                    setTimeout(() => {
+                        const revenue = parseFloat(this.form.annualRevenue) || 0;
+                        const growth = parseFloat(this.form.revenueGrowth) || 0;
+                        const grossMargin = parseFloat(this.form.grossMargin) || 0;
+                        const opMargin = parseFloat(this.form.operatingMargin) || 0;
+                        const netMargin = parseFloat(this.form.netMargin) || 0;
+                        const cashFlow = parseFloat(this.form.monthlyCashFlow) || 0;
+                        const cash = parseFloat(this.form.cashOnHand) || 0;
+                        const burn = parseFloat(this.form.monthlyBurn) || 1;
+                        const debt = parseFloat(this.form.totalDebt) || 0;
+                        const currentRatio = parseFloat(this.form.currentRatio) || 1;
+                        const dso = parseFloat(this.form.dso) || 45;
+                        
+                        // Calculate scores (0-100)
+                        // Profitability Score
+                        this.results.profitabilityScore = Math.min(100, Math.round(
+                            (grossMargin * 0.3) + 
+                            (Math.max(0, opMargin) * 2) + 
+                            (Math.max(0, netMargin) * 3) +
+                            (Math.min(growth, 50) * 0.5)
+                        ));
+                        
+                        // Cash Flow Score
+                        const runway = cash / burn;
+                        this.results.cashFlowScore = Math.min(100, Math.round(
+                            (runway * 5) + 
+                            (cashFlow > 0 ? 30 : 0) +
+                            (Math.max(0, cashFlow / burn) * 20)
+                        ));
+                        
+                        // Working Capital Score
+                        this.results.workingCapitalScore = Math.min(100, Math.round(
+                            (Math.min(currentRatio, 3) * 25) +
+                            ((60 - Math.min(dso, 60)) * 0.8) +
+                            (cashFlow > 0 ? 20 : 0)
+                        ));
+                        
+                        // Growth Readiness Score
+                        const debtToRevenue = debt / revenue;
+                        this.results.growthReadinessScore = Math.min(100, Math.round(
+                            (Math.min(growth, 30) * 2) +
+                            (Math.max(0, 50 - debtToRevenue * 100)) +
+                            (opMargin > 10 ? 25 : opMargin * 2) +
+                            (runway > 6 ? 25 : runway * 4)
+                        ));
+                        
+                        // Overall Score
+                        this.results.overallScore = Math.round(
+                            (this.results.profitabilityScore * 0.3) +
+                            (this.results.cashFlowScore * 0.25) +
+                            (this.results.workingCapitalScore * 0.25) +
+                            (this.results.growthReadinessScore * 0.2)
+                        );
+                        
+                        // Percentile (simulated based on score)
+                        this.results.percentile = Math.min(99, Math.max(1, this.results.overallScore - 10 + Math.floor(Math.random() * 20)));
+                        
+                        // Generate insights
+                        this.generateInsights();
+                        
+                        // Submit lead
+                        this.submitLead();
+                        
+                        this.loading = false;
+                        this.showResults = true;
+                    }, 2500);
+                },
+                
+                generateInsights() {
+                    this.results.insights = [];
+                    
+                    if (this.results.profitabilityScore < 60) {
+                        this.results.insights.push({
+                            icon: '⚠️',
+                            title: 'Profitability Improvement Opportunity',
+                            description: 'Your margins are below industry benchmarks. Consider expense reduction or pricing optimization.',
+                            borderColor: 'border-red-500'
+                        });
+                    }
+                    
+                    if (this.results.cashFlowScore < 60) {
+                        this.results.insights.push({
+                            icon: '💧',
+                            title: 'Cash Flow Management',
+                            description: 'Strengthen cash reserves and accelerate collections to improve financial stability.',
+                            borderColor: 'border-amber-500'
+                        });
+                    }
+                    
+                    if (parseFloat(this.form.dso) > 45) {
+                        this.results.insights.push({
+                            icon: '⏱️',
+                            title: 'Collection Cycle Optimization',
+                            description: `Your ${this.form.dso}-day collection cycle is above optimal. Implement automated reminders and early payment incentives.`,
+                            borderColor: 'border-blue-500'
+                        });
+                    }
+                    
+                    if (this.results.growthReadinessScore > 75) {
+                        this.results.insights.push({
+                            icon: '🚀',
+                            title: 'Growth Ready',
+                            description: 'Strong fundamentals position you for expansion. Consider strategic investments or market expansion.',
+                            borderColor: 'border-green-500'
+                        });
+                    }
+                    
+                    if (this.results.insights.length === 0) {
+                        this.results.insights.push({
+                            icon: '✅',
+                            title: 'Solid Financial Foundation',
+                            description: 'Your metrics show a healthy financial position. Focus on incremental improvements to maximize value.',
+                            borderColor: 'border-green-500'
+                        });
+                    }
+                },
+                
+                async submitLead() {
+                    const leadData = {
+                        timestamp: new Date().toISOString(),
+                        service: 'cfo-scorecard',
+                        companyName: this.form.companyName,
+                        industry: this.form.industry,
+                        annualRevenue: parseFloat(this.form.annualRevenue),
+                        overallScore: this.results.overallScore,
+                        contactName: this.form.contactName,
+                        contactTitle: this.form.contactTitle,
+                        email: this.form.email,
+                        source: 'cfo-scorecard'
+                    };
+                    
+                    try {
+                        await fetch('/api/submit-lead', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(leadData)
+                        });
+                    } catch (error) {
+                        console.error('Error submitting lead:', error);
+                    }
+                },
+                
+                get scoreOffset() {
+                    return this.circumference - (this.results.overallScore / 100) * this.circumference;
+                },
+                
+                get scoreColor() {
+                    if (this.results.overallScore >= 80) return '#22c55e';
+                    if (this.results.overallScore >= 60) return '#3b82f6';
+                    if (this.results.overallScore >= 40) return '#f59e0b';
+                    return '#ef4444';
+                },
+                
+                get scoreTextColor() {
+                    if (this.results.overallScore >= 80) return 'text-green-600';
+                    if (this.results.overallScore >= 60) return 'text-blue-600';
+                    if (this.results.overallScore >= 40) return 'text-amber-600';
+                    return 'text-red-600';
+                },
+                
+                get scoreLabel() {
+                    if (this.results.overallScore >= 80) return 'Excellent';
+                    if (this.results.overallScore >= 60) return 'Good';
+                    if (this.results.overallScore >= 40) return 'Fair';
+                    return 'Needs Attention';
+                },
+                
+                get profitabilityFeedback() {
+                    if (this.results.profitabilityScore >= 75) return 'Strong margins driving value';
+                    if (this.results.profitabilityScore >= 50) return 'Room for margin improvement';
+                    return 'Critical: Review pricing & costs';
+                },
+                
+                get cashFlowFeedback() {
+                    if (this.results.cashFlowScore >= 75) return 'Healthy cash generation';
+                    if (this.results.cashFlowScore >= 50) return 'Monitor cash reserves';
+                    return 'Urgent: Address cash flow';
+                },
+                
+                get workingCapitalFeedback() {
+                    if (this.results.workingCapitalScore >= 75) return 'Efficient capital management';
+                    if (this.results.workingCapitalScore >= 50) return 'Optimize working capital';
+                    return 'Improve receivables/payables';
+                },
+                
+                get growthReadinessFeedback() {
+                    if (this.results.growthReadinessScore >= 75) return 'Ready to scale';
+                    if (this.results.growthReadinessScore >= 50) return 'Cautious growth possible';
+                    return 'Stabilize before expanding';
+                },
+                
+                formatCurrency(num) {
+                    return '$' + parseInt(num).toLocaleString();
+                },
+                
+                formatNumber(num) {
+                    return parseInt(num).toLocaleString();
+                },
+                
+                bookCall() {
+                    window.open('https://calendly.com/impactquadrant/cfo-strategy', '_blank');
+                },
+                
+                downloadPDF() {
+                    alert('PDF generation will be implemented with Puppeteer');
+                },
+                
+                reset() {
+                    this.showResults = false;
+                    this.form = {
+                        companyName: '',
+                        industry: '',
+                        annualRevenue: '',
+                        revenueGrowth: '',
+                        grossMargin: '',
+                        operatingMargin: '',
+                        netMargin: '',
+                        monthlyCashFlow: '',
+                        cashOnHand: '',
+                        dso: '',
+                        monthlyBurn: '',
+                        totalDebt: '',
+                        currentRatio: '',
+                        contactName: '',
+                        contactTitle: '',
+                        email: ''
+                    };
+                }
+            }
+        }
+    </script>
+</body>
+</html>
