@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Reduction Audit | ImpactQuadrant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="../assets/js/alpine.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #059669 0%, #10b981 100%); }
+        .money-gradient { background: linear-gradient(135deg, #065f46 0%, #059669 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-2">Expense Reduction Audit</h1>
+            <p class="text-xl opacity-90">Discover how much your company can save on vendor and SaaS spend</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-12" x-data="expenseAudit()">
+        
+        <!-- Form Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-8" x-show="!showResults">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800">Analyze Your Vendor Spend</h2>
+                <p class="text-gray-600 mt-2">In 2 minutes, identify potential savings across your vendor portfolio</p>
+            </div>
+            
+            <form @submit.prevent="calculateSavings()" class="space-y-6">
+                <!-- Company Info -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                        <input type="text" x-model="form.companyName" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                            placeholder="Acme Corp">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Number of Employees</label>
+                        <input type="number" x-model="form.employeeCount" required min="1"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                            placeholder="50">
+                    </div>
+                </div>
+
+                <!-- SaaS Spend -->
+                <div class="bg-emerald-50 rounded-xl p-6">
+                    <h3 class="font-semibold text-emerald-800 mb-4">💻 SaaS & Software Spend</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Monthly SaaS Spend</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3 text-gray-500">$</span>
+                                <input type="number" x-model="form.monthlySaaSSpend" required min="0"
+                                    class="w-full px-4 py-3 pl-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+                                    placeholder="5000">
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1">CRM, project management, comms tools, etc.</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Number of SaaS Tools</label>
+                            <input type="number" x-model="form.saasToolCount" required min="1"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+                                placeholder="25">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vendor Spend -->
+                <div class="bg-blue-50 rounded-xl p-6">
+                    <h3 class="font-semibold text-blue-800 mb-4">🏢 Vendor & Service Spend</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Monthly Vendor Spend</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3 text-gray-500">$</span>
+                                <input type="number" x-model="form.monthlyVendorSpend" required min="0"
+                                    class="w-full px-4 py-3 pl-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+                                    placeholder="15000">
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1">Professional services, contractors, suppliers</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Primary Vendor Categories</label>
+                            <select x-model="form.vendorCategories" multiple
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500">
+                                <option value="marketing">Marketing & Advertising</option>
+                                <option value="it">IT Services & Support</option>
+                                <option value="legal">Legal & Compliance</option>
+                                <option value="hr">HR & Recruiting</option>
+                                <option value="facilities">Facilities & Maintenance</option>
+                                <option value="logistics">Logistics & Shipping</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Expenses -->
+                <div class="bg-amber-50 rounded-xl p-6">
+                    <h3 class="font-semibold text-amber-800 mb-4">✈️ Other Major Expenses</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Monthly Travel Spend</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3 text-gray-500">$</span>
+                                <input type="number" x-model="form.monthlyTravelSpend" min="0"
+                                    class="w-full px-4 py-3 pl-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+                                    placeholder="3000">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Telecom/Internet</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3 text-gray-500">$</span>
+                                <input type="number" x-model="form.monthlyTelecomSpend" min="0"
+                                    class="w-full px-4 py-3 pl-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+                                    placeholder="800">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Office/Supplies</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3 text-gray-500">$</span>
+                                <input type="number" x-model="form.monthlyOfficeSpend" min="0"
+                                    class="w-full px-4 py-3 pl-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+                                    placeholder="1200">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="pt-6 border-t">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                            <input type="text" x-model="form.contactName" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+                                placeholder="John Smith">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your Title</label>
+                            <select x-model="form.contactTitle" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500">
+                                <option value="">Select your role...</option>
+                                <option value="cfo">CFO / VP Finance</option>
+                                <option value="ceo">CEO / Owner</option>
+                                <option value="coo">COO</option>
+                                <option value="controller">Controller</option>
+                                <option value="finance_manager">Finance Manager</option>
+                                <option value="procurement">Procurement</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Business Email</label>
+                        <input type="email" x-model="form.email" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+                            placeholder="you@company.com">
+                        <p class="text-sm text-gray-500 mt-1">We'll send your personalized audit report to this email</p>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" 
+                    class="w-full money-gradient text-white font-semibold py-4 rounded-lg hover:opacity-90 transition-opacity text-lg">
+                    Analyze My Spend →
+                </button>
+
+                <p class="text-center text-sm text-gray-500">
+                    🔒 Your data is secure. We never share your information with third parties.
+                </p>
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-8" x-show="showResults" x-cloak>
+            <div class="text-center mb-8">
+                <div class="inline-block p-4 rounded-full bg-emerald-100 mb-4">
+                    <span class="text-4xl">💰</span>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Your Potential Savings</h2>
+                <p class="text-gray-600">Based on your annual spend of <span x-text="formatCurrency(form.totalAnnualSpend)"></span></p>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl p-6 text-white text-center">
+                    <p class="text-sm opacity-90 mb-1">Total Annual Savings</p>
+                    <p class="text-4xl font-bold">$<span x-text="formatNumber(results.totalSavings)"></span></p>
+                    <p class="text-sm opacity-75 mt-1">Conservative estimate</p>
+                </div>
+                <div class="bg-blue-50 rounded-xl p-6 text-center">
+                    <p class="text-sm text-blue-600 mb-1">SaaS Optimization</p>
+                    <p class="text-3xl font-bold text-blue-700">$<span x-text="formatNumber(results.saasSavings)"></span></p>
+                    <p class="text-sm text-blue-500">per year</p>
+                </div>
+                <div class="bg-amber-50 rounded-xl p-6 text-center">
+                    <p class="text-sm text-amber-600 mb-1">Vendor Negotiation</p>
+                    <p class="text-3xl font-bold text-amber-700">$<span x-text="formatNumber(results.vendorSavings)"></span></p>
+                    <p class="text-sm text-amber-500">per year</p>
+                </div>
+            </div>
+
+            <!-- Detailed Breakdown -->
+            <div class="bg-gray-50 rounded-xl p-6 mb-8">
+                <h3 class="font-semibold text-gray-800 mb-4">Where Your Savings Come From</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-white rounded-lg">
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-3">🔄</span>
+                            <div>
+                                <p class="font-medium text-gray-800">SaaS Rightsizing</p>
+                                <p class="text-sm text-gray-500">Eliminate unused licenses, consolidate tools</p>
+                            </div>
+                        </div>
+                        <span class="font-bold text-emerald-600">$<span x-text="formatNumber(results.saasRightsizing)"></span></span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-white rounded-lg">
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-3">💳</span>
+                            <div>
+                                <p class="font-medium text-gray-800">Contract Renegotiation</p>
+                                <p class="text-sm text-gray-500">Better rates at renewal, volume discounts</p>
+                            </div>
+                        </div>
+                        <span class="font-bold text-emerald-600">$<span x-text="formatNumber(results.contractSavings)"></span></span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-white rounded-lg">
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-3">✈️</span>
+                            <div>
+                                <p class="font-medium text-gray-800">Travel & Expense Policy</p>
+                                <p class="text-sm text-gray-500">Automated compliance, preferred vendors</p>
+                            </div>
+                        </div>
+                        <span class="font-bold text-emerald-600">$<span x-text="formatNumber(results.travelSavings)"></span></span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-white rounded-lg">
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-3">📞</span>
+                            <div>
+                                <p class="font-medium text-gray-800">Telecom Optimization</p>
+                                <p class="text-sm text-gray-500">Plan optimization, redundant services</p>
+                            </div>
+                        </div>
+                        <span class="font-bold text-emerald-600">$<span x-text="formatNumber(results.telecomSavings)"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROI Calculator -->
+            <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl p-6 text-white mb-8">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="font-bold text-xl mb-2">Your ROI Potential</h3>
+                        <p class="opacity-90">For every $1 invested in expense reduction services...</p>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <p class="text-5xl font-bold">10-15x</p>
+                        <p class="text-sm opacity-75">Return on investment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-6 text-white">
+                <h3 class="font-bold text-xl mb-2">Ready to Capture These Savings?</h3>
+                <p class="mb-6 opacity-90">Get your free 90-minute expense reduction strategy session</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button @click="bookCall()" 
+                        class="bg-white text-gray-900 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition text-center">
+                        Book Free Strategy Call
+                    </button>
+                    <button @click="downloadPDF()" 
+                        class="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-gray-900 transition text-center">
+                        Download Full Audit Report (PDF)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Start Over -->
+            <div class="text-center mt-6">
+                <button @click="reset()" class="text-gray-500 hover:text-gray-700 underline">
+                    ← Run Another Analysis
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div class="text-center py-12" x-show="loading">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto mb-4"></div>
+            <p class="text-gray-600">Analyzing your spend patterns...</p>
+            <p class="text-sm text-gray-500 mt-2">This may take a moment</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8 mt-12">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="mb-2">© 2026 ImpactQuadrant. All rights reserved.</p>
+            <p class="text-sm">Technology-led expense reduction with success-based pricing only</p>
+        </div>
+    </footer>
+
+    <script>
+        function expenseAudit() {
+            return {
+                form: {
+                    companyName: '',
+                    employeeCount: '',
+                    monthlySaaSSpend: '',
+                    saasToolCount: '',
+                    monthlyVendorSpend: '',
+                    vendorCategories: [],
+                    monthlyTravelSpend: '',
+                    monthlyTelecomSpend: '',
+                    monthlyOfficeSpend: '',
+                    contactName: '',
+                    contactTitle: '',
+                    email: ''
+                },
+                showResults: false,
+                loading: false,
+                results: {
+                    totalSavings: 0,
+                    saasSavings: 0,
+                    vendorSavings: 0,
+                    saasRightsizing: 0,
+                    contractSavings: 0,
+                    travelSavings: 0,
+                    telecomSavings: 0
+                },
+                
+                get totalAnnualSpend() {
+                    const saas = parseInt(this.form.monthlySaaSSpend) || 0;
+                    const vendor = parseInt(this.form.monthlyVendorSpend) || 0;
+                    const travel = parseInt(this.form.monthlyTravelSpend) || 0;
+                    const telecom = parseInt(this.form.monthlyTelecomSpend) || 0;
+                    const office = parseInt(this.form.monthlyOfficeSpend) || 0;
+                    return (saas + vendor + travel + telecom + office) * 12;
+                },
+                
+                calculateSavings() {
+                    this.loading = true;
+                    
+                    setTimeout(() => {
+                        const monthlySaaS = parseInt(this.form.monthlySaaSSpend) || 0;
+                        const monthlyVendor = parseInt(this.form.monthlyVendorSpend) || 0;
+                        const monthlyTravel = parseInt(this.form.monthlyTravelSpend) || 0;
+                        const monthlyTelecom = parseInt(this.form.monthlyTelecomSpend) || 0;
+                        const employees = parseInt(this.form.employeeCount) || 1;
+                        
+                        // Calculate savings
+                        this.results.saasRightsizing = Math.round(monthlySaaS * 12 * 0.15); // 15% SaaS savings
+                        this.results.contractSavings = Math.round(monthlyVendor * 12 * 0.12); // 12% vendor savings
+                        this.results.travelSavings = Math.round(monthlyTravel * 12 * 0.20); // 20% travel savings
+                        this.results.telecomSavings = Math.round(monthlyTelecom * 12 * 0.25); // 25% telecom savings
+                        
+                        this.results.saasSavings = this.results.saasRightsizing;
+                        this.results.vendorSavings = this.results.contractSavings;
+                        this.results.totalSavings = 
+                            this.results.saasRightsizing + 
+                            this.results.contractSavings + 
+                            this.results.travelSavings + 
+                            this.results.telecomSavings;
+                        
+                        // Submit lead
+                        this.submitLead();
+                        
+                        this.loading = false;
+                        this.showResults = true;
+                    }, 2000);
+                },
+                
+                async submitLead() {
+                    const leadData = {
+                        timestamp: new Date().toISOString(),
+                        service: 'expense-reduction',
+                        companyName: this.form.companyName,
+                        employeeCount: parseInt(this.form.employeeCount),
+                        monthlySaaSSpend: parseInt(this.form.monthlySaaSSpend) || 0,
+                        monthlyVendorSpend: parseInt(this.form.monthlyVendorSpend) || 0,
+                        monthlyTravelSpend: parseInt(this.form.monthlyTravelSpend) || 0,
+                        totalAnnualSpend: this.totalAnnualSpend,
+                        calculatedSavings: this.results.totalSavings,
+                        contactName: this.form.contactName,
+                        contactTitle: this.form.contactTitle,
+                        email: this.form.email,
+                        source: 'expense-audit'
+                    };
+                    
+                    try {
+                        await fetch('/api/submit-lead', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(leadData)
+                        });
+                    } catch (error) {
+                        console.error('Error submitting lead:', error);
+                    }
+                },
+                
+                formatNumber(num) {
+                    return num.toLocaleString();
+                },
+                
+                formatCurrency(num) {
+                    return '$' + num.toLocaleString();
+                },
+                
+                bookCall() {
+                    window.open('https://calendly.com/impactquadrant/expense-reduction-strategy', '_blank');
+                },
+                
+                downloadPDF() {
+                    alert('PDF generation will be implemented with Puppeteer');
+                },
+                
+                reset() {
+                    this.showResults = false;
+                    this.form = {
+                        companyName: '',
+                        employeeCount: '',
+                        monthlySaaSSpend: '',
+                        saasToolCount: '',
+                        monthlyVendorSpend: '',
+                        vendorCategories: [],
+                        monthlyTravelSpend: '',
+                        monthlyTelecomSpend: '',
+                        monthlyOfficeSpend: '',
+                        contactName: '',
+                        contactTitle: '',
+                        email: ''
+                    };
+                }
+            }
+        }
+    </script>
+</body>
+</html>
