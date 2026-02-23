@@ -1,0 +1,809 @@
+[
+  {
+    "can_close_early": true,
+    "close_time": "2026-03-04T20:00:00Z",
+    "created_time": "2026-02-18T16:07:45.453061Z",
+    "custom_strike": {
+      "Associated Events": "KXUCLBTTS-26FEB18BOGINT,KXUCLBTTS-26FEB18QARNEW,KXUCLGAME-26FEB18BOGINT,KXUCLGAME-26FEB18BRUATM",
+      "Associated Market Sides": "yes,yes,yes,yes",
+      "Associated Markets": "KXUCLBTTS-26FEB18BOGINT,KXUCLBTTS-26FEB18QARNEW,KXUCLGAME-26FEB18BOGINT-INT,KXUCLGAME-26FEB18BRUATM-ATM",
+      "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R"
+    },
+    "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20264F49AFE6544",
+    "expected_expiration_time": "2026-02-18T23:00:00Z",
+    "expiration_time": "2026-03-04T20:00:00Z",
+    "expiration_value": "",
+    "fractional_trading_enabled": false,
+    "is_provisional": true,
+    "last_price": 0,
+    "last_price_dollars": "0.0000",
+    "latest_expiration_time": "2026-03-04T20:00:00Z",
+    "liquidity": 0,
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+    "mve_selected_legs": [
+      {
+        "event_ticker": "KXUCLBTTS-26FEB18BOGINT",
+        "market_ticker": "KXUCLBTTS-26FEB18BOGINT",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXUCLBTTS-26FEB18QARNEW",
+        "market_ticker": "KXUCLBTTS-26FEB18QARNEW",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXUCLGAME-26FEB18BOGINT",
+        "market_ticker": "KXUCLGAME-26FEB18BOGINT-INT",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXUCLGAME-26FEB18BRUATM",
+        "market_ticker": "KXUCLGAME-26FEB18BRUATM-ATM",
+        "side": "yes"
+      }
+    ],
+    "no_ask": 100,
+    "no_ask_dollars": "1.0000",
+    "no_bid": 100,
+    "no_bid_dollars": "1.0000",
+    "no_sub_title": "yes Both Teams To Score,yes Both Teams To Score,yes Inter,yes Atletico",
+    "notional_value": 100,
+    "notional_value_dollars": "1.0000",
+    "open_interest": 0,
+    "open_interest_fp": "0.00",
+    "open_time": "2026-02-18T16:07:45.430278Z",
+    "previous_price": 0,
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask": 0,
+    "previous_yes_ask_dollars": "0.0000",
+    "previous_yes_bid": 0,
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "deci_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0010"
+      }
+    ],
+    "response_price_units": "usd_cent",
+    "result": "",
+    "rules_primary": "",
+    "rules_secondary": "",
+    "settlement_timer_seconds": 5,
+    "status": "active",
+    "strike_type": "custom",
+    "subtitle": "",
+    "tick_size": 1,
+    "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20264F49AFE6544-CFED2D964A9",
+    "title": "yes Both Teams To Score,yes Both Teams To Score,yes Inter,yes Atletico",
+    "updated_time": "2026-02-18T16:07:46.046416Z",
+    "volume": 0,
+    "volume_24h": 0,
+    "volume_24h_fp": "0.00",
+    "volume_fp": "0.00",
+    "yes_ask": 0,
+    "yes_ask_dollars": "0.0000",
+    "yes_bid": 0,
+    "yes_bid_dollars": "0.0000",
+    "yes_sub_title": "yes Both Teams To Score,yes Both Teams To Score,yes Inter,yes Atletico"
+  },
+  {
+    "can_close_early": true,
+    "close_time": "2026-03-04T19:45:00Z",
+    "created_time": "2026-02-18T16:07:08.710654Z",
+    "custom_strike": {
+      "Associated Events": "KXSERIEATOTAL-26FEB18ACMCOM,KXUCLTOTAL-26FEB18BRUATM,KXUCLTOTAL-26FEB18QARNEW",
+      "Associated Market Sides": "no,yes,yes",
+      "Associated Markets": "KXSERIEATOTAL-26FEB18ACMCOM-4,KXUCLTOTAL-26FEB18BRUATM-1,KXUCLTOTAL-26FEB18QARNEW-1",
+      "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R"
+    },
+    "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026759A0E491AF",
+    "expected_expiration_time": "2026-02-18T23:00:00Z",
+    "expiration_time": "2026-03-04T19:45:00Z",
+    "expiration_value": "",
+    "fractional_trading_enabled": false,
+    "is_provisional": true,
+    "last_price": 0,
+    "last_price_dollars": "0.0000",
+    "latest_expiration_time": "2026-03-04T19:45:00Z",
+    "liquidity": 0,
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+    "mve_selected_legs": [
+      {
+        "event_ticker": "KXSERIEATOTAL-26FEB18ACMCOM",
+        "market_ticker": "KXSERIEATOTAL-26FEB18ACMCOM-4",
+        "side": "no"
+      },
+      {
+        "event_ticker": "KXUCLTOTAL-26FEB18BRUATM",
+        "market_ticker": "KXUCLTOTAL-26FEB18BRUATM-1",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXUCLTOTAL-26FEB18QARNEW",
+        "market_ticker": "KXUCLTOTAL-26FEB18QARNEW-1",
+        "side": "yes"
+      }
+    ],
+    "no_ask": 100,
+    "no_ask_dollars": "1.0000",
+    "no_bid": 100,
+    "no_bid_dollars": "1.0000",
+    "no_sub_title": "no Over 4.5 goals scored,yes Over 1.5 goals scored,yes Over 1.5 goals scored",
+    "notional_value": 100,
+    "notional_value_dollars": "1.0000",
+    "open_interest": 0,
+    "open_interest_fp": "0.00",
+    "open_time": "2026-02-18T16:07:08.691Z",
+    "previous_price": 0,
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask": 0,
+    "previous_yes_ask_dollars": "0.0000",
+    "previous_yes_bid": 0,
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "deci_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0010"
+      }
+    ],
+    "response_price_units": "usd_cent",
+    "result": "",
+    "rules_primary": "",
+    "rules_secondary": "",
+    "settlement_timer_seconds": 5,
+    "status": "active",
+    "strike_type": "custom",
+    "subtitle": "",
+    "tick_size": 1,
+    "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026759A0E491AF-0FEDD7DF370",
+    "title": "no Over 4.5 goals scored,yes Over 1.5 goals scored,yes Over 1.5 goals scored",
+    "updated_time": "2026-02-18T16:07:09.045146Z",
+    "volume": 0,
+    "volume_24h": 0,
+    "volume_24h_fp": "0.00",
+    "volume_fp": "0.00",
+    "yes_ask": 0,
+    "yes_ask_dollars": "0.0000",
+    "yes_bid": 0,
+    "yes_bid_dollars": "0.0000",
+    "yes_sub_title": "no Over 4.5 goals scored,yes Over 1.5 goals scored,yes Over 1.5 goals scored"
+  },
+  {
+    "can_close_early": true,
+    "close_time": "2026-03-05T00:00:00Z",
+    "created_time": "2026-02-18T16:06:08.834601Z",
+    "custom_strike": {
+      "Associated Events": "KXNCAAMBSPREAD-26FEB18ARKALA,KXNCAAMBSPREAD-26FEB18BRADVALP,KXNCAAMBSPREAD-26FEB18BUTGTWN,KXNCAAMBSPREAD-26FEB18DAYGMU,KXNCAAMBSPREAD-26FEB18ETSUFUR,KXNCAAMBSPREAD-26FEB18LAFHC,KXNCAAMBSPREAD-26FEB18PFWNKU,KXNCAAMBSPREAD-26FEB18UABTEM",
+      "Associated Market Sides": "no,no,no,no,no,no,no,no",
+      "Associated Markets": "KXNCAAMBSPREAD-26FEB18ARKALA-ARK12,KXNCAAMBSPREAD-26FEB18BRADVALP-BRAD14,KXNCAAMBSPREAD-26FEB18BUTGTWN-BUT9,KXNCAAMBSPREAD-26FEB18DAYGMU-DAY10,KXNCAAMBSPREAD-26FEB18ETSUFUR-ETSU11,KXNCAAMBSPREAD-26FEB18LAFHC-LAF10,KXNCAAMBSPREAD-26FEB18PFWNKU-PFW9,KXNCAAMBSPREAD-26FEB18UABTEM-UAB11",
+      "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R"
+    },
+    "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026B38C6CEA074",
+    "expected_expiration_time": "2026-02-19T03:00:00Z",
+    "expiration_time": "2026-03-05T00:00:00Z",
+    "expiration_value": "",
+    "fractional_trading_enabled": false,
+    "last_price": 5,
+    "last_price_dollars": "0.0500",
+    "latest_expiration_time": "2026-03-05T00:00:00Z",
+    "liquidity": 990,
+    "liquidity_dollars": "9.9000",
+    "market_type": "binary",
+    "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+    "mve_selected_legs": [
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18ARKALA",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18ARKALA-ARK12",
+        "side": "no"
+      },
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18BRADVALP",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18BRADVALP-BRAD14",
+        "side": "no"
+      },
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18BUTGTWN",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18BUTGTWN-BUT9",
+        "side": "no"
+      },
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18DAYGMU",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18DAYGMU-DAY10",
+        "side": "no"
+      },
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18ETSUFUR",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18ETSUFUR-ETSU11",
+        "side": "no"
+      },
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18LAFHC",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18LAFHC-LAF10",
+        "side": "no"
+      },
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18PFWNKU",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18PFWNKU-PFW9",
+        "side": "no"
+      },
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18UABTEM",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18UABTEM-UAB11",
+        "side": "no"
+      }
+    ],
+    "no_ask": 99,
+    "no_ask_dollars": "0.9900",
+    "no_bid": 0,
+    "no_bid_dollars": "0.0000",
+    "no_sub_title": "no Arkansas wins by over 12.5 Points,no Bradley wins by over 14.5 Points,no Butler wins by over 9.5 Points,no Dayton wins by over 10.5 Points,no East Tennessee St. wins by over 11.5 Points,no Lafayette wins by over 10.5 Points,no Purdue Fort Wayne wins by over 9.5 Points,no UAB wins by over 11.5 Points",
+    "notional_value": 100,
+    "notional_value_dollars": "1.0000",
+    "open_interest": 10,
+    "open_interest_fp": "10.00",
+    "open_time": "2026-02-18T16:06:08.806409Z",
+    "previous_price": 0,
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask": 0,
+    "previous_yes_ask_dollars": "0.0000",
+    "previous_yes_bid": 0,
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "deci_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0010"
+      }
+    ],
+    "response_price_units": "usd_cent",
+    "result": "",
+    "rules_primary": "",
+    "rules_secondary": "",
+    "settlement_timer_seconds": 5,
+    "status": "active",
+    "strike_type": "custom",
+    "subtitle": "",
+    "tick_size": 1,
+    "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026B38C6CEA074-62AFE5FED60",
+    "title": "no Arkansas wins by over 12.5 Points,no Bradley wins by over 14.5 Points,no Butler wins by over 9.5 Points,no Dayton wins by over 10.5 Points,no East Tennessee St. wins by over 11.5 Points,no Lafayette wins by over 10.5 Points,no Purdue Fort Wayne wins by over 9.5 Points,no UAB wins by over 11.5 Points",
+    "updated_time": "2026-02-18T16:06:58.117662Z",
+    "volume": 10,
+    "volume_24h": 0,
+    "volume_24h_fp": "0.00",
+    "volume_fp": "10.00",
+    "yes_ask": 100,
+    "yes_ask_dollars": "1.0000",
+    "yes_bid": 1,
+    "yes_bid_dollars": "0.0100",
+    "yes_sub_title": "no Arkansas wins by over 12.5 Points,no Bradley wins by over 14.5 Points,no Butler wins by over 9.5 Points,no Dayton wins by over 10.5 Points,no East Tennessee St. wins by over 11.5 Points,no Lafayette wins by over 10.5 Points,no Purdue Fort Wayne wins by over 9.5 Points,no UAB wins by over 11.5 Points"
+  },
+  {
+    "can_close_early": true,
+    "close_time": "2026-03-06T00:00:00Z",
+    "created_time": "2026-02-18T16:06:08.797389Z",
+    "custom_strike": {
+      "Associated Events": "KXNBAPTS-26FEB19BKNCLE,KXNBAPTS-26FEB19BKNCLE,KXNBATOTAL-26FEB19ATLPHI,KXNBATOTAL-26FEB19HOUCHA",
+      "Associated Market Sides": "yes,yes,yes,yes",
+      "Associated Markets": "KXNBAPTS-26FEB19BKNCLE-CLEDMITCHELL45-25,KXNBAPTS-26FEB19BKNCLE-CLEJHARDEN1-15,KXNBATOTAL-26FEB19ATLPHI-235,KXNBATOTAL-26FEB19HOUCHA-217",
+      "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R"
+    },
+    "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026CFEDF8E55F1",
+    "expected_expiration_time": "2026-02-20T03:00:00Z",
+    "expiration_time": "2026-03-06T00:00:00Z",
+    "expiration_value": "",
+    "fractional_trading_enabled": false,
+    "is_provisional": true,
+    "last_price": 0,
+    "last_price_dollars": "0.0000",
+    "latest_expiration_time": "2026-03-06T00:00:00Z",
+    "liquidity": 10000,
+    "liquidity_dollars": "100.0000",
+    "market_type": "binary",
+    "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+    "mve_selected_legs": [
+      {
+        "event_ticker": "KXNBAPTS-26FEB19BKNCLE",
+        "market_ticker": "KXNBAPTS-26FEB19BKNCLE-CLEDMITCHELL45-25",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAPTS-26FEB19BKNCLE",
+        "market_ticker": "KXNBAPTS-26FEB19BKNCLE-CLEJHARDEN1-15",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBATOTAL-26FEB19ATLPHI",
+        "market_ticker": "KXNBATOTAL-26FEB19ATLPHI-235",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBATOTAL-26FEB19HOUCHA",
+        "market_ticker": "KXNBATOTAL-26FEB19HOUCHA-217",
+        "side": "yes"
+      }
+    ],
+    "no_ask": 100,
+    "no_ask_dollars": "1.0000",
+    "no_bid": 75,
+    "no_bid_dollars": "0.7500",
+    "no_sub_title": "yes Donovan Mitchell: 25+,yes James Harden: 15+,yes Over 235.5 points scored,yes Over 217.5 points scored",
+    "notional_value": 100,
+    "notional_value_dollars": "1.0000",
+    "open_interest": 0,
+    "open_interest_fp": "0.00",
+    "open_time": "2026-02-18T16:06:08.762511Z",
+    "previous_price": 0,
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask": 0,
+    "previous_yes_ask_dollars": "0.0000",
+    "previous_yes_bid": 0,
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "deci_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0010"
+      }
+    ],
+    "response_price_units": "usd_cent",
+    "result": "",
+    "rules_primary": "",
+    "rules_secondary": "",
+    "settlement_timer_seconds": 5,
+    "status": "active",
+    "strike_type": "custom",
+    "subtitle": "",
+    "tick_size": 1,
+    "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026CFEDF8E55F1-6411BD97DCD",
+    "title": "yes Donovan Mitchell: 25+,yes James Harden: 15+,yes Over 235.5 points scored,yes Over 217.5 points scored",
+    "updated_time": "2026-02-18T16:06:15.127955Z",
+    "volume": 0,
+    "volume_24h": 0,
+    "volume_24h_fp": "0.00",
+    "volume_fp": "0.00",
+    "yes_ask": 25,
+    "yes_ask_dollars": "0.2500",
+    "yes_bid": 0,
+    "yes_bid_dollars": "0.0000",
+    "yes_sub_title": "yes Donovan Mitchell: 25+,yes James Harden: 15+,yes Over 235.5 points scored,yes Over 217.5 points scored"
+  },
+  {
+    "can_close_early": true,
+    "close_time": "2026-03-06T03:00:00Z",
+    "created_time": "2026-02-18T16:05:49.880855Z",
+    "custom_strike": {
+      "Associated Events": "KXNBA3PT-26FEB19BOSGSW,KXNBA3PT-26FEB19BOSGSW,KXNBA3PT-26FEB19DENLAC,KXNBA3PT-26FEB19DENLAC,KXNBA3PT-26FEB19ORLSAC,KXNBA3PT-26FEB19ORLSAC,KXNBAAST-26FEB19BOSGSW,KXNBAAST-26FEB19DENLAC,KXNBAPTS-26FEB19BOSGSW,KXNBAPTS-26FEB19DENLAC,KXNBAPTS-26FEB19DENLAC,KXNBAPTS-26FEB19DENLAC,KXNBAPTS-26FEB19ORLSAC,KXNBAPTS-26FEB19ORLSAC,KXNBAPTS-26FEB19TORCHI,KXNBAREB-26FEB19BOSGSW,KXNBAREB-26FEB19DENLAC,KXNBAREB-26FEB19PHXSAS,KXNBAREB-26FEB19TORCHI,KXNBASTL-26FEB19DENLAC",
+      "Associated Market Sides": "yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes",
+      "Associated Markets": "KXNBA3PT-26FEB19BOSGSW-BOSDWHITE9-2,KXNBA3PT-26FEB19BOSGSW-BOSPPRITCHARD11-1,KXNBA3PT-26FEB19DENLAC-DENJMURRAY27-1,KXNBA3PT-26FEB19DENLAC-LACKLEONARD2-1,KXNBA3PT-26FEB19ORLSAC-ORLDBANE3-2,KXNBA3PT-26FEB19ORLSAC-ORLPBANCHERO5-1,KXNBAAST-26FEB19BOSGSW-BOSDWHITE9-4,KXNBAAST-26FEB19DENLAC-DENJMURRAY27-4,KXNBAPTS-26FEB19BOSGSW-BOSJBROWN7-25,KXNBAPTS-26FEB19DENLAC-DENJMURRAY27-20,KXNBAPTS-26FEB19DENLAC-DENNJOKIC15-20,KXNBAPTS-26FEB19DENLAC-LACKLEONARD2-25,KXNBAPTS-26FEB19ORLSAC-ORLDBANE3-20,KXNBAPTS-26FEB19ORLSAC-SACDDEROZAN10-15,KXNBAPTS-26FEB19TORCHI-TORSBARNES4-15,KXNBAREB-26FEB19BOSGSW-BOSNVUCEVIC4-6,KXNBAREB-26FEB19DENLAC-DENNJOKIC15-10,KXNBAREB-26FEB19PHXSAS-SASVWEMBANYAMA1-10,KXNBAREB-26FEB19TORCHI-TORSBARNES4-6,KXNBASTL-26FEB19DENLAC-LACKLEONARD2-1",
+      "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R"
+    },
+    "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20264944CFE497A",
+    "expected_expiration_time": "2026-02-20T06:30:00Z",
+    "expiration_time": "2026-03-06T03:00:00Z",
+    "expiration_value": "",
+    "fractional_trading_enabled": false,
+    "is_provisional": true,
+    "last_price": 0,
+    "last_price_dollars": "0.0000",
+    "latest_expiration_time": "2026-03-06T03:00:00Z",
+    "liquidity": 990,
+    "liquidity_dollars": "9.9000",
+    "market_type": "binary",
+    "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+    "mve_selected_legs": [
+      {
+        "event_ticker": "KXNBA3PT-26FEB19BOSGSW",
+        "market_ticker": "KXNBA3PT-26FEB19BOSGSW-BOSDWHITE9-2",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBA3PT-26FEB19BOSGSW",
+        "market_ticker": "KXNBA3PT-26FEB19BOSGSW-BOSPPRITCHARD11-1",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBA3PT-26FEB19DENLAC",
+        "market_ticker": "KXNBA3PT-26FEB19DENLAC-DENJMURRAY27-1",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBA3PT-26FEB19DENLAC",
+        "market_ticker": "KXNBA3PT-26FEB19DENLAC-LACKLEONARD2-1",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBA3PT-26FEB19ORLSAC",
+        "market_ticker": "KXNBA3PT-26FEB19ORLSAC-ORLDBANE3-2",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBA3PT-26FEB19ORLSAC",
+        "market_ticker": "KXNBA3PT-26FEB19ORLSAC-ORLPBANCHERO5-1",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAAST-26FEB19BOSGSW",
+        "market_ticker": "KXNBAAST-26FEB19BOSGSW-BOSDWHITE9-4",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAAST-26FEB19DENLAC",
+        "market_ticker": "KXNBAAST-26FEB19DENLAC-DENJMURRAY27-4",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAPTS-26FEB19BOSGSW",
+        "market_ticker": "KXNBAPTS-26FEB19BOSGSW-BOSJBROWN7-25",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAPTS-26FEB19DENLAC",
+        "market_ticker": "KXNBAPTS-26FEB19DENLAC-DENJMURRAY27-20",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAPTS-26FEB19DENLAC",
+        "market_ticker": "KXNBAPTS-26FEB19DENLAC-DENNJOKIC15-20",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAPTS-26FEB19DENLAC",
+        "market_ticker": "KXNBAPTS-26FEB19DENLAC-LACKLEONARD2-25",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAPTS-26FEB19ORLSAC",
+        "market_ticker": "KXNBAPTS-26FEB19ORLSAC-ORLDBANE3-20",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAPTS-26FEB19ORLSAC",
+        "market_ticker": "KXNBAPTS-26FEB19ORLSAC-SACDDEROZAN10-15",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAPTS-26FEB19TORCHI",
+        "market_ticker": "KXNBAPTS-26FEB19TORCHI-TORSBARNES4-15",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAREB-26FEB19BOSGSW",
+        "market_ticker": "KXNBAREB-26FEB19BOSGSW-BOSNVUCEVIC4-6",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAREB-26FEB19DENLAC",
+        "market_ticker": "KXNBAREB-26FEB19DENLAC-DENNJOKIC15-10",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAREB-26FEB19PHXSAS",
+        "market_ticker": "KXNBAREB-26FEB19PHXSAS-SASVWEMBANYAMA1-10",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAREB-26FEB19TORCHI",
+        "market_ticker": "KXNBAREB-26FEB19TORCHI-TORSBARNES4-6",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBASTL-26FEB19DENLAC",
+        "market_ticker": "KXNBASTL-26FEB19DENLAC-LACKLEONARD2-1",
+        "side": "yes"
+      }
+    ],
+    "no_ask": 99,
+    "no_ask_dollars": "0.9900",
+    "no_bid": 0,
+    "no_bid_dollars": "0.0000",
+    "no_sub_title": "yes Derrick White: 2+,yes Payton Pritchard: 1+,yes Jamal Murray: 1+,yes Kawhi Leonard: 1+,yes Desmond Bane: 2+,yes Paolo Banchero: 1+,yes Derrick White: 4+,yes Jamal Murray: 4+,yes Jaylen Brown: 25+,yes Jamal Murray: 20+,yes Nikola Joki\u0107: 20+,yes Kawhi Leonard: 25+,yes Desmond Bane: 20+,yes DeMar DeRozan: 15+,yes Scottie Barnes: 15+,yes Nikola Vu\u010devi\u0107: 6+,yes Nikola Joki\u0107: 10+,yes Victor Wembanyama: 10+,yes Scottie Barnes: 6+,yes Kawhi Leonard: 1+",
+    "notional_value": 100,
+    "notional_value_dollars": "1.0000",
+    "open_interest": 0,
+    "open_interest_fp": "0.00",
+    "open_time": "2026-02-18T16:05:49.85987Z",
+    "previous_price": 0,
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask": 0,
+    "previous_yes_ask_dollars": "0.0000",
+    "previous_yes_bid": 0,
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "deci_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0010"
+      }
+    ],
+    "response_price_units": "usd_cent",
+    "result": "",
+    "rules_primary": "",
+    "rules_secondary": "",
+    "settlement_timer_seconds": 5,
+    "status": "active",
+    "strike_type": "custom",
+    "subtitle": "",
+    "tick_size": 1,
+    "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20264944CFE497A-B7757715FED",
+    "title": "yes Derrick White: 2+,yes Payton Pritchard: 1+,yes Jamal Murray: 1+,yes Kawhi Leonard: 1+,yes Desmond Bane: 2+,yes Paolo Banchero: 1+,yes Derrick White: 4+,yes Jamal Murray: 4+,yes Jaylen Brown: 25+,yes Jamal Murray: 20+,yes Nikola Joki\u0107: 20+,yes Kawhi Leonard: 25+,yes Desmond Bane: 20+,yes DeMar DeRozan: 15+,yes Scottie Barnes: 15+,yes Nikola Vu\u010devi\u0107: 6+,yes Nikola Joki\u0107: 10+,yes Victor Wembanyama: 10+,yes Scottie Barnes: 6+,yes Kawhi Leonard: 1+",
+    "updated_time": "2026-02-18T16:06:58.087686Z",
+    "volume": 0,
+    "volume_24h": 0,
+    "volume_24h_fp": "0.00",
+    "volume_fp": "0.00",
+    "yes_ask": 100,
+    "yes_ask_dollars": "1.0000",
+    "yes_bid": 1,
+    "yes_bid_dollars": "0.0100",
+    "yes_sub_title": "yes Derrick White: 2+,yes Payton Pritchard: 1+,yes Jamal Murray: 1+,yes Kawhi Leonard: 1+,yes Desmond Bane: 2+,yes Paolo Banchero: 1+,yes Derrick White: 4+,yes Jamal Murray: 4+,yes Jaylen Brown: 25+,yes Jamal Murray: 20+,yes Nikola Joki\u0107: 20+,yes Kawhi Leonard: 25+,yes Desmond Bane: 20+,yes DeMar DeRozan: 15+,yes Scottie Barnes: 15+,yes Nikola Vu\u010devi\u0107: 6+,yes Nikola Joki\u0107: 10+,yes Victor Wembanyama: 10+,yes Scottie Barnes: 6+,yes Kawhi Leonard: 1+"
+  },
+  {
+    "can_close_early": true,
+    "close_time": "2026-03-05T00:00:00Z",
+    "created_time": "2026-02-18T16:05:41.276427Z",
+    "custom_strike": {
+      "Associated Events": "KXNCAAMBSPREAD-26FEB18DAYGMU,KXNCAAMBSPREAD-26FEB18RUTGPSU,KXNCAAMBSPREAD-26FEB18UABTEM",
+      "Associated Market Sides": "no,no,no",
+      "Associated Markets": "KXNCAAMBSPREAD-26FEB18DAYGMU-DAY4,KXNCAAMBSPREAD-26FEB18RUTGPSU-RUTG5,KXNCAAMBSPREAD-26FEB18UABTEM-UAB8",
+      "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R"
+    },
+    "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20268DD5FED8A18",
+    "expected_expiration_time": "2026-02-19T03:00:00Z",
+    "expiration_time": "2026-03-05T00:00:00Z",
+    "expiration_value": "",
+    "fractional_trading_enabled": false,
+    "is_provisional": true,
+    "last_price": 0,
+    "last_price_dollars": "0.0000",
+    "latest_expiration_time": "2026-03-05T00:00:00Z",
+    "liquidity": 990,
+    "liquidity_dollars": "9.9000",
+    "market_type": "binary",
+    "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+    "mve_selected_legs": [
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18DAYGMU",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18DAYGMU-DAY4",
+        "side": "no"
+      },
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18RUTGPSU",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18RUTGPSU-RUTG5",
+        "side": "no"
+      },
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18UABTEM",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18UABTEM-UAB8",
+        "side": "no"
+      }
+    ],
+    "no_ask": 99,
+    "no_ask_dollars": "0.9900",
+    "no_bid": 0,
+    "no_bid_dollars": "0.0000",
+    "no_sub_title": "no Dayton wins by over 4.5 Points,no Rutgers wins by over 5.5 Points,no UAB wins by over 8.5 Points",
+    "notional_value": 100,
+    "notional_value_dollars": "1.0000",
+    "open_interest": 0,
+    "open_interest_fp": "0.00",
+    "open_time": "2026-02-18T16:05:41.256383Z",
+    "previous_price": 0,
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask": 0,
+    "previous_yes_ask_dollars": "0.0000",
+    "previous_yes_bid": 0,
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "deci_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0010"
+      }
+    ],
+    "response_price_units": "usd_cent",
+    "result": "",
+    "rules_primary": "",
+    "rules_secondary": "",
+    "settlement_timer_seconds": 5,
+    "status": "active",
+    "strike_type": "custom",
+    "subtitle": "",
+    "tick_size": 1,
+    "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20268DD5FED8A18-BDF07833E3B",
+    "title": "no Dayton wins by over 4.5 Points,no Rutgers wins by over 5.5 Points,no UAB wins by over 8.5 Points",
+    "updated_time": "2026-02-18T16:06:58.297268Z",
+    "volume": 0,
+    "volume_24h": 0,
+    "volume_24h_fp": "0.00",
+    "volume_fp": "0.00",
+    "yes_ask": 100,
+    "yes_ask_dollars": "1.0000",
+    "yes_bid": 1,
+    "yes_bid_dollars": "0.0100",
+    "yes_sub_title": "no Dayton wins by over 4.5 Points,no Rutgers wins by over 5.5 Points,no UAB wins by over 8.5 Points"
+  },
+  {
+    "can_close_early": true,
+    "close_time": "2026-03-05T00:00:00Z",
+    "created_time": "2026-02-18T16:05:32.979132Z",
+    "custom_strike": {
+      "Associated Events": "KXNCAAMBSPREAD-26FEB18DAYGMU,KXNCAAMBSPREAD-26FEB18RUTGPSU,KXNCAAMBSPREAD-26FEB18UABTEM",
+      "Associated Market Sides": "no,no,no",
+      "Associated Markets": "KXNCAAMBSPREAD-26FEB18DAYGMU-DAY4,KXNCAAMBSPREAD-26FEB18RUTGPSU-RUTG5,KXNCAAMBSPREAD-26FEB18UABTEM-UAB5",
+      "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R"
+    },
+    "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20268DD5FED8A18",
+    "expected_expiration_time": "2026-02-19T03:00:00Z",
+    "expiration_time": "2026-03-05T00:00:00Z",
+    "expiration_value": "",
+    "fractional_trading_enabled": false,
+    "is_provisional": true,
+    "last_price": 0,
+    "last_price_dollars": "0.0000",
+    "latest_expiration_time": "2026-03-05T00:00:00Z",
+    "liquidity": 990,
+    "liquidity_dollars": "9.9000",
+    "market_type": "binary",
+    "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+    "mve_selected_legs": [
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18DAYGMU",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18DAYGMU-DAY4",
+        "side": "no"
+      },
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18RUTGPSU",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18RUTGPSU-RUTG5",
+        "side": "no"
+      },
+      {
+        "event_ticker": "KXNCAAMBSPREAD-26FEB18UABTEM",
+        "market_ticker": "KXNCAAMBSPREAD-26FEB18UABTEM-UAB5",
+        "side": "no"
+      }
+    ],
+    "no_ask": 99,
+    "no_ask_dollars": "0.9900",
+    "no_bid": 0,
+    "no_bid_dollars": "0.0000",
+    "no_sub_title": "no Dayton wins by over 4.5 Points,no Rutgers wins by over 5.5 Points,no UAB wins by over 5.5 Points",
+    "notional_value": 100,
+    "notional_value_dollars": "1.0000",
+    "open_interest": 0,
+    "open_interest_fp": "0.00",
+    "open_time": "2026-02-18T16:05:32.947404Z",
+    "previous_price": 0,
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask": 0,
+    "previous_yes_ask_dollars": "0.0000",
+    "previous_yes_bid": 0,
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "deci_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0010"
+      }
+    ],
+    "response_price_units": "usd_cent",
+    "result": "",
+    "rules_primary": "",
+    "rules_secondary": "",
+    "settlement_timer_seconds": 5,
+    "status": "active",
+    "strike_type": "custom",
+    "subtitle": "",
+    "tick_size": 1,
+    "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20268DD5FED8A18-44ACFD1E32A",
+    "title": "no Dayton wins by over 4.5 Points,no Rutgers wins by over 5.5 Points,no UAB wins by over 5.5 Points",
+    "updated_time": "2026-02-18T16:06:58.609409Z",
+    "volume": 0,
+    "volume_24h": 0,
+    "volume_24h_fp": "0.00",
+    "volume_fp": "0.00",
+    "yes_ask": 100,
+    "yes_ask_dollars": "1.0000",
+    "yes_bid": 1,
+    "yes_bid_dollars": "0.0100",
+    "yes_sub_title": "no Dayton wins by over 4.5 Points,no Rutgers wins by over 5.5 Points,no UAB wins by over 5.5 Points"
+  },
+  {
+    "can_close_early": true,
+    "close_time": "2026-03-06T00:00:00Z",
+    "created_time": "2026-02-18T16:04:54.126301Z",
+    "custom_strike": {
+      "Associated Events": "KXNBAAST-26FEB19ATLPHI,KXNBAAST-26FEB19ATLPHI,KXNBAREB-26FEB19ATLPHI",
+      "Associated Market Sides": "yes,yes,yes",
+      "Associated Markets": "KXNBAAST-26FEB19ATLPHI-ATLCMCCOLLUM3-2,KXNBAAST-26FEB19ATLPHI-PHIVEDGECOMBE77-2,KXNBAREB-26FEB19ATLPHI-ATLDDANIELS5-4",
+      "Multivariate Event Ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R"
+    },
+    "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20266A33B6D322C",
+    "expected_expiration_time": "2026-02-20T03:00:00Z",
+    "expiration_time": "2026-03-06T00:00:00Z",
+    "expiration_value": "",
+    "fractional_trading_enabled": false,
+    "is_provisional": true,
+    "last_price": 0,
+    "last_price_dollars": "0.0000",
+    "latest_expiration_time": "2026-03-06T00:00:00Z",
+    "liquidity": 0,
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "mve_collection_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-R",
+    "mve_selected_legs": [
+      {
+        "event_ticker": "KXNBAAST-26FEB19ATLPHI",
+        "market_ticker": "KXNBAAST-26FEB19ATLPHI-ATLCMCCOLLUM3-2",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAAST-26FEB19ATLPHI",
+        "market_ticker": "KXNBAAST-26FEB19ATLPHI-PHIVEDGECOMBE77-2",
+        "side": "yes"
+      },
+      {
+        "event_ticker": "KXNBAREB-26FEB19ATLPHI",
+        "market_ticker": "KXNBAREB-26FEB19ATLPHI-ATLDDANIELS5-4",
+        "side": "yes"
+      }
+    ],
+    "no_ask": 100,
+    "no_ask_dollars": "1.0000",
+    "no_bid": 100,
+    "no_bid_dollars": "1.0000",
+    "no_sub_title": "yes CJ McCollum: 2+,yes VJ Edgecombe: 2+,yes Dyson Daniels: 4+",
+    "notional_value": 100,
+    "notional_value_dollars": "1.0000",
+    "open_interest": 0,
+    "open_interest_fp": "0.00",
+    "open_time": "2026-02-18T16:04:54.094648Z",
+    "previous_price": 0,
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask": 0,
+    "previous_yes_ask_dollars": "0.0000",
+    "previous_yes_bid": 0,
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "deci_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0010"
+      }
+    ],
+    "response_price_units": "usd_cent",
+    "result": "",
+    "rules_primary": "",
+    "rules_secondary": "",
+    "settlement_timer_seconds": 5,
+    "status": "active",
+    "strike_type": "custom",
+    "subtitle": "",
+    "tick_size": 1,
+    "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20266A33B6D322C-DE5FFED7473",
+    "title": "yes CJ McCollum: 2+,yes VJ Edgecombe: 2+,yes Dyson Daniels: 4+",
+    "updated_time": "2026-02-18T16:04:55.04495Z",
+    "volume": 0,
+    "volume_24h": 0,
+    "volume_24h_fp": "0.00",
+    "volume_fp": "0.00",
+    "yes_ask": 0,
+    "yes_ask_dollars": "0.0000",
+    "yes_bid": 0,
+    "yes_bid_dollars": "0.0000",
+    "yes_sub_title": "yes CJ McCollum: 2+,yes VJ Edgecombe: 2+,yes Dyson Daniels: 4+"
+  }
+]

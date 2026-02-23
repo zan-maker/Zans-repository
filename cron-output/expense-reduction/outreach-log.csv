@@ -1,0 +1,19 @@
+Date,Company,Domain,CEO Name,Email Attempted,Hunter Status,Score,Action,Reason
+2026-02-18,Traba,traba.work,Mike Shebat,mike@traba.work,API_ERROR,95,SKIPPED,Hunter.io authentication failed - no verification possible
+2026-02-18,Adaptive Security,adaptivesecurity.com,TBD,TBD,API_ERROR,92,PENDING,Hunter.io authentication failed - no verification possible
+2026-02-18,Omnea,omnea.co,TBD,TBD,API_ERROR,90,PENDING,Hunter.io authentication failed - no verification possible
+2026-02-18,Rilla,rilla.com,TBD,TBD,API_ERROR,88,PENDING,Hunter.io authentication failed - no verification possible
+2026-02-18,Graphite,graphite.dev,TBD,TBD,API_ERROR,86,PENDING,Hunter.io authentication failed - no verification possible
+2026-02-18,Clay,clay.com,TBD,TBD,API_ERROR,85,PENDING,Hunter.io authentication failed - no verification possible
+2026-02-18,Camber Health,camber.health,TBD,TBD,API_ERROR,84,PENDING,Hunter.io authentication failed - no verification possible
+2026-02-18,Nooks,nooks.ai,TBD,TBD,API_ERROR,82,PENDING,Hunter.io authentication failed - no verification possible
+2026-02-18,Decagon,decagon.ai,TBD,TBD,API_ERROR,81,PENDING,Hunter.io authentication failed - no verification possible
+2026-02-18,Newlimit,newlimit.com,TBD,TBD,API_ERROR,80,PENDING,Hunter.io authentication failed - no verification possible
+2026-02-18,Gridline,gridline.co,TBD,TBD,API_ERROR,78,PENDING,Hunter.io authentication failed - no verification possible
+2026-02-18,Evaro,evaro.com,TBD,TBD,API_ERROR,78,PENDING,Hunter.io authentication failed - no verification possible
+2026-02-19,Camber Health,camber.health,TBD,TBD,API_ERROR,95,PENDING,Hunter.io authentication failed - identified as hot lead
+2026-02-19,Ambience Healthcare,ambiencehealthcare.com,Steve Hu,steve.hu@ambiencehealthcare.com,API_ERROR,92,PENDING,Hunter.io authentication failed - CFO contact identified
+2026-02-19,Kalshi,kalshi.com,Rebecca Schick,rebecca.schick@kalshi.com,API_ERROR,90,PENDING,Hunter.io authentication failed - CFO contact identified
+2026-02-19,Rad AI,radai.com,Barrett Dwyer,barrett.dwyer@radai.com,API_ERROR,88,PENDING,Hunter.io authentication failed - CFO contact identified
+2026-02-19,Qventus,qventus.com,Mike Levin,mike.levin@qventus.com,API_ERROR,85,PENDING,Hunter.io authentication failed - VP Finance identified
+2026-02-19,Formation Bio,formation.bio,James Leslie,james.leslie@formation.bio,API_ERROR,82,PENDING,Hunter.io authentication failed - CFO contact identified

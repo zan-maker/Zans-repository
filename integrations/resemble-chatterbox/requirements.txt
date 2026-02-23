@@ -1,0 +1,22 @@
+# Chatterbox TTS Requirements
+# Resemble AI Open Source Text-to-Speech
+
+# Core dependencies
+torch>=2.0.0
+torchaudio>=2.0.0
+transformers>=4.35.0
+accelerate>=0.20.0
+
+# Audio processing
+librosa>=0.10.0
+soundfile>=0.12.0
+
+# API and utilities
+requests>=2.28.0
+python-dotenv>=1.0.0
+
+# Optional: For voice activity detection (helps with voice cloning)
+# silero-vad>=4.0.0
+
+# Optional: For real-time streaming
+# websockets>=11.0.0

@@ -1,0 +1,5 @@
+Company,Industry,Size,Location,Decision Maker,Title,Email,Phone,Website,Score,Source,Pain Signals,Outreach Status,Date Contacted
+Example Healthcare Clinic,Healthcare,45,"Austin, TX",Sarah Johnson,CEO,sarah@exampleclinic.com,512-555-0100,https://exampleclinic.com,82,LinkedIn,Rapid hiring (6 roles) | No CFO on team,Pending,2026-02-14
+Example Hotel Group,Hospitality,125,"Miami, FL",Michael Chen,Owner,michael@examplehotel.com,305-555-0200,https://examplehotel.com,88,Crunchbase,Expansion (new location) | Seasonal cash flow issues,Pending,2026-02-14
+Example Manufacturing Co,Manufacturing,67,"Detroit, MI",Jennifer Martinez,CFO,jennifer@examplemfg.com,313-555-0300,https://examplemfg.com,75,ThomasNet,Working capital constraints | Job costing needs,Pending,2026-02-14
+Example Logistics LLC,Transportation,38,"Denver, CO",Robert Kim,CEO,robert@examplelogistics.com,720-555-0400,https://examplelogistics.com,79,Industry Directory,Fuel cost volatility | Route profitability tracking,Pending,2026-02-14

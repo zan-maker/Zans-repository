@@ -1,0 +1,19 @@
+Company,Industry,Size,Location,Decision_Maker,Title,Email,Phone,Website,Score,Source,Spend_Signals,Outreach_Status,Date_Contacted
+Ambience Healthcare,Healthcare / AI,101-200,San Francisco CA,VP of Finance and Ops,VP Finance & Ops,finance@ambiencehealthcare.com,,https://www.ambiencehealthcare.com,92,TopStartups.io;Crunchbase,"$243M Series C; EHR integrations; Rapid scaling",Not Contacted,2026-02-22
+Rad AI,Healthcare / AI,189,San Francisco CA,Barrett Dwyer,CFO,barrett.dwyer@radai.com,,https://www.radai.com,90,PRNewswire;PitchBook,"$60M Series C; New CFO hire Aug 2025; AI radiology",Not Contacted,2026-02-22
+Camber Health,Healthcare / FinTech,85,New York NY,Nathan Lee,CEO,nathan@camber.health,,https://www.camber.health,88,Y Combinator;Built In NYC,"$30M Series B; 100K patients; Hiring 11 roles",Not Contacted,2026-02-22
+Qventus,Healthcare / Analytics,101-200,Mountain View CA,Michael Levin,VP Finance,michael.levin@qventus.com,,https://www.qventus.com,86,TopStartups.io;RocketReach,"$85M Series D; Hospital contracts; VP Finance identified",Not Contacted,2026-02-22
+NewLimit,Biotech,50,South San Francisco CA,Brian Armstrong,Co-founder,contact@newlimit.com,,https://www.newlimit.com,84,FinSMEs;Fierce Biotech,"$130M Series B; Lab equipment spend; No CFO yet",Not Contacted,2026-02-22
+Sprinter Health,Healthcare / Medical,111,San Francisco CA,Max Cohen,CEO,max@sprinterhealth.com,,https://www.sprinterhealth.com,82,TopStartups.io;ContactOut,"$32M Series B; W-2 workforce; Mobile health ops",Not Contacted,2026-02-22
+Vivodyne,Biotech / AI,11-50,San Francisco CA,Andrei Georgescu,CEO,andrei@vivodyne.com,,https://www.vivodyne.com,80,Crunchbase;LeadIQ,"$40M Series A; AI drug testing; Robotics platform",Not Contacted,2026-02-22
+Blossom Health,Healthcare / AI,1-10,New York NY,John Zhao,Co-founder,john@joinblossomhealth.com,,https://joinblossomhealth.com,72,TopStartups.io,"$20M Series A; AI psychiatry; Early stage",Not Contacted,2026-02-22
+Prologis,Real Estate / Logistics,1400+,Denver CO,Procurement Manager,Procurement Manager,N/A,,https://www.prologis.com,68,LinkedIn Jobs;ZipRecruiter,"Hiring procurement across 5 cities; Vendor mgmt pain",Not Contacted,2026-02-22
+Fleetio,SaaS / Fleet Management,50-200,Birmingham AL,CFO/VP Finance,Finance Leader,N/A,,https://www.fleetio.com,65,Crunchbase news,"Recent funding; SMB SaaS; Infrastructure spend",Not Contacted,2026-02-22
+Front,SaaS / Collaboration,200+,San Francisco CA,Sr. FP&A Manager,Sr. Corporate FP&A Manager,N/A,,https://front.com,62,LinkedIn Jobs,"Hiring FP&A; Scaling finance function",Not Contacted,2026-02-22
+Alvys,Logistics / Software,50-100,Multiple Locations,CFO/VP Finance,Finance Leader,N/A,,https://www.alvys.com,58,Crunchbase news,"$40M Series B; Trucking software; Recent funding",Not Contacted,2026-02-22
+Rippling,HR Tech / SaaS,500+,San Francisco CA,CFO/Finance Team,Finance Leader,N/A,,https://www.rippling.com,55,Crunchbase news,"$450M Series G; Reference only - too large",Not Contacted,2026-02-22
+Flip,AI / Voice,20-50,Unknown,CEO/Founder,CEO,N/A,,N/A,48,Crunchbase news,"$20M Series A; Voice AI; Limited data",Not Contacted,2026-02-22
+Cambio,Real Estate / PropTech,50-100,Unknown,CEO/Founder,CEO,N/A,,https://www.cambio.com,45,Crunchbase news,"$18M Series A; CRE software; Limited contacts",Not Contacted,2026-02-22
+Abridge,Healthcare / AI,200+,Pittsburgh/SF,CEO/Finance Team,Finance Leader,N/A,,https://www.abridge.com,42,Industry reports,"$150M Series C; Likely too large",Not Contacted,2026-02-22
+OpenEvidence,Healthcare / AI,50-100,Unknown,CEO/Founder,CEO,N/A,,N/A,40,Industry reports,"$50M Series B; Limited data",Not Contacted,2026-02-22
+Voize,Healthcare / AI,20-50,Unknown,CEO/Founder,CEO,N/A,,N/A,38,Fierce Healthcare,"$50M funding; AI nursing; Limited data",Not Contacted,2026-02-22

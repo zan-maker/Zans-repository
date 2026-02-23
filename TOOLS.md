@@ -59,7 +59,7 @@
 ### Data Enrichment APIs
 
 #### Hunter.io (Email Finder)
-- **API Key:** `f701d171cf7decf7e730a6b1c6e9b74f29f39b6e`
+- **API Key:** `f65adb440d1d4be20ae1b75f972b637b3e04b8fa`
 - **Use:** Find email addresses for lead generation
 - **Domain:** `hunter.io`
 

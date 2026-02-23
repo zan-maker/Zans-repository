@@ -1,0 +1,2 @@
+Date,Company_Name,Industry,Location,Signal_Type,Signal_Details,Contact_Name,Contact_Email,Contact_Phone,Estimated_Need,Vertical_Match,Score,Vertical_Priority,Notes
+2026-02-15,TechCorp Inc,SaaS,San Francisco CA,Funding,Series B $25M,John Smith,jsmith@techcorp.com,555-0100,Data infrastructure,Technology/SaaS,85,Tier 1,Hiring 3 data engineers - Snowflake implementation need

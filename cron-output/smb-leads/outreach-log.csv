@@ -1,0 +1,6 @@
+timestamp,company,industry,decision_maker,title,email,score,subject,status,savings_potential,api_error
+2026-02-14T20:00:00Z,Monogram Health,Healthcare,Michael Uchrin,CEO & Co-Founder,michael.uchrin@monogramhealth.com,95,Monogram Health - Increase Net Pay & Reduce Costs (No Fees),PENDING_API_FIX,$511431,Route not found
+2026-02-14T20:00:00Z,HealthMark Group,Healthcare,Bart Howe,CEO,bhowe@healthmark-group.com,90,HealthMark Group - $93K+ Annual Savings Opportunity (No Fees),PENDING_API_FIX,$93297,Route not found
+2026-02-14T20:00:00Z,HealthMark Group,Healthcare,Nicholas Mancini,VP Finance,nmancini@healthmark-group.com,90,HealthMark Group - $93K Annual Payroll Tax Savings (VP Finance),PENDING_API_FIX,$93297,Route not found
+2026-02-14T20:00:00Z,Hospitality America,Hospitality,Ben Campbell,President & CEO,b.campbell@hospitalityamerica.com,80,Hospitality America - Cut Payroll Costs & Boost Retention (Zero Fees),PENDING_API_FIX,$204000,Route not found
+2026-02-14T20:00:00Z,Browns Restaurant Group,Hospitality,Mary Tardelli,VP Finance & Admin,mtardelli@brownsrestaurantgroup.com,75,Browns Restaurant Group - $100K+ Annual Savings Opportunity (Zero Fees),PENDING_API_FIX,$136170,Route not found

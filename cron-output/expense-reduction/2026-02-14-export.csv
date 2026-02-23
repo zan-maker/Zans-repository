@@ -1,0 +1,21 @@
+Company,Industry,Size,Location,Decision Maker,Title,Email,Phone,Website,Score,Source,Spend Signals,Outreach Status,Date Contacted
+Apptronik,Robotics / Manufacturing / Logistics,101-200,Austin TX,CEO/Founder,Jeff Cardenas,jeff@apptronik.com,,https://apptronik.com,95,Tavily/Crunchbase,Mega-funded Series A robotics vendor spend,Not Contacted,2026-02-14
+GC AI,Legal Tech / AI / SaaS,50-99,San Francisco CA,Hiring,VP Finance,careers@gc.ai,,https://gc.ai,88,Tavily/Jobright,Series B scaling AI tool spend,Not Contacted,2026-02-14
+Traba,Industrial Supply Chain / Logistics,101-200,New York NY,CEO,Mike Zaghlool,mike@traba.com,,https://traba.com,85,Topstartups/Tavily,Supply chain marketplace vendor sprawl,Not Contacted,2026-02-14
+Omnea,Procurement Tech / Enterprise SaaS,101-200,London UK + US,CEO,Daniel Huddart,daniel@omnea.com,,https://omnea.com,82,Topstartups.io,Series B rapid scaling spend,Not Contacted,2026-02-14
+Tenvie Therapeutics,Biotech / Healthcare,20-50,San Francisco CA,CEO,,info@tenvie.com,,https://tenvie.com,80,Employbl/Tavily,$200M Series A biotech vendor complexity,Not Contacted,2026-02-14
+Cluely,AI / Productivity Software,10-100,San Francisco CA,CEO/Co-founder,,contact@cluely.com,,https://cluely.com,78,Employbl/Tavily,AI company tool sprawl,Not Contacted,2026-02-14
+Sema4.ai,AI Agents / Enterprise Software,20-100,Atlanta GA,CEO,Rob Bearden,info@sema4.ai,,https://sema4.ai,72,Employbl/Tavily,AI agents enterprise software stack,Not Contacted,2026-02-14
+Adaptive Security,Cybersecurity / AI,101-200,New York NY,CEO/Co-founder,,contact@adaptive.security,,https://adaptive.security,71,Topstartups.io,Series B security tool sprawl,Not Contacted,2026-02-14
+Vivodyne,Biotech / AI Drug Discovery,11-50,San Francisco Bay Area CA,CEO,,info@vivodyne.com,,https://vivodyne.com,70,Topstartups.io,Lab operations equipment spend,Not Contacted,2026-02-14
+Base Power,Hardware / Energy / Manufacturing,101-200,Austin TX,CEO,,contact@basepower.com,,https://basepower.com,68,Topstartups.io,$200M Series B hardware COGS,Not Contacted,2026-02-14
+OpenRouter,AI Infrastructure / SaaS,1-10,Remote,CEO/Co-founder,,support@openrouter.ai,,https://openrouter.ai,65,Topstartups.io,AI infrastructure compute costs,Not Contacted,2026-02-14
+Ouro Medicines,Biotech / Immunology,20-50,San Francisco CA,CEO,,info@ouromedicines.com,,https://ouromedicines.com,63,Employbl/Tavily,Biotech CRO vendor spend,Not Contacted,2026-02-14
+Trace Neuroscience,Biopharma / Healthcare,10-50,South San Francisco CA,CEO,,info@traceneuro.com,,https://traceneuro.com,62,Employbl/Tavily,Genetic medicine vendor complexity,Not Contacted,2026-02-14
+Ataraxis,AI / Healthcare,11-50,New York NY,CEO,,contact@ataraxis.com,,https://ataraxis.com,60,Topstartups.io,Healthcare AI tool stack,Not Contacted,2026-02-14
+Cerrion,Manufacturing / AI Analytics,50-99,Zurich Switzerland + US,CEO,Karim Saleh,karim@cerrion.com,,https://cerrion.com,58,Dynamo/Tavily,Manufacturing AI infrastructure,Not Contacted,2026-02-14
+FinStrat Management,Fintech / SaaS / CFO Services,11-50,Remote / Maryland,CEO,,careers@finstratmgmt.com,,https://finstratmgmt.com,55,Remote Rocketship,Financial services SaaS tools,Not Contacted,2026-02-14
+Stainless,Developer Tools / API Platform,11-50,New York NY,CEO,,hello@stainless.com,,https://stainless.com,48,Topstartups.io,Developer tools stack,Not Contacted,2026-02-14
+Reflect Orbital,Space Tech / Hardware,11-50,Los Angeles CA,CEO,,contact@reflectorbital.com,,https://reflectorbital.com,45,Topstartups.io,Space hardware vendor spend,Not Contacted,2026-02-14
+Ember LifeSciences,Healthcare Logistics / Cold Chain,20-50,Not Specified,CEO,,info@emberlifesciences.com,,https://emberlifesciences.com,42,Dynamo/Tavily,Temperature-controlled logistics,Not Contacted,2026-02-14
+Virtue AI,AI Security / Enterprise Software,10-50,San Francisco Bay Area CA,CEO,,contact@virtueai.com,,https://virtueai.com,40,Employbl/Tavily,AI security compliance tools,Not Contacted,2026-02-14

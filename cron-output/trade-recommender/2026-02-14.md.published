@@ -1,0 +1,193 @@
+# 💰 TradeRecommender Report - 2026-02-14
+
+**Report Date:** Saturday, February 14, 2026  
+**Session Time:** 03:30 AM UTC  
+**Status:** REVENUE GENERATION MODE
+
+---
+
+## Market Overview (AlphaVantage)
+
+| Metric | Value | Signal |
+|--------|-------|--------|
+| **SPY** | $681.75 | +0.07% (Flat) |
+| **RSI (14)** | 43.91 | Neutral/Bearish (<50) |
+| **QQQ** | Rate Limited | N/A |
+| **IWM** | Rate Limited | N/A |
+| **Market Sentiment** | Cautious | Risk-neutral |
+
+### Key Technical Signals
+- **SPY RSI:** 43.91 - Below 50 indicates bearish momentum, but not oversold (>30)
+- **SPY Trend:** Sideways with slight positive bias (+0.07%)
+- **Volume:** SPY volume at 95M (healthy)
+
+### Top Market Movers (Feb 13, 2026)
+
+**Top Gainers:**
+| Symbol | Price | Change | Volume | Signal |
+|--------|-------|--------|--------|--------|
+| RIME | $3.60 | +232% | 129M | 🔥 Extreme momentum |
+| CRSR | $6.79 | +48% | 46.5M | 🔥 Strong breakout |
+| RVNL | $41.91 | +53% | 313K | ⚠️ Low volume |
+| F | $14.11 | +1.84% | 87M | ✅ Steady |
+| RIG | $6.53 | +8.29% | 97M | ✅ Energy momentum |
+
+**Top Losers:**
+| Symbol | Price | Change | Signal |
+|--------|-------|--------|--------|
+| POAS | $1.10 | -83% | ❌ Avoid |
+| ANPA | $31.13 | -50% | ❌ Avoid |
+| CONI | $91.97 | -33% | ❌ Avoid |
+
+---
+
+## Kalshi Top Trades
+
+**Status:** ⚠️ Kalshi API requires authentication - markets not accessible via public API
+
+**Alternative Analysis:**
+Based on market data, potential Kalshi opportunities would include:
+- **Fed Rate Decision Markets:** If RSI < 40, increased probability of dovish signals
+- **Earnings Event Markets:** CRSR showing unusual activity suggests earnings speculation
+- **Economic Indicators:** Neutral market stance suggests CPI/PCE beats less likely
+
+**Recommendation:** Set up Kalshi API credentials for automated scanning.
+
+---
+
+## Alpaca Paper Trades Executed
+
+### Orders Placed (Pending Market Open)
+
+| Symbol | Entry | Shares | Position | Stop | Target | Rationale |
+|--------|-------|--------|----------|------|--------|-----------|
+| **RIVN** | ~$17.00 | 58 | ~$986 | $16.15 | $18.70 | EV momentum leader, +26% prior day, strong volume (127M) |
+| **F** | ~$14.10 | 70 | ~$987 | $13.40 | $15.50 | Blue-chip momentum, high volume (87M), steady gains |
+| **RIG** | ~$6.53 | 150 | ~$980 | $6.20 | $7.18 | Energy sector play, oil services demand, +8% momentum |
+
+**Total Exposure:** ~$2,953 (3 positions)  
+**Cash Remaining:** ~$97,047  
+**Max Per Trade:** $1,000 (within limits)
+
+### Order Details
+- **RIVN Order ID:** dc97d4cc-9c00-4e8d-9120-a11ae3994e34 (Status: Accepted)
+- **F Order ID:** 87e4eec1-1dbb-4268-9aae-5d71445818fd (Status: Accepted)
+- **RIG Order ID:** 8c565c9a-1e96-4cb4-9881-299fab9f922a (Status: Accepted)
+
+**Note:** Orders are day orders expiring 2026-02-17. Market is currently closed (weekend).
+
+---
+
+## Active Alpaca Positions
+
+**Current Status:** No active positions (orders pending market open)
+
+| Symbol | Entry | Current | P&L | Days Held | Status |
+|--------|-------|---------|-----|-----------|--------|
+| — | — | — | — | — | No positions |
+
+---
+
+## Portfolio Summary (Alpaca)
+
+| Metric | Value |
+|--------|-------|
+| **Cash** | $100,000 |
+| **Positions** | $0 (pending: ~$2,953) |
+| **Total Equity** | $100,000 |
+| **Day P&L** | $0 |
+| **Total P&L** | $0 |
+
+**Buying Power:** $200,000 (2:1 margin)
+
+---
+
+## AlphaVantage Insights
+
+### Key Signals
+1. **RSI Divergence:** SPY RSI at 43.91 is below 50, indicating weakening momentum despite flat price action
+2. **Volume Analysis:** Top movers showing institutional interest (RIVN 127M, F 87M, RIG 97M volume)
+3. **Sector Rotation:** Energy (RIG) and EVs (RIVN) showing strength, tech mixed
+
+### Kalshi Correlation
+- Low RSI + flat market = Higher probability of volatility expansion
+- Earnings speculation evident in CRSR (+48%) = Event-driven opportunities
+- Energy sector momentum = Watch oil/gas prediction markets
+
+### Sector Rotation
+| Sector | Leader | Signal |
+|--------|--------|--------|
+| Energy | RIG +8.3% | ✅ Strong |
+| EV/Auto | RIVN +26.6% | ✅ Strong |
+| Tech | CRSR +48% | 🔥 Anomaly |
+| Blue Chip | F +1.8% | ✅ Steady |
+
+---
+
+## Revenue Metrics
+
+| Metric | Target | Current | Progress |
+|--------|--------|---------|----------|
+| Monthly Target | $100 | $0 | 0% |
+| Kalshi Exposure | — | $0 | — |
+| Alpaca Exposure | — | $2,953 | — |
+| Paper P&L | — | $0 | — |
+
+### Trade Targets
+- **Take Profit:** 10% per position = ~$295 potential
+- **Stop Loss:** 5% per position = ~$148 risk
+- **Risk/Reward:** 1:2 ratio
+
+---
+
+## Trading Log
+
+```csv
+Date,Symbol,Action,Shares,Price,Value,Stop,Target,Rationale
+2026-02-14,RIVN,BUY,58,$17.00,$986,$16.15,$18.70,EV momentum leader
+2026-02-14,F,BUY,70,$14.10,$987,$13.40,$15.50,Blue chip momentum
+2026-02-14,RIG,BUY,150,$6.53,$980,$6.20,$7.18,Energy sector play
+```
+
+---
+
+## Notes & Observations
+
+### Market Environment
+- **Weekend Session:** Low liquidity, orders queued for Monday open
+- **Neutral Sentiment:** RSI < 50 but not oversold suggests cautious outlook
+- **Earnings Season:** CRSR's unusual +48% move suggests event-driven speculation
+
+### Risk Factors
+1. **Gap Risk:** Weekend orders may fill at different prices Monday open
+2. **Volatility:** High-momentum stocks (RIVN, CRSR) can reverse quickly
+3. **Sector Risk:** Energy exposure via RIG tied to oil price volatility
+
+### Action Items
+- [ ] Monitor Monday pre-market for gap openings
+- [ ] Set stop-loss orders immediately after fills
+- [ ] Review Kalshi markets for hedging opportunities
+- [ ] Track CRSR for potential short-term mean reversion
+
+### API Status
+| Source | Status | Notes |
+|--------|--------|-------|
+| AlphaVantage | ⚠️ Rate Limited | 25 calls/day exceeded |
+| Alpaca Trading | ✅ Active | Orders accepted |
+| Alpaca Market Data | ✅ Active | Quotes available |
+| Kalshi | ❌ No Auth | API key required |
+
+---
+
+## Summary
+
+**Strategy:** Momentum-based swing trading (1-5 day holds)  
+**Positions:** 3 paper trades pending execution  
+**Bias:** Cautiously bullish on energy and EV sectors  
+**Risk Level:** Moderate (3 positions, ~3% portfolio exposure)
+
+**Next Review:** 2026-02-17 (Post-market Monday)
+
+---
+*Report generated by TradeRecommender v1.0*  
+*Data sources: AlphaVantage, Alpaca Markets*

@@ -1,0 +1,45 @@
+DEAL ORIGINATION DAILY SUMMARY — February 23, 2026
+
+KEY FINDINGS:
+
+PE BUYERS ACTIVELY ACQUIRING:
+• Apex Service Partners (Alpine Investors): 107+ HVAC/plumbing/electrical acquisitions; contact Will Matson: Wmatson@apexservicepartners.com, 817-614-1242
+• FirstCall Mechanical (SkyKnight Capital): 15 acquisitions since 2022; commercial HVAC, refrigeration, electrical, plumbing
+• The Wrench Group: Larger residential ops; acquired Lindstrom Air Conditioning & Plumbing (Mar 2024)
+• The SEER Group: 36+ acquisitions since 2018; Pacific Northwest expansion active (9th Western WA deal)
+• Redwood Services: 18 partners since 2020; $1M-$20M range; Rite Way grew from $30M to $70M under ownership
+• Aventia (Bernhard Capital): Environmental/waste management platform; active add-ons
+
+OFF-MARKET SELLER SIGNALS:
+• 60+ year-old owners with outdated websites (5-10+ years old)
+• Established 20-50+ years, stagnant growth, healthy financials
+• Owner-operator dependent, no succession plan
+• Family-owned with no interested heirs
+• Skip gatekeepers: Use personal cell/email/home address for direct outreach
+
+MARKET TRENDS:
+• PE interest in skilled trades jumped from 8% to 23% (2023-2024)
+• Almost 800 HVAC/plumbing/electrical businesses acquired by PE since 2022
+• "Silver Tsunami": 2.3-3 million SMBs changing hands over next decade
+• Multiples: HVAC 8x-12x+, Plumbing 7x-10x, Electrical 9x-13x, Waste 6x-9x
+
+TARGET INDUSTRIES:
+• HVAC Services ($2M-$20M revenue) - Very High PE interest
+• Plumbing ($1M-$15M) - Very High PE interest
+• Electrical ($3M-$25M) - Very High PE interest
+• Waste Management ($5M-$50M) - High PE interest
+• Landscaping ($500K-$5M) - Moderate interest
+
+GEOGRAPHY:
+• Pacific Northwest: SEER Group actively acquiring
+• Midwest: Blue Point's Pinnacle MEP expanding in Indiana
+• Southwest: Redwood Services active in AZ, TX
+• Southeast: Bernhard Capital's Aventia (NC, GA, FL)
+
+NEXT ACTIONS:
+1. Build database of 60+ year-old owners in target industries
+2. Direct outreach via personal letter/call (before brokers involved)
+3. Nurture CPA/attorney relationships for referrals
+4. Monitor Axial.net and industry publications for deal announcements
+
+Full report: cron-output/deal-origination/2026-02-23-deal-origination-summary.md

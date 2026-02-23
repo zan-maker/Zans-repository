@@ -1,0 +1,104 @@
+PE FUND REFERRAL OUTREACH - EXECUTION SUMMARY
+===============================================
+Date: February 23, 2026
+Time: 19:00 UTC
+Status: Drafts complete, awaiting approval to send
+
+EXECUTIVE SUMMARY
+-----------------
+Drafted 15 personalized referral partnership emails for high-priority PE funds.
+Goal: Secure 5-10 referral agreements within 30 days.
+Strategy: Direct owner relationships, no broker fees, pre-qualified sellers.
+
+CONTACTS TARGETED (15 Total)
+-----------------------------
+
+Tier 1 PE Funds:
+
+1. John Travaglini - 4Front Capital Partners (CEO) - Zane@agentmail.to
+2. Mark Kennedy - 4Front Capital Partners (MD) - Zane@agentmail.to
+3. Ben Ghirmai - 4Front Capital Partners - Zane@agentmail.to
+
+4. Tyler Frances - Alpine Investors - Zander@agentmail.to
+5. Lucky Gilja - Alpine Investors - Zander@agentmail.to
+
+6. Kevin Hartz - A* Capital - Zander@agentmail.to
+
+7. Nico Richardson - AFI Capital Partners (Austin) - Zander@agentmail.to
+8. Chi Hou - AFI Capital Partners (LA) - Zander@agentmail.to
+
+9. Marc Rayfield - Arsenal Capital - Zane@agentmail.to
+10. Brian Orkin - Arsenal Capital - Zane@agentmail.to
+
+11. Mark Cordes - Audax Group - Zane@agentmail.to
+12. Remington Chin - Audax Group - Zane@agentmail.to
+
+13. Michael Dyment - NEXA Capital Partners (Managing Partner) - Zane@agentmail.to
+
+14. Nicolas Massard - Abry Partners - Zane@agentmail.to
+
+15. Michael Forlenza - Lincolnshire Management - Zane@agentmail.to
+
+REFERRAL AGREEMENT TERMS
+------------------------
+- Fee: 5% of transaction value up to $1M, sliding scale above
+- Minimum fee: $50,000
+- Trigger: Closing (includes deferred + assumed debt)
+- Payment: Net 30 days
+- Attribution: 12-month tail from introduction
+- Exclusivity: Non-exclusive
+
+PIPELINE READY
+--------------
+~15 active off-market opportunities:
+- HVAC businesses: TX, FL, GA, Canada (5+ opportunities)
+- Manufacturing: Southeast US (2-3 opportunities)
+- Services/Healthcare: Multiple locations (5-7 opportunities)
+- Technology-enabled services: Various markets (3-5 opportunities)
+
+OUTREACH FILES CREATED
+-----------------------
+1. Main Report: referral-outreach-2026-02-23.md (6.9 KB)
+   - Full strategy, contact details, agreement terms, success metrics
+
+2. Email Drafts: emails/ directory (15 .txt files)
+   - Personalized for each PE fund's focus and geography
+
+3. Summary: summary.md (3.5 KB)
+   - Quick review document for Sam's approval
+
+4. Outreach Log: outreach-log.csv (2.1 KB)
+   - Tracks all 15 contacts with status, responses, next actions
+
+NEXT STEPS (REQUIRING SAM'S ACTION)
+------------------------------------
+1. Review email drafts in cron-output/pe-referral-outreach/2026-02-23/emails/
+2. Approve or provide feedback for revisions
+3. Hunter.io verification of all email addresses before sending
+4. Send in batches of 3-5 per day (recommended schedule in summary.md)
+5. Update outreach-log.csv with responses
+6. Schedule follow-up sequences (Day 4, 8, 14)
+
+SUCCESS METRICS
+---------------
+30-Day Goal: 5-10 signed referral agreements
+
+Metrics to Track:
+- Email open rate
+- Response rate
+- Call scheduled rate
+- Agreement signed rate
+- First deal introduction timeline
+
+DELIVERY INSTRUCTIONS
+---------------------
+Emails should be sent via:
+- Zane@agentmail.to for: 4Front, Arsenal, Audax, NEXA, Abry, Lincolnshire
+- Zander@agentmail.to for: Alpine, A* Capital, AFI
+
+All emails CC: sam@impactquadrant.info
+
+EXTERNAL RECIPIENTS
+------------------
+Emails drafted for 15 PE fund executives. Sam must review and approve before
+Zan/Zander send on agentmail.to accounts.

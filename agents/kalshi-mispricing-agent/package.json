@@ -1,0 +1,32 @@
+{
+  "name": "kalshi-mispricing-agent",
+  "version": "1.0.0",
+  "description": "AI-driven arbitrage and mispricing engine between Kalshi and sportsbook APIs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js start",
+    "scan": "node index.js scan",
+    "status": "node index.js status",
+    "kill": "node index.js kill",
+    "unkill": "node index.js unkill",
+    "feeder": "node index.js start",
+    "engine": "node index.js scan",
+    "agent": "node index.js start"
+  },
+  "keywords": [
+    "kalshi",
+    "arbitrage",
+    "sportsbook",
+    "prediction-markets",
+    "trading",
+    "mispricing"
+  ],
+  "author": "ImpactQuadrant",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

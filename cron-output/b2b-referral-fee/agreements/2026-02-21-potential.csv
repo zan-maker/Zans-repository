@@ -1,0 +1,21 @@
+Match ID,Prospect Company,Partner Match,Service Type,Match Confidence,Next Action,Est. Referral Value
+1,Braintrust,Arctic Wolf,IT/Cybersecurity,High,Research decision maker contact,Est $5K-15K
+2,Braintrust,ExtensisHR,HR/PEO,High,Approach for payroll/benefits scaling,Est $5K-10K
+3,Braintrust,Doeren Mayhew,Accounting,Medium,Check if they have CFO services need,Est $5K-8K
+4,World Labs,Logicalis,IT/Managed Services,High,Enterprise-scale IT infrastructure,Est $15K-50K
+5,World Labs,TriNet,HR/PEO,High,Rapid headcount growth need,Est $10K-20K
+6,World Labs,BearingPoint,Business Consulting,Medium,Strategic growth consulting,Est $10K-30K
+7,Freeform,AHEAD,IT/Cloud,High,Manufacturing tech infrastructure,Est $10K-25K
+8,Freeform,Insperity,HR/HR Services,Medium,Los Angeles manufacturer needs,Est $5K-12K
+9,Onshore (SPRX),Clarity Strategic Partners,HR/Payroll Consulting,High,Already in tax - payroll adjacent,Est $5K-10K
+10,Onshore (SPRX),The A.C.T. Group,Accounting,Medium,NYC accounting firm partnership,Est $3K-7K
+11,Goodfire,Arctic Wolf,IT/Cybersecurity,Medium,AI lab security needs,Est $5K-15K
+12,Goodfire,Justworks,HR/PEO,High,YC-backed PEO for YC company,Est $5K-10K
+13,Kavak,Logicalis,IT/Managed Services,Medium,Latin America expansion support,Est $10K-25K
+14,Kavak,BearingPoint,Business Consulting,High,Cross-border growth consulting,Est $15K-40K
+15,Temporal,Arctic Wolf,IT/Cybersecurity,High,Seattle tech infrastructure,Est $10K-25K
+16,Temporal,ADP TotalSource,HR/PEO,High,Enterprise-scale HR,Est $15K-30K
+17,ElevenLabs,Sortlist Marketing Partners,Marketing,High,Global marketing agency needs,Est $20K-50K
+18,ElevenLabs,Paychex,Payroll,Medium,Rapid hiring payroll needs,Est $8K-15K
+19,Runway,Flite Digital,Marketing/Digital,High,Creative/digital marketing,Est $10K-25K
+20,Runway,ExtensisHR,HR/PEO,Medium,NYC creative company growth,Est $5K-12K

@@ -1,0 +1,34 @@
+Company Name,Sector,Stage,Funding Raised,Valuation,HQ Location,Employees,Strategic Fit Score,Priority Tier,Geography,Technology Focus,Recent Contracts/News,M&A Considerations,Contact Status
+Anduril Industries,AI/Autonomous Systems,Series E (Pre-IPO),$3.5B+,~$28B,Costa Mesa CA,3000+,92,Tier 1 - Critical,United States,Counter-Drone AI Platform Lattice,$250M+ CUAS contract Ukraine,High valuation partnership preferred,Not Contacted
+Shield AI,AI Pilot Autonomous Systems,Series F,$1B+,~$2.8B,San Diego CA,800+,88,Tier 1 - Critical,United States,Hivemind AI Pilot NOVA V-BAT,Active combat deployment Ukraine,IPO path likely licensing opportunity,Not Contacted
+Epirus,Counter-Drone HPM,Series C,~$300M,~$1.5B,Torrance CA,400+,90,Tier 1 - Critical,United States,Leonidas High-Power Microwave,$66M Army contract Stryker integration,Clear acquisition target strong team,Not Contacted
+Saronic,Maritime Autonomy USVs,Series B,~$175M,~$600M,Austin TX,200+,82,Tier 2 - High Value,United States,Spyglass Cutlass ASV platforms,US Navy autonomous vessel programs,Early stage attractive valuation,Not Contacted
+Skydio,Autonomous Drones AI,Series E,~$1B,~$2.2B,San Mateo CA,1500+,85,Tier 1 - Critical,United States,Computer Vision GPS-denied flight,China blacklist defense pivot,Consumer business complicates M&A,Not Contacted
+Helsing,AI/ML Defense,Series C,~€750M,~€5B,Munich Germany,500+,89,Tier 1 - Critical,United Kingdom/EU,Eurofighter EW AI decision-support,HENSOLDT partnership Euro CCA program,European govt ties partnership model,Not Contacted
+QinetiQ Spin-outs,Defense R&D,Pre-seed to Series A,N/A,N/A,Farnborough UK,Varies,78,Tier 2 - High Value,United Kingdom,DST heritage cyber EW spectrum,UK MoD spin-out pipeline,Focus on early-stage only,Not Contacted
+BAE Systems Applied Intel,Cyber Defense,Division,N/A,N/A,London UK,3500+,86,Tier 1 - Critical,United Kingdom,National-grade cybersecurity,National cyber defense contracts,Division-specific approach needed,Not Contacted
+Rheinmetall Digital,Defense Electronics,Division,N/A,N/A,Dusseldorf Germany,2000+,84,Tier 2 - High Value,European Union,Military networks cyber defense,NATO relationships,Corporate acquisition structure,Not Contacted
+Thales Cyber Digital,Cybersecurity,Division,N/A,N/A,Paris France,5000+,87,Tier 1 - Critical,European Union,Military encryption secure comms,EU defense contracts,Complementary to EMS capabilities,Not Contacted
+Ekagrata,Defense VC,Fund,$50M,N/A,Bengaluru India,Team only,93,Critical Priority,India,Pure-play defense tech fund,India defense tech investments,Fund investment not acquisition,Not Contacted
+Speciale Invest,Deep Tech VC,Fund,$100M,N/A,Chennai India,Team only,92,Critical Priority,India,Aerospace defense robotics,Drone autonomous systems portfolio,Co-investment partner for targets,Not Contacted
+3one4 Capital,Multi-sector VC,Fund,$500M,N/A,Bengaluru India,Team only,86,High Priority,India,Dual-use technology B2B,Enterprise defense applications,Co-investment partner,Not Contacted
+Stellaris Venture Partners,Enterprise Tech,Fund,$400M,N/A,Bengaluru India,Team only,84,High Priority,India,Enterprise SaaS deep tech,Deep tech defense applications,Co-investment partner,Not Contacted
+Athera Venture Partners,Deep Tech VC,Fund,$300M,N/A,Bengaluru India,Team only,83,High Priority,India,Robotics AI,Robotics defense applications,Co-investment partner,Not Contacted
+pi Ventures,AI/ML VC,Fund,$50M,N/A,Bengaluru India,Team only,82,High Priority,India,AI ML robotics,AI defense applications,Co-investment partner,Not Contacted
+Peak XV Partners,Growth Equity,Fund,$9B,N/A,Singapore/Mumbai,Team only,89,High Priority,India,Multi-sector defense interest,Large check sizes defense tech,Co-investment partner,Not Contacted
+Kalaari Capital,Multi-sector VC,Fund,$700M,N/A,Bengaluru India,Team only,91,High Priority,India,Defense aerospace portfolio,Active defense investments,Co-investment partner,Not Contacted
+DRDO Technology Dev Fund,Government Co-investment,Fund,Government,N/A,New Delhi India,Government,96,Critical Priority,India,Defense commercialization,DRDO technology transfer,Co-investment government channel,Not Contacted
+Vertex Holdings,Multi-stage VC,Fund,$3B,N/A,Singapore,Team only,87,High Priority,Singapore/SE Asia,Defense tech exposure SE Asia,Regional hub defense ecosystem,Co-investment partner,Not Contacted
+GIC,Sovereign Wealth Fund,Fund,$800B,N/A,Singapore,Team only,86,High Priority,Singapore,Defense industrial aerospace,Direct aerospace defense exposure,Large check strategic investor,Not Contacted
+Temasek,Sovereign Wealth Fund,Fund,$400B,N/A,Singapore,Team only,83,High Priority,Singapore,Aerospace defense,Strategic defense portfolio,Large check strategic investor,Not Contacted
+Mubadala,Sovereign Wealth Fund,Fund,$300B,N/A,Abu Dhabi UAE,Team only,88,High Priority,UAE/MENA,Aerospace defense,Active UAE defense modernization,Regional defense investor,Not Contacted
+SoftBank Vision Fund,Growth Equity,Fund,$100B,N/A,Tokyo Japan,Team only,78,Medium Priority,Japan/Asia,Autonomous systems AI,Large capacity autonomous focus,Growth stage only,Not Contacted
+8VC,Defense Tech VC,Fund,$6B,N/A,San Francisco CA,Team only,73,High Priority,United States,Defense enterprise software,Lead Anduril investor,Co-investment partner,Not Contacted
+Founders Fund,Deep Tech VC,Fund,$12B,N/A,San Francisco CA,Team only,79,High Priority,United States,Defense frontier tech,Premier defense tech investor,Co-investment partner,Not Contacted
+Andreessen Horowitz,Multi-sector VC,Fund,$42B,N/A,Menlo Park CA,Team only,82,High Priority,United States,American Dynamism defense,National security practice,Co-investment partner,Not Contacted
+General Catalyst,Multi-sector VC,Fund,$25B,N/A,Boston MA,Team only,79,High Priority,United States,Defense healthcare enterprise,Defense prime partnerships,Co-investment partner,Not Contacted
+Lux Capital,Deep Tech VC,Fund,$5B,N/A,New York NY,Team only,73,Medium-High Priority,United States,Deep tech defense space,Deep tech defense applications,Co-investment partner,Not Contacted
+NATO Innovation Fund,Strategic VC,Fund,€1B,N/A,Various EU,Team only,87,Critical Priority,European Union,Defense security dual-use,NATO-backed defense innovation,Alliance co-investment partner,Not Contacted
+In-Q-Tel,Strategic VC (CIA),Strategic Fund,Classified,N/A,Arlington VA/London,Team only,75,High Priority,US/UK,National security technology,IC strategic investor London office,Government channel required,Not Contacted
+Airbus Ventures,Corporate VC,Fund,€500M,N/A,Munich Germany,Team only,79,High Priority,European Union,Aerospace defense tech,Airbus defense ecosystem,Corporate partnership,Not Contacted
+Seraphim Space,Space VC,Fund,£300M,N/A,London UK,Team only,73,High Priority,United Kingdom,Space defense applications,Space defense companies,Co-investment partner,Not Contacted

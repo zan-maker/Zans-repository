@@ -1,18 +1,31 @@
 #!/usr/bin/env python3
 """
 Example arbitrage detection script for TradeRecommender
-Uses DefeatBeta API, Kalshi API, and web search
+Uses DefeatBeta API, Kalshi API, Sportsbook API, and web search
 """
 
 import os
+import sys
 import requests
 import json
 from datetime import datetime
 
+# Add current directory to path for imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+# Import Sportsbook API client
+try:
+    from sportsbook_client import SportsbookAPIClient, SportsbookKalshiArbitrage
+    SPORTSBOOK_AVAILABLE = True
+except ImportError:
+    SPORTSBOOK_AVAILABLE = False
+    print("⚠️  Sportsbook client not available")
+
 # Configuration from environment variables
 BRAVE_API_KEY = os.environ.get("BRAVE_API_KEY")
-KALSHI_API_KEY_ID = os.environ.get("KALSHI_API_KEY_ID")
-KALSHI_PRIVATE_KEY = os.environ.get("KALSHI_PRIVATE_KEY")
+KALSHI_API_KEY_ID = os.environ.get("KALSHI_API_KEY_ID", "fb109d35-efc3-42b1-bdba-0ee2a1e90ef8")
+KALSHI_PRIVATE_KEY_PATH = os.environ.get("KALSHI_PRIVATE_KEY_PATH", "./keys/kalshi_private.pem")
+RAPIDAPI_KEY = os.environ.get("RAPIDAPI_KEY")
 
 # Safety parameters
 MIN_PROFIT_PCT = 0.5
@@ -153,22 +166,138 @@ News Context:
 Timestamp: {opp['timestamp']}
 """
 
+def scan_sportsbook_kalshi_arbitrage():
+    """
+    Scan for arbitrage between Sportsbook odds and Kalshi markets
+    Returns list of opportunities
+    """
+    opportunities = []
+    
+    if not SPORTSBOOK_AVAILABLE or not RAPIDAPI_KEY:
+        print("⚠️  Sportsbook API not configured. Skipping sportsbook scan.")
+        return opportunities
+    
+    try:
+        # Initialize Sportsbook client
+        sb_client = SportsbookAPIClient(RAPIDAPI_KEY)
+        arb_finder = SportsbookKalshiArbitrage(sb_client)
+        
+        print("\nFetching available sports...")
+        sports = sb_client.get_sports()
+        
+        # Focus on major sports with Kalshi markets
+        target_sports = ['basketball', 'football', 'baseball', 'hockey']
+        
+        for sport in sports:
+            sport_id = sport.get('id', '').lower()
+            if sport_id not in target_sports:
+                continue
+            
+            print(f"\nScanning {sport.get('name', sport_id)}...")
+            
+            try:
+                # Get leagues for this sport
+                leagues = sb_client.get_leagues(sport_id)
+                
+                for league in leagues[:2]:  # Check first 2 leagues
+                    league_id = league.get('id')
+                    
+                    try:
+                        # Get games
+                        games = sb_client.get_games(league_id)
+                        
+                        for game in games[:3]:  # Check first 3 games
+                            game_id = game.get('id')
+                            game_title = f"{game.get('home_team', '')} vs {game.get('away_team', '')}"
+                            
+                            print(f"  Checking: {game_title}")
+                            
+                            # Get odds
+                            odds_data = sb_client.get_odds(game_id)
+                            canonical_odds = sb_client.parse_odds_to_canonical(odds_data)
+                            
+                            # Find best odds
+                            best_odds = sb_client.find_best_odds(canonical_odds, 'moneyline')
+                            
+                            # Check for value opportunities (odds differ significantly)
+                            for outcome, odds in best_odds.items():
+                                # Calculate no-vig probability
+                                all_probs = [o.implied_probability for o in canonical_odds 
+                                           if o.outcome == outcome]
+                                if len(all_probs) >= 2:
+                                    max_prob = max(all_probs)
+                                    min_prob = min(all_probs)
+                                    spread = (max_prob - min_prob) * 100
+                                    
+                                    if spread > 2.0:  # 2%+ spread
+                                        opportunity = {
+                                            "game": game_title,
+                                            "type": "Sportsbook Value",
+                                            "outcome": outcome,
+                                            "best_book": odds.book,
+                                            "best_odds": odds.odds_american,
+                                            "best_implied": odds.implied_probability,
+                                            "spread_pct": spread,
+                                            "profit_pct": spread * 0.5,  # Estimate
+                                            "timestamp": datetime.now().isoformat(),
+                                            "confidence": 6 if spread > 3 else 5,
+                                            "recommendation": "EXPLORE"
+                                        }
+                                        opportunities.append(opportunity)
+                                        print(f"    ✓ Value found: {spread:.2f}% spread on {outcome}")
+                                        
+                    except Exception as e:
+                        print(f"    Error scanning games: {e}")
+                        continue
+                        
+            except Exception as e:
+                print(f"  Error scanning leagues: {e}")
+                continue
+                
+    except Exception as e:
+        print(f"❌ Sportsbook scan error: {e}")
+    
+    return opportunities
+
 if __name__ == "__main__":
     print("=" * 60)
     print("TRADE RECOMMENDER - ARBITRAGE SCANNER")
     print("=" * 60)
     print(f"Mode: {'PAPER TRADING' if PAPER_TRADING else 'LIVE'}")
     print(f"Min Profit: {MIN_PROFIT_PCT}%")
+    print(f"Sources: Kalshi API + Sportsbook API (RapidAPI)")
     print()
     
-    opps = detect_arbitrage_opportunities()
+    all_opportunities = []
     
-    if opps:
+    # Scan 1: Kalshi internal arbitrage
+    print("\n" + "-" * 60)
+    print("SCAN 1: Kalshi Internal Arbitrage")
+    print("-" * 60)
+    kalshi_opps = detect_arbitrage_opportunities()
+    all_opportunities.extend(kalshi_opps)
+    
+    # Scan 2: Sportsbook value opportunities
+    print("\n" + "-" * 60)
+    print("SCAN 2: Sportsbook Value Opportunities")
+    print("-" * 60)
+    sportsbook_opps = scan_sportsbook_kalshi_arbitrage()
+    all_opportunities.extend(sportsbook_opps)
+    
+    # Results
+    print("\n" + "=" * 60)
+    print(f"SCAN COMPLETE")
+    print("=" * 60)
+    print(f"Kalshi opportunities: {len(kalshi_opps)}")
+    print(f"Sportsbook opportunities: {len(sportsbook_opps)}")
+    print(f"Total: {len(all_opportunities)}")
+    
+    if all_opportunities:
         print(f"\n{'='*60}")
-        print(f"FOUND {len(opps)} OPPORTUNITIES")
+        print(f"DETAILED OPPORTUNITIES")
         print(f"{'='*60}")
         
-        for opp in opps:
+        for opp in all_opportunities:
             print(format_recommendation(opp))
     else:
         print("\nNo arbitrage opportunities found meeting criteria.")

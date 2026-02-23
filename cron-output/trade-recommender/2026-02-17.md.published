@@ -1,0 +1,257 @@
+# 📊 Trade Recommender Report - 2026-02-17
+
+**Generated:** Tuesday, February 17th, 2026 — 3:30 AM (UTC)  
+**Mode:** REVENUE GENERATION — DUAL FOCUS (Stocks + Kalshi)
+
+---
+
+## 📈 Stock Opportunities (Alpaca Paper Trading)
+
+### Current Account Status
+| Metric | Value |
+|--------|-------|
+| **Buying Power** | $195,963.78 |
+| **Portfolio Value** | $100,000.00 |
+| **Cash** | $100,000.00 |
+| **Positions** | 0 (Clean slate) |
+| **Daytrade Count** | 0 |
+
+### Market Regime Assessment
+| Indicator | Reading | Signal |
+|-----------|---------|--------|
+| **VIX** | ~20.60-20.82 | 🟡 **ELEVATED** (>20 threshold pierced) |
+| **SPY** | $681.75 (+0.07%) | Neutral trend |
+| **Volatility Regime** | "Return of Fear" | **OPPORTUNITY ZONE** |
+
+**Key Insight:** VIX piercing 20 indicates elevated volatility and potential mean-reversion opportunities. Market calm proved temporary as "sticky" inflation concerns persist.
+
+### New Opportunities
+
+#### 1. **NVDA** — BUY
+- **Signal:** AI memory chip crisis catalyst (Bloomberg headline)
+- **Entry:** ~$140-145 (watch for pullback)
+- **Stop:** $136 (-5%)
+- **Target:** $159 (+10%)
+- **Confidence:** 7/10
+- **Rationale:** Elon Musk and Tim Cook warning about memory chip shortages. AI demand is "hammering profits" and inflating prices. NVDA positioned as infrastructure play.
+- **Position Size:** $1,000 max
+
+#### 2. **BABA** — SHORT-TERM BUY (Contrarian)
+- **Signal:** Pentagon blacklist confusion = volatility = opportunity
+- **Entry:** Watch for washout below $85
+- **Stop:** $80 (-5%)
+- **Target:** $95 (+12%)
+- **Confidence:** 6/10
+- **Rationale:** Pentagon added then WITHDREW blacklist within minutes. Creates panic-selling opportunity. Chinese tech oversold on regulatory noise.
+- **Risk:** High volatility — size accordingly
+- **Position Size:** $500 (half position due to risk)
+
+#### 3. **WBD** — BUY (M&A Catalyst)
+- **Signal:** Warner Bros Discovery may engage with Paramount
+- **Entry:** $12-13 range
+- **Stop:** $11.40 (-5%)
+- **Target:** $14.30 (+10%)
+- **Confidence:** 6/10
+- **Rationale:** Ellison family sweetened offer with concessions. M&A drama heating up. WBD has Netflix deal providing floor.
+- **Position Size:** $1,000 max
+
+### Sector Rotation Watch
+- **Financials (XLF):** Monitor for rate sentiment shifts
+- **Tech (XLK):** AI infrastructure demand strong
+- **Energy (XLE):** Energy crisis + geopolitical tensions
+- **Industrials (XLI):** Japan avoiding recession = global demand signal
+
+### Trading Plan
+```
+MAX 3 positions/day
+MAX $1,000 per position
+HOLD: 1-5 days
+STOP LOSS: 5% (hard)
+TAKE PROFIT: 10% (or trailing)
+```
+
+---
+
+## 🎯 Kalshi Prediction Markets
+
+### High-Edge Opportunities
+
+#### 1. **Fed Decision in March 2026**
+| Metric | Value |
+|--------|-------|
+| **Market** | Fed maintains rate vs Cut 25bps |
+| **Implied Odds** | 93% maintain / 7% cut |
+| **Edge Assessment** | ⚠️ LOW EDGE — Market pricing is efficient |
+| **Volume** | $9.6M+ |
+| **Resolution** | March 19, 2026 |
+| **Recommendation** | **PASS** — No value at these odds |
+
+**Analysis:** Market is heavily pricing in Fed pause. CFTC Chair Selig's comments suggest regulatory caution. Only trade if you have contrarian data suggesting cut probability >10%.
+
+---
+
+#### 2. **CPI in February (MoM)**
+| Metric | Value |
+|--------|-------|
+| **Market** | Above 0.2% vs Below |
+| **Implied Odds** | 56% Above 0.2% |
+| **Edge Assessment** | 🟡 MODERATE — Watch for survey data |
+| **Volume** | $16,949 |
+| **Resolution** | March 11, 2026 |
+| **Recommendation** | **WATCH** — Wait for pre-release surveys |
+
+**Analysis:** 56% feels low if inflation is truly "sticky" as VIX suggests. Monitor Bloomberg surveys 1-2 days before release for edge.
+
+---
+
+#### 3. **Inflation YoY in February (Above 2.4%)**
+| Metric | Value |
+|--------|-------|
+| **Market** | Above 2.4% |
+| **Implied Odds** | 45% |
+| **Edge Assessment** | 🟢 **POTENTIAL VALUE** |
+| **Volume** | $37,754 |
+| **Resolution** | March 11, 2026 |
+| **Recommendation** | **CONSIDER SMALL YES POSITION at 45¢** |
+
+**Rationale:** 
+- VIX elevated suggests market pricing in uncertainty
+- "Sticky" inflation narrative gaining traction
+- Fed maintaining rates = inflation not fully tamed
+- True probability likely 50-55%, market at 45% = 5-10% edge
+
+**Sizing:** Conservative 1% of bankroll (Kelly: ~10% edge / 2.2 odds = ~4.5% optimal, use 1% for safety)
+
+---
+
+#### 4. **Sports: 2026 NBA Champion — Oklahoma City Thunder**
+| Metric | Value |
+|--------|-------|
+| **Current Price** | 36¢ (36% implied) |
+| **Volume** | $258.2M total, $1.5M 24h |
+| **Edge Assessment** | Compare to Vegas lines |
+| **Resolution** | June 2026 |
+| **Recommendation** | **RESEARCH vs VEGAS** — High liquidity allows position building |
+
+**Analysis:** 
+- $258M volume = deep liquidity
+- Compare Thunder 36% to FanDuel/DraftKings odds
+- If Thunder <30% at sportsbooks, there's arbitrage
+- Risk: Long-dated, capital tied up
+
+---
+
+#### 5. **Sports: 2026 NHL Stanley Cup — Canada**
+| Metric | Value |
+|--------|-------|
+| **Current Price** | 55¢ (55% implied) |
+| **Volume** | $9.0M total, $1.3M open interest |
+| **Resolution** | Feb 21, 2026 (CLOSING SOON) |
+| **Recommendation** | **HIGH PRIORITY — Near-term resolution** |
+
+**Analysis:**
+- Resolves in 4 days — quick capital turnover
+- Compare to Vegas odds on Canada gold medal
+- Winter Olympics context adds volatility
+- Volume sufficient for position entry/exit
+
+---
+
+### Kalshi Market Summary
+| Market | Implied | Edge | Action |
+|--------|---------|------|--------|
+| Fed March (Maintain) | 93% | None | PASS |
+| CPI >0.2% MoM | 56% | Low | WATCH |
+| CPI YoY >2.4% | 45% | 5-10% | **BUY YES** |
+| NBA Thunder | 36% | Research vs Vegas | ANALYZE |
+| NHL Canada Gold | 55% | Research vs Vegas | **HIGH PRIORITY** |
+
+---
+
+## 📰 News Catalysts (NewsAPI + Tavily)
+
+### Primary Catalysts
+
+1. **AI Memory Chip Crisis** 🟢 **BULLISH NVDA/AMD**
+   - Source: Bloomberg, Feb 15
+   - Elon Musk, Tim Cook warning about shortages
+   - "Hammering profits, derailing corporate plans"
+   - **Trade:** NVDA, AMD, MU (Micron)
+
+2. **WBD-Paramount M&A Activity** 🟢 **BULLISH WBD**
+   - Source: Deadline, Feb 16
+   - Ellison family sweetened offer with concessions
+   - WBD considering engagement
+   - **Trade:** WBD long
+
+3. **Alibaba Pentagon Blacklist Confusion** 🟡 **VOLATILITY OPPORTUNITY**
+   - Source: Bloomberg, Feb 16
+   - Added then WITHDRAWN within minutes
+   - Chinese tech selloff = oversold bounce opportunity
+   - **Trade:** BABA contrarian buy
+
+4. **Japan GDP Avoids Recession** 🟢 **BULLISH GLOBAL DEMAND**
+   - Source: CNBC, Feb 16
+   - 0.1% growth vs expected contraction
+   - Avoids technical recession
+   - **Trade:** EWJ, global industrials
+
+5. **India AI Infrastructure Buildout** 🟢 **BULLISH SEMIS/GPUs**
+   - Source: TechCrunch, Feb 15
+   - Blackstone backs Neysa with $1.2B
+   - 20,000 GPU deployment target
+   - **Trade:** NVDA, AMD (data center exposure)
+
+### Earnings Calendar Watch
+- **Feb 18:** Major tech earnings (watch for AI commentary)
+- **Feb 19:** Retail sector reports
+
+---
+
+## 🔧 Data Sources Used
+
+| Source | Data Retrieved | Trades Informed |
+|--------|----------------|-----------------|
+| **AlphaVantage** | SPY quote ($681.75), VIX inference | Market regime assessment |
+| **NewsAPI** | 67 business headlines | NVDA, BABA, WBD opportunities |
+| **Tavily API** | Kalshi market data, VIX levels, premarket movers | All Kalshi recommendations |
+| **Alpaca API** | Account status ($195K buying power), positions | Position sizing |
+| **Web Search** | Kalshi volume data, sports markets | NBA/NHL trade ideas |
+
+---
+
+## 📋 Action Items
+
+### Immediate (Today)
+1. [ ] **PAPER TRADE:** NVDA $1,000 position on AI chip shortage news
+2. [ ] **PAPER TRADE:** BABA $500 contrarian position (if washout occurs)
+3. [ ] **KALSHI:** Research NHL Canada vs Vegas odds for potential edge
+
+### This Week
+1. [ ] Monitor VIX for volatility contraction opportunity
+2. [ ] Watch CPI pre-release surveys for Kalshi edge
+3. [ ] Track WBD-Paramount M&A developments
+4. [ ] Compare NBA Thunder odds across platforms
+
+### Ongoing
+1. [ ] Track paper trade P&L
+2. [ ] Document Kalshi trade outcomes
+3. [ ] Update position sizing based on performance
+
+---
+
+## ⚠️ Risk Disclosures
+
+**STOCKS:** All stock recommendations are for **PAPER TRADING ONLY** using Alpaca paper account. No live trades without explicit approval.
+
+**KALSHI:** Prediction markets involve risk of loss. Past performance not indicative of future results. Edge calculations are estimates, not guarantees.
+
+**MARKET RISK:** VIX >20 indicates elevated volatility. Position sizes should reflect risk tolerance.
+
+**CONFLICTS:** This report generated by automated analysis. Verify all data independently before trading.
+
+---
+
+**End of Report**
+
+*Trade Recommender v1.0 | Multi-Source Intelligence | Alpaca Paper + Kalshi Markets*

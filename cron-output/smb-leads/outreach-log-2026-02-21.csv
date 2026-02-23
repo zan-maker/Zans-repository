@@ -1,0 +1,2 @@
+timestamp,job_id,lead_file,company,contact_email,email_verified,hunter_score,agentmail_message_id,agentmail_thread_id,status,cc
+2026-02-21T15:26:00Z,81775b05-582e-4b65-b4a1-2c65cbc071b7,2026-02-20-export.csv,NGL Transportation,jaeky.l@ngltrans.net,deliverable,100,0100019c80ce9700-3a8edaf8-f331-405c-8b59-d1e9c8c3db86-000000,d646f8a6-8bf1-4878-a36b-4c810b0309ba,SENT,sam@impactquadrant.info
