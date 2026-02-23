@@ -4,3 +4,8 @@ timestamp,company,industry,decision_maker,title,email,score,subject,status,savin
 2026-02-14T20:00:00Z,HealthMark Group,Healthcare,Nicholas Mancini,VP Finance,nmancini@healthmark-group.com,90,HealthMark Group - $93K Annual Payroll Tax Savings (VP Finance),PENDING_API_FIX,$93297,Route not found
 2026-02-14T20:00:00Z,Hospitality America,Hospitality,Ben Campbell,President & CEO,b.campbell@hospitalityamerica.com,80,Hospitality America - Cut Payroll Costs & Boost Retention (Zero Fees),PENDING_API_FIX,$204000,Route not found
 2026-02-14T20:00:00Z,Browns Restaurant Group,Hospitality,Mary Tardelli,VP Finance & Admin,mtardelli@brownsrestaurantgroup.com,75,Browns Restaurant Group - $100K+ Annual Savings Opportunity (Zero Fees),PENDING_API_FIX,$136170,Route not found
+2026-02-23T20:00:00Z,Beachside Hospitality Group,Hospitality,Greg Powers,CEO,greg@bshgrp.com,85,Increase Your Employees' Take-Home Pay at Beachside Hospitality Group,SENT,$10215,
+2026-02-23T20:00:00Z,Palletized Trucking Inc.,Transportation,Michael King,President & CEO,mike@palletizedtrucking.com,92,SKIPPED - Email undeliverable,,,
+2026-02-23T20:00:00Z,Three Oaks Hospitality,Hospitality,Dennis Gkotsis,CEO,dennis@threeoakstampa.com,88,SKIPPED - Email undeliverable,,,
+2026-02-23T20:00:00Z,Excargo Services,Transportation,Marcia Faschingbauer,President & CEO,marcia@excargo.com,82,SKIPPED - Email undeliverable,,,
+2026-02-23T20:00:00Z,NCG Hospitality,Hospitality,Jeff Lenz,President & CEO,jeff@ncghospitality.com,80,SKIPPED - Email undeliverable,,,
