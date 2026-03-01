@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USGS Critical Minerals Analyst Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-top: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #2d3748;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #4a5568;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .demo-card {
+            background: #f7fafc;
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid #e2e8f0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .demo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .demo-card h3 {
+            color: #2d3748;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .demo-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 2px solid #cbd5e0;
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #4299e1;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #3182ce;
+        }
+        .btn-secondary {
+            background: #718096;
+        }
+        .btn-secondary:hover {
+            background: #4a5568;
+        }
+        .features {
+            background: #ebf8ff;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        .features h3 {
+            color: #2b6cb0;
+            margin-top: 0;
+        }
+        .features ul {
+            columns: 2;
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #38a169;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #718096;
+            font-size: 0.9em;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #38a169;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 USGS Critical Minerals Analyst</h1>
+            <div class="subtitle">AI-Powered Mining Data Intelligence with Mistral AI + Daily Automation</div>
+        </header>
+
+        <div class="demo-grid">
+            <div class="demo-card">
+                <h3>📊 Dashboard Demo <span class="badge">Live</span></h3>
+                <img src="dashboard-demo.jpg" alt="USGS Critical Minerals Dashboard">
+                <p><strong>Real-time dashboard</strong> showing data extraction, AI analysis, and prospect scoring.</p>
+                <p><strong>Features:</strong> Three-panel interface with interactive US map and geological insights.</p>
+            </div>
+            
+            <div class="demo-card">
+                <h3>🤖 AI Analysis</h3>
+                <p><strong>Mistral AI Integration:</strong> Document analysis of geological surveys and reports.</p>
+                <p><strong>Daily Automation:</strong> Cron job runs at 9:00 AM EST to pull latest USGS data.</p>
+                <p><strong>Intelligent Scoring:</strong> Prospect evaluation based on multiple data sources.</p>
+            </div>
+            
+            <div class="demo-card">
+                <h3>📈 Data Sources</h3>
+                <p><strong>USMIN Database:</strong> Comprehensive mineral deposit information.</p>
+                <p><strong>MRDATA API:</strong> Real-time geological data access.</p>
+                <p><strong>National Inventories:</strong> Mine waste and resource data.</p>
+                <p><strong>Critical Minerals:</strong> Focus on lithium, cobalt, rare earth elements.</p>
+            </div>
+        </div>
+
+        <div class="features">
+            <h3>✨ Key Features</h3>
+            <ul>
+                <li>Daily automated data extraction from USGS APIs</li>
+                <li>Mistral AI Document Analysis for geological insights</li>
+                <li>Intelligent prospect scoring algorithm</li>
+                <li>Interactive dashboard with real-time updates</li>
+                <li>Media generation (screenshots + videos)</li>
+                <li>GitHub integration for version control</li>
+                <li>Contact identification for mine owners</li>
+                <li>Automated outreach system</li>
+                <li>Multi-source data validation</li>
+                <li>Geographic filtering (US/Canada/Latin America)</li>
+                <li>Commodity focus (Gold, Silver, Copper, Rare Earths)</li>
+                <li>Risk assessment and opportunity scoring</li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <a href="2026-02-28-enhanced-report.md" class="btn">📄 View Enhanced Report</a>
+            <a href="2026-02-28-report.md" class="btn">📊 View Full Analysis</a>
+            <a href="media/dashboard-demo.jpg" class="btn">🖼️ View Dashboard Image</a>
+            <a href="README.md" class="btn">📚 Documentation</a>
+            <a href="upload-to-github.sh" class="btn">🚀 Upload Script</a>
+        </div>
+
+        <div class="links">
+            <a href="https://github.com/zan-maker/Zans-repository" class="btn btn-secondary" target="_blank">GitHub Repository</a>
+            <a href="https://www.usgs.gov/products/data" class="btn btn-secondary" target="_blank">USGS Data Portal</a>
+            <a href="https://mrdata.usgs.gov/" class="btn btn-secondary" target="_blank">MRDATA API</a>
+        </div>
+
+        <footer>
+            <p>🚀 <strong>USGS Critical Minerals Analyst</strong> | Built with Mistral AI + OpenClaw</p>
+            <p>📅 Last Updated: February 28, 2026 | ⏰ Next Run: Tomorrow 9:00 AM EST</p>
+            <p>🔐 Secure Token Authentication | 📧 Automated Outreach | 🎯 Prospect Intelligence</p>
+        </footer>
+    </div>
+</body>
+</html>
