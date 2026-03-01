@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+.env
+.env.local
+.DS_Store
+*.xlsx
+*.xls
+*.csv
+!evaluation/test_cases.csv
+!functions/project.yml
+node_modules/
+dist/

@@ -1,119 +1,145 @@
-# 🔋 Commodity Price Analyzer
+# DeltaFin Chat
 
-> *Calculate the impact of commodity prices, exchange rates, and government regulations on product output price.*
+**Financial variance analysis agent on Telegram — powered by DigitalOcean Gradient™**
 
-[![Model](https://img.shields.io/badge/Model-Claude%20Haiku%204.5-blueviolet)](https://anthropic.com)
-[![Orchestration](https://img.shields.io/badge/Orchestration-Airia-blue)](https://airia.com)
-[![MCP Tools](https://img.shields.io/badge/MCP-AlphaVantage%20%7C%20Regulations.Gov-green)](#tools)
-[![State](https://img.shields.io/badge/State-Preview-orange)](#)
-[![Flow Version](https://img.shields.io/badge/Flow%20Version-3.00-lightgrey)](#)
+Upload your financial model. Ask questions in plain English. Get governed, source-cited answers.
+
+> Built for the [DigitalOcean Gradient™ AI Hackathon](https://digitalocean.devpost.com/)
 
 ---
 
-## What It Does
-
-GLI runs complex payables and offtake structures across Nickel (Ni), Cobalt (Co), Lithium (Li), and Mixed Hydroxide Precipitate (MHP). Monitoring those contract economics has historically been manual and slow. **Commodity Price Analyzer** turns term sheets into a living model that continuously re-prices GLI's contracts off real-time commodity curves.
-
-The agent:
-
-1. Pulls live Ni/Co/Li prices via **AlphaVantage MCP** and monitors regulatory risk via **Regulations.Gov MCP**
-2. Applies GLI's encoded business rules — black mass payables, Primary Offtaker MHP offtake, lithium carbonate GTCs, and Li Cycle feedstock pricing
-3. Returns a narrative interpretation: realized vs. theoretical payables, margin capture vs. WMC, profit-share trigger status, and index sensitivity
-
-A single natural-language question such as:
-
-> *"What's our Ni/Co margin vs Offtaker this month on Atoka output?"*
-
-triggers the full pipeline: **Memory Load → AI Model → Python Code → AI Model 1 → Output + Memory Store**.
-
----
-
-## Encoded Contract Structures
-
-| Contract | Index Basis | Key Rules |
-|---|---|---|
-| **Black Mass Payables** | LME 3-month Ni/Co | 85% grade multiplier; counterparties: Atoka, Li-Cycle, Redwood |
-| **Primary Offtaker MHP Offtake** | Fastmarkets MB CO-0005 monthly | 8% floor discount; 15% profit share above $20,000/mt Ni |
-| **Lithium Carbonate GTC** | Fastmarkets Li₂CO₃ 99.5% CIF | Floor $20,000/mt · Ceiling $30,000/mt |
-| **Li Cycle Feedstock** | Mixed Fastmarkets/LME composite | 92% Li @ 75% payable · 3% Ni @ 90% · 2% Co @ 90% |
-
----
-
-## Repository Structure
+## How It Works
 
 ```
-commodity-price-analyzer/
-├── README.md                   ← This file
-├── ARCHITECTURE.md             ← Airia flow diagram, node-by-node reference
-├── CONTRACT_LOGIC.md           ← Full Python business-rules code, annotated
-├── DATA_SOURCES.md             ← MCP tool config, API endpoints, symbol maps
-├── SETUP.md                    ← Installation and credential configuration
-├── USAGE.md                    ← Example queries and response walkthrough
-├── SECURITY.md                 ← Guardrails, key management, audit trail
-├── CONTRIBUTING.md             ← How to extend contracts and data sources
-├── CHANGELOG.md                ← Version history
-└── flows/
-    └── commodity_analyzer.json ← Airia orchestration flow (import via dashboard)
+You (Telegram) → Bot → Gradient Agent → [Knowledge Base + DO Functions] → Response
 ```
 
----
+A Gradient AI agent handles natural language understanding and narrative generation. Three DO Functions handle all financial math deterministically. A Knowledge Base provides RAG over the investor model. A Telegram bot relays messages.
 
-## Tech Stack
-
-| Layer | Detail |
-|---|---|
-| **Orchestration** | Airia (Flow v3.00) |
-| **Language Model** | Claude Haiku 4.5 (`claude-haiku-4-5-20251001`) — both AI steps |
-| **Market Data** | AlphaVantage MCP — NICKEL, COBALT, CURRENCY_EXCHANGE_RATE |
-| **Regulatory Data** | Regulations.Gov MCP — `GET /v4/documents` |
-| **Computation** | Python step — deterministic contract functions |
-| **Memory (Load)** | `GLI Contract Parameters` — shared, persistent contract config |
-| **Memory (Store)** | `Historical Pricing Data` — shared, persistent, append-mode audit log |
-| **Deployment Mode** | Chat — FileUpload, Whiteboard, Code, Math input modes supported |
-
----
+**Core principle: Code for math. Model for meaning.**
 
 ## Quick Start
 
-See [SETUP.md](./SETUP.md) for full instructions.
+### 1. Set Up DigitalOcean
+
+- Sign up at [digitalocean.com](https://mlh.link/digitalocean-signup) ($200 free credits)
+- Enable **Gradient AI** in your Console
+
+### 2. Create the Agent
+
+1. Console → Gradient AI → Create Agent
+2. Name: `DeltaFin Chat`
+3. Model: Claude Sonnet 4.5 (or GPT-4.1)
+4. Paste instructions from [`AGENT_INSTRUCTIONS.md`](AGENT_INSTRUCTIONS.md)
+5. Save → copy **Agent Endpoint** and **Access Key**
+
+### 3. Set Up Knowledge Base
+
+1. Preprocess your model: `python knowledge_base/preprocessor.py model.xlsx`
+2. Upload output `.md` to DO Spaces
+3. Console → Knowledge Bases → Create → add Spaces source
+4. Attach KB to your agent in Resources tab
+
+### 4. Deploy Functions
 
 ```bash
-git clone https://github.com/GLI/commodity-price-analyzer.git
-# Configure credentials in Airia (see SETUP.md)
-# Import flows/commodity_analyzer.json via Airia dashboard
+doctl serverless install     # one-time setup
+cd functions
+doctl serverless deploy .    # deploys all 3 functions
 ```
 
-Then ask the agent:
+Attach each function to the agent via **Resources → Functions** in Console.
+
+### 5. Create Telegram Bot
+
+1. Message `@BotFather` on Telegram → `/newbot` → save token
+2. Configure environment:
+   ```bash
+   cp .env.example .env
+   # Fill in TELEGRAM_BOT_TOKEN, AGENT_ENDPOINT, AGENT_ACCESS_KEY
+   ```
+3. Run locally: `cd telegram_bot && pip install -r requirements.txt && python bot.py`
+4. Or deploy to App Platform (see below)
+
+### 6. Deploy Bot to App Platform
+
+```yaml
+# app-spec.yml
+name: deltafin-telegram-bot
+services:
+  - name: bot
+    github:
+      repo: your-org/deltafin-chat
+      branch: main
+      deploy_on_push: true
+    source_dir: telegram_bot
+    run_command: python bot.py
+    environment_slug: python
+    instance_size_slug: apps-s-1vcpu-0.5gb
+    envs:
+      - key: TELEGRAM_BOT_TOKEN
+        value: ${TELEGRAM_BOT_TOKEN}
+        type: SECRET
+      - key: AGENT_ENDPOINT
+        value: ${AGENT_ENDPOINT}
+      - key: AGENT_ACCESS_KEY
+        value: ${AGENT_ACCESS_KEY}
+        type: SECRET
 ```
-"What are our realized Ni payables on black mass this week vs LME?"
-"Has the Primary Offtaker profit share triggered this month?"
-"Show me our Li carbonate GTC position — is the floor or ceiling active?"
-"Run sensitivity: what happens to MHP margins if Ni drops $1,000/mt?"
+
+```bash
+doctl apps create --spec app-spec.yml
 ```
 
----
+## Project Structure
 
-## Agent Metadata
+```
+deltafin-chat/
+├── AGENT_INSTRUCTIONS.md       # Paste into Gradient agent
+├── DEVPOST.md                  # Hackathon submission narrative
+├── SHORT_DESCRIPTION.md        # 500-char Devpost blurb
+├── README.md                   # This file
+├── LICENSE
+├── .gitignore
+├── .env.example
+│
+├── telegram_bot/
+│   ├── bot.py                  # Telegram ↔ Gradient agent relay
+│   └── requirements.txt
+│
+├── functions/                  # DO Functions (serverless math)
+│   ├── project.yml             # Functions deployment config
+│   ├── variance_engine/
+│   │   └── __main__.py         # Line-item variance analysis
+│   ├── runway_calculator/
+│   │   └── __main__.py         # Cash runway projection
+│   └── revenue_decomposition/
+│       └── __main__.py         # Volume/price/mix decomposition
+│
+├── knowledge_base/
+│   ├── preprocessor.py         # Excel → markdown for KB indexing
+│   └── SETUP.md                # KB creation guide
+│
+├── evaluation/
+│   └── test_cases.csv          # 20 test cases for Gradient Evaluations
+│
+└── docs/
+    ├── ARCHITECTURE.md         # System design
+    └── GRADIENT_USAGE.md       # DO feature map for judges
+```
 
-| Field | Value |
-|---|---|
-| Agent ID | `20013153-1e89-4496-adf7-27f2924ac70d` |
-| Export Version | `20260226132027_EditBraveNativeEntries` |
-| Flow Version | `3.00` |
-| State | Preview |
-| Last Updated | 2026-03-01 |
-| Contributor | Shyam Desigan |
-| Department | Everyone |
+## DigitalOcean Products Used
 
----
-
-## What's Next
-
-- Add SMM and direct Fastmarkets MCP feeds; extend commodity coverage to Mn and Cu
-- ERP/treasury integration for invoice reconciliation and real-time P&L variance alerts
-
----
+| Product | Purpose |
+|---------|---------|
+| Gradient AI Agent | Core intelligence + routing |
+| Gradient Serverless Inference | LLM (Claude Sonnet 4.5) |
+| Gradient Knowledge Base | RAG over financial model |
+| Gradient Evaluations | Agent accuracy testing |
+| DO Functions | Deterministic financial math |
+| App Platform | Telegram bot hosting |
+| Spaces | File storage + KB source |
 
 ## License
 
-Proprietary — GLI Internal Use Only.
+MIT — see [LICENSE](LICENSE)
