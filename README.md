@@ -1,119 +1,125 @@
-# 🔋 Commodity Price Analyzer
+# DeltaFin AI
 
-> *Calculate the impact of commodity prices, exchange rates, and government regulations on product output price.*
+**Automated financial variance analysis for pre-IPO companies — built on Airia, Amazon Nova, and Amazon Bedrock.**
 
-[![Model](https://img.shields.io/badge/Model-Claude%20Haiku%204.5-blueviolet)](https://anthropic.com)
-[![Orchestration](https://img.shields.io/badge/Orchestration-Airia-blue)](https://airia.com)
-[![MCP Tools](https://img.shields.io/badge/MCP-AlphaVantage%20%7C%20Regulations.Gov-green)](#tools)
-[![State](https://img.shields.io/badge/State-Preview-orange)](#)
-[![Flow Version](https://img.shields.io/badge/Flow%20Version-3.00-lightgrey)](#)
+DeltaFin AI is a 7-stage financial intelligence pipeline that extracts consolidated financial data from enterprise platforms, runs automated variance analysis against investor models, enriches with live market and regulatory intelligence, and generates governance-audited investor briefs. Total cost per run: under $1.
 
 ---
 
-## What It Does
+## The Problem
 
-GLI runs complex payables and offtake structures across Nickel (Ni), Cobalt (Co), Lithium (Li), and Mixed Hydroxide Precipitate (MHP). Monitoring those contract economics has historically been manual and slow. **Commodity Price Analyzer** turns term sheets into a living model that continuously re-prices GLI's contracts off real-time commodity curves.
+Pre-IPO finance teams run on disconnected SaaS platforms — accounting in Xero, procurement in Precoro, reporting in Syft Analytics. Every month, someone manually exports reports, reconciles across entities, pulls commodity prices, compares actuals to the financial model investors underwrote, and stitches everything into an investor brief. It takes a full day.
 
-The agent:
+The real pain isn't data extraction — it's **variance analysis**. Investors and boards don't just want numbers. They want to know: *are we tracking to the model we raised on?*
 
-1. Pulls live Ni/Co/Li prices via **AlphaVantage MCP** and monitors regulatory risk via **Regulations.Gov MCP**
-2. Applies GLI's encoded business rules — black mass payables, Primary Offtaker MHP offtake, lithium carbonate GTCs, and Li Cycle feedstock pricing
-3. Returns a narrative interpretation: realized vs. theoretical payables, margin capture vs. WMC, profit-share trigger status, and index sensitivity
+## The Solution
 
-A single natural-language question such as:
-
-> *"What's our Ni/Co margin vs Offtaker this month on Atoka output?"*
-
-triggers the full pipeline: **Memory Load → AI Model → Python Code → AI Model 1 → Output + Memory Store**.
+DeltaFin AI automates the entire workflow: extraction → normalization → variance calculation → market enrichment → regulatory intelligence → narrative generation → governed delivery. What previously took a full day runs in under 10 minutes, with a complete audit trail and human approval gate before distribution.
 
 ---
 
-## Encoded Contract Structures
-
-| Contract | Index Basis | Key Rules |
-|---|---|---|
-| **Black Mass Payables** | LME 3-month Ni/Co | 85% grade multiplier; counterparties: Atoka, Li-Cycle, Redwood |
-| **Primary Offtaker MHP Offtake** | Fastmarkets MB CO-0005 monthly | 8% floor discount; 15% profit share above $20,000/mt Ni |
-| **Lithium Carbonate GTC** | Fastmarkets Li₂CO₃ 99.5% CIF | Floor $20,000/mt · Ceiling $30,000/mt |
-| **Li Cycle Feedstock** | Mixed Fastmarkets/LME composite | 92% Li @ 75% payable · 3% Ni @ 90% · 2% Co @ 90% |
-
----
-
-## Repository Structure
+## Architecture
 
 ```
-commodity-price-analyzer/
-├── README.md                   ← This file
-├── ARCHITECTURE.md             ← Airia flow diagram, node-by-node reference
-├── CONTRACT_LOGIC.md           ← Full Python business-rules code, annotated
-├── DATA_SOURCES.md             ← MCP tool config, API endpoints, symbol maps
-├── SETUP.md                    ← Installation and credential configuration
-├── USAGE.md                    ← Example queries and response walkthrough
-├── SECURITY.md                 ← Guardrails, key management, audit trail
-├── CONTRIBUTING.md             ← How to extend contracts and data sources
-├── CHANGELOG.md                ← Version history
-└── flows/
-    └── commodity_analyzer.json ← Airia orchestration flow (import via dashboard)
+┌──────────────┐  ┌──────────────────┐  ┌──────────────────────────────────┐
+│  S3 Buckets   │  │  Amazon Nova Act  │  │        AIRIA PLATFORM             │
+│               │  │                   │  │                                  │
+│ finmodels-*   │  │  Browser Agent    │  │  7-Stage Agent Workflow:          │
+│ (versioned,   │  │  • Login to Syft  │  │                                  │
+│  KMS encrypt) │  │  • Export CSV     │  │  0. Lambda → Model + Syft JSON   │
+│               │  │                   │  │  1. Nova Act → Syft extraction   │
+│ syft-exports-*│  └───────┬──────────┘  │  2A. MCP → AlphaVantage          │
+│               │          │ CSV         │  2B. MCP → Regulations.Gov        │
+│ deltafin-     │          ▼             │  3. Python → Variance engine      │
+│  output       │◄─────────┬─────────────│  4. Nova Pro → Narrative (t=0.2)  │
+└──────────────┘          │             │  5. Human approval gate           │
+                           │             │  6. MCP → Teams + OneDrive       │
+┌──────────────┐          │             │                                  │
+│  Lambda       │──────────┘             │  Governance: full audit trail,    │
+│               │                        │  policy enforcement, cost monitor │
+│ extract_model │                        └──────────────────────────────────┘
+│ extract_syft  │
+│ (Python 3.12) │
+└──────────────┘
 ```
+
+## Technology Stack
+
+| Component | Technology | Role |
+|-----------|-----------|------|
+| Orchestration | Airia Enterprise AI Platform | Agent workflow, MCP Gateway, governance |
+| Browser Automation | Amazon Nova Act SDK | Syft Analytics data extraction |
+| Financial Analysis | Amazon Nova Pro (Bedrock) | Variance interpretation, narrative generation |
+| Data Classification | Amazon Nova Micro (Bedrock) | CSV classification, regulatory pre-filtering |
+| Financial Model Access | AWS Lambda + S3 | Versioned Excel model extraction via `openpyxl` |
+| Market Data | AlphaVantage MCP | Commodities, FX, macro indicators, peer equities |
+| Regulatory Data | Regulations.Gov MCP | Federal rulemaking, proposed rules, comment periods |
+| Delivery | Microsoft Teams + OneDrive MCP | Governed brief distribution |
+| Scheduling | AWS EventBridge | Monthly automated pipeline trigger |
+| Variance Engine | Python (`pandas`) | All quantitative calculations |
 
 ---
 
-## Tech Stack
+## Documentation
 
-| Layer | Detail |
-|---|---|
-| **Orchestration** | Airia (Flow v3.00) |
-| **Language Model** | Claude Haiku 4.5 (`claude-haiku-4-5-20251001`) — both AI steps |
-| **Market Data** | AlphaVantage MCP — NICKEL, COBALT, CURRENCY_EXCHANGE_RATE |
-| **Regulatory Data** | Regulations.Gov MCP — `GET /v4/documents` |
-| **Computation** | Python step — deterministic contract functions |
-| **Memory (Load)** | `GLI Contract Parameters` — shared, persistent contract config |
-| **Memory (Store)** | `Historical Pricing Data` — shared, persistent, append-mode audit log |
-| **Deployment Mode** | Chat — FileUpload, Whiteboard, Code, Math input modes supported |
+| Document | Description |
+|----------|-------------|
+| [Architecture](docs/ARCHITECTURE.md) | Technical architecture and design decisions |
+| [Pipeline](docs/PIPELINE.md) | Stage-by-stage pipeline specification |
+| [Setup](docs/SETUP.md) | Airia configuration and MCP tool attachment |
+| [Deployment](docs/DEPLOYMENT.md) | AWS infrastructure (S3, Lambda, EventBridge, IAM) |
+| [Financial Model Access](docs/FINANCIAL-MODEL-ACCESS.md) | S3 + Lambda extraction pattern |
+| [Devpost](DEVPOST.md) | Hackathon project story |
 
 ---
 
 ## Quick Start
 
-See [SETUP.md](./SETUP.md) for full instructions.
-
 ```bash
-git clone https://github.com/GLI/commodity-price-analyzer.git
-# Configure credentials in Airia (see SETUP.md)
-# Import flows/commodity_analyzer.json via Airia dashboard
+# 1. Deploy AWS infrastructure
+aws s3api create-bucket --bucket finmodels-deltafin \
+  --versioning-configuration Status=Enabled \
+  --server-side-encryption-configuration '{
+    "Rules": [{"ApplyServerSideEncryptionByDefault": {"SSEAlgorithm": "aws:kms"}}]
+  }'
+aws s3api create-bucket --bucket syft-exports-deltafin
+aws s3api create-bucket --bucket deltafin-output
+
+# 2. Upload financial model
+aws s3 cp model.xlsx s3://finmodels-deltafin/{entity}/budget/20250301/model.xlsx
+
+# 3. Configure MCP servers in Airia (see docs/SETUP.md)
+# 4. Attach tools to pipeline nodes (see docs/SETUP.md)
+# 5. Run pipeline in Airia or wait for EventBridge schedule
 ```
 
-Then ask the agent:
-```
-"What are our realized Ni payables on black mass this week vs LME?"
-"Has the Primary Offtaker profit share triggered this month?"
-"Show me our Li carbonate GTC position — is the floor or ceiling active?"
-"Run sensitivity: what happens to MHP margins if Ni drops $1,000/mt?"
-```
+See individual docs for complete instructions.
 
----
+## Design Principles
 
-## Agent Metadata
+1. **Never let the LLM touch the spreadsheet.** Lambda reads the workbook; Nova Pro reasons over structured JSON.
+2. **Separate calculation from narration.** All math runs in Python. The LLM interprets pre-computed variance data.
+3. **Governance is a feature, not overhead.** Audit trails, versioned models, and human approval gates are the product.
+4. **MCP as the governed data backbone.** All external data flows through Airia's MCP Gateway.
+5. **Atomic commands for browser automation.** Nova Act workflows decompose into precise, verifiable steps.
 
-| Field | Value |
-|---|---|
-| Agent ID | `20013153-1e89-4496-adf7-27f2924ac70d` |
-| Export Version | `20260226132027_EditBraveNativeEntries` |
-| Flow Version | `3.00` |
-| State | Preview |
-| Last Updated | 2026-03-01 |
-| Contributor | Shyam Desigan |
-| Department | Everyone |
+## Cost Per Monthly Run
 
----
+| Component | Cost |
+|-----------|------|
+| Nova Pro (all AI stages) | $0.15 – $0.50 |
+| AlphaVantage API | $0.02 – $0.05 |
+| Regulations.Gov API | Free |
+| Lambda + S3 | $0.06 |
+| Microsoft Graph API | Free (M365) |
+| **Total** | **$0.23 – $0.61** |
 
-## What's Next
-
-- Add SMM and direct Fastmarkets MCP feeds; extend commodity coverage to Mn and Cu
-- ERP/treasury integration for invoice reconciliation and real-time P&L variance alerts
+Scales to 50 companies for under $50/month.
 
 ---
 
 ## License
 
-Proprietary — GLI Internal Use Only.
+MIT
+
+*Built for the Amazon Nova Hackathon.*

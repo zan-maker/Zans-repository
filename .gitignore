@@ -1,0 +1,48 @@
+# Environment
+.env
+.env.local
+*.env
+
+# API Keys
+*api_key*
+*secret*
+credentials.json
+
+# AWS
+.aws/
+samconfig.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+
+# Lambda packages
+lambda_packages/
+*.zip
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test outputs
+test_output/
+response.json
+
+# Financial data (never commit actual financial data)
+*.xlsx
+*.xls
+*.csv
+!pipeline/*.json
