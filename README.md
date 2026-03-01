@@ -12,17 +12,17 @@
 
 ## What It Does
 
-GLI runs complex payables and offtake structures across Nickel (Ni), Cobalt (Co), Lithium (Li), and Mixed Hydroxide Precipitate (MHP). Monitoring those contract economics has historically been manual and slow. **Commodity Price Analyzer** turns term sheets into a living model that continuously re-prices GLI's contracts off real-time commodity curves.
+Commodity Price Analyzer is an AI agent that turns complex commodity-linked contracts into a continuously running economic model. Rather than manually pulling prices and applying contract formulas in spreadsheets, the agent fetches live market data, applies encoded business rules, and returns a plain-English interpretation of realized vs. theoretical value across multiple contract structures and counterparties.
 
 The agent:
 
 1. Pulls live Ni/Co/Li prices via **AlphaVantage MCP** and monitors regulatory risk via **Regulations.Gov MCP**
-2. Applies GLI's encoded business rules — black mass payables, Primary Offtaker MHP offtake, lithium carbonate GTCs, and Li Cycle feedstock pricing
-3. Returns a narrative interpretation: realized vs. theoretical payables, margin capture vs. WMC, profit-share trigger status, and index sensitivity
+2. Applies encoded business rules — black mass payables, Primary Offtaker MHP offtake, lithium carbonate GTCs, and feedstock pricing
+3. Returns a narrative interpretation: realized vs. theoretical payables, margin capture vs. offtaker, profit-share trigger status, and index sensitivity
 
 A single natural-language question such as:
 
-> *"What's our Ni/Co margin vs Offtaker this month on Atoka output?"*
+> *"What's our Ni/Co margin vs Offtaker this month on output?"*
 
 triggers the full pipeline: **Memory Load → AI Model → Python Code → AI Model 1 → Output + Memory Store**.
 
@@ -32,10 +32,10 @@ triggers the full pipeline: **Memory Load → AI Model → Python Code → AI Mo
 
 | Contract | Index Basis | Key Rules |
 |---|---|---|
-| **Black Mass Payables** | LME 3-month Ni/Co | 85% grade multiplier; counterparties: Atoka, Li-Cycle, Redwood |
+| **Black Mass Payables** | LME 3-month Ni/Co | 85% grade multiplier; counterparties: Cirba, Interco |
 | **Primary Offtaker MHP Offtake** | Fastmarkets MB CO-0005 monthly | 8% floor discount; 15% profit share above $20,000/mt Ni |
 | **Lithium Carbonate GTC** | Fastmarkets Li₂CO₃ 99.5% CIF | Floor $20,000/mt · Ceiling $30,000/mt |
-| **Li Cycle Feedstock** | Mixed Fastmarkets/LME composite | 92% Li @ 75% payable · 3% Ni @ 90% · 2% Co @ 90% |
+| **Feedstock** | Mixed Fastmarkets/LME composite | 92% Li @ 75% payable · 3% Ni @ 90% · 2% Co @ 90% |
 
 ---
 
@@ -102,7 +102,7 @@ Then ask the agent:
 | Flow Version | `3.00` |
 | State | Preview |
 | Last Updated | 2026-03-01 |
-| Contributor | Shyam Desigan |
+| Contributor | Sam Desigan |
 | Department | Everyone |
 
 ---
