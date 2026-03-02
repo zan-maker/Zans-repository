@@ -1,119 +1,195 @@
-# 🔋 Commodity Price Analyzer
+# 🔒 Pre-IPO Compliance Gate
 
-> *Calculate the impact of commodity prices, exchange rates, and government regulations on product output price.*
+**AI-powered pull request compliance scanning for companies preparing to go public.**
 
-[![Model](https://img.shields.io/badge/Model-Claude%20Haiku%204.5-blueviolet)](https://anthropic.com)
-[![Orchestration](https://img.shields.io/badge/Orchestration-Airia-blue)](https://airia.com)
-[![MCP Tools](https://img.shields.io/badge/MCP-AlphaVantage%20%7C%20Regulations.Gov-green)](#tools)
-[![State](https://img.shields.io/badge/State-Preview-orange)](#)
-[![Flow Version](https://img.shields.io/badge/Flow%20Version-3.00-lightgrey)](#)
+A multi-agent Airia pipeline that chains three specialized AI agents to scan every pull request for license contamination, exposed secrets, and financial data — producing investor-grade audit reports.
 
 ---
 
-## What It Does
+## The Problem
 
-GLI runs complex payables and offtake structures across Nickel (Ni), Cobalt (Co), Lithium (Li), and Mixed Hydroxide Precipitate (MHP). Monitoring those contract economics has historically been manual and slow. **Commodity Price Analyzer** turns term sheets into a living model that continuously re-prices GLI's contracts off real-time commodity curves.
+Over 4,000 companies are preparing for IPO at any given time. Every one faces the same risk: a developer commits a GPL dependency, an API key, or a financial model to the repo — and it surfaces during due diligence months later.
 
-The agent:
+Manual code reviews catch functional bugs, not IP risk. The compliance review bottleneck costs pre-IPO companies 25–200 hours per month of legal and engineering time.
 
-1. Pulls live Ni/Co/Li prices via **AlphaVantage MCP** and monitors regulatory risk via **Regulations.Gov MCP**
-2. Applies GLI's encoded business rules — black mass payables, Primary Offtaker MHP offtake, lithium carbonate GTCs, and Li Cycle feedstock pricing
-3. Returns a narrative interpretation: realized vs. theoretical payables, margin capture vs. WMC, profit-share trigger status, and index sensitivity
+## The Solution
 
-A single natural-language question such as:
+Pre-IPO Compliance Gate automates the compliance checks that investment banks and legal counsel perform during due diligence — at the pull request level, before problems compound.
 
-> *"What's our Ni/Co margin vs Offtaker this month on Atoka output?"*
-
-triggers the full pipeline: **Memory Load → AI Model → Python Code → AI Model 1 → Output + Memory Store**.
-
----
-
-## Encoded Contract Structures
-
-| Contract | Index Basis | Key Rules |
-|---|---|---|
-| **Black Mass Payables** | LME 3-month Ni/Co | 85% grade multiplier; counterparties: Atoka, Li-Cycle, Redwood |
-| **Primary Offtaker MHP Offtake** | Fastmarkets MB CO-0005 monthly | 8% floor discount; 15% profit share above $20,000/mt Ni |
-| **Lithium Carbonate GTC** | Fastmarkets Li₂CO₃ 99.5% CIF | Floor $20,000/mt · Ceiling $30,000/mt |
-| **Li Cycle Feedstock** | Mixed Fastmarkets/LME composite | 92% Li @ 75% payable · 3% Ni @ 90% · 2% Co @ 90% |
-
----
-
-## Repository Structure
+### Architecture
 
 ```
-commodity-price-analyzer/
-├── README.md                   ← This file
-├── ARCHITECTURE.md             ← Airia flow diagram, node-by-node reference
-├── CONTRACT_LOGIC.md           ← Full Python business-rules code, annotated
-├── DATA_SOURCES.md             ← MCP tool config, API endpoints, symbol maps
-├── SETUP.md                    ← Installation and credential configuration
-├── USAGE.md                    ← Example queries and response walkthrough
-├── SECURITY.md                 ← Guardrails, key management, audit trail
-├── CONTRIBUTING.md             ← How to extend contracts and data sources
-├── CHANGELOG.md                ← Version history
-└── flows/
-    └── commodity_analyzer.json ← Airia orchestration flow (import via dashboard)
+GitHub PR Webhook → AWS API Gateway
+        │
+        ▼
+┌──────────────────────────────┐
+│  Airia Multi-Agent Pipeline   │
+│                               │
+│  ┌─────────────────────────┐ │
+│  │ Agent 1: License Audit   │ │  Gemini 2.5 Pro (t=0.3)
+│  │ ← AWS Lambda tool        │ │  Scans manifests for GPL/AGPL/SSPL
+│  └───────────┬─────────────┘ │
+│              │ JSON            │
+│  ┌───────────▼─────────────┐ │
+│  │ Agent 2: Secrets Scanner │ │  Gemini 2.5 Pro (t=0.3)
+│  │ ← AWS Lambda tool        │ │  Detects API keys, cap tables, PII
+│  └───────────┬─────────────┘ │
+│              │ JSON            │
+│  ┌───────────▼─────────────┐ │
+│  │ Agent 3: Compliance      │ │  Gemini 2.5 Pro (t=0.7)
+│  │ Reporter ← Lambda tool   │ │  Posts PR comment, creates issues
+│  └───────────┬─────────────┘ │
+│              │                 │
+│  ┌───────────▼─────────────┐ │
+│  │ Memory (Write)           │ │  Airia Memory — audit trail
+│  └─────────────────────────┘ │
+└──────────────────────────────┘
+        │
+        ▼
+  GitHub PR Comment + S3 Audit Log + SNS Alert
 ```
+
+### Verdict Matrix
+
+| Verdict | Trigger | Actions |
+|---------|---------|---------|
+| ✅ PASS | No CRITICAL or HIGH findings | PR comment, `compliance:passed` label |
+| ⚠️ REVIEW_REQUIRED | HIGH findings only | PR comment, `compliance:review-required` label |
+| ⛔ BLOCKED | Any CRITICAL finding | PR comment, blocking issue, `compliance:blocked` label, SNS alert |
 
 ---
 
 ## Tech Stack
 
-| Layer | Detail |
-|---|---|
-| **Orchestration** | Airia (Flow v3.00) |
-| **Language Model** | Claude Haiku 4.5 (`claude-haiku-4-5-20251001`) — both AI steps |
-| **Market Data** | AlphaVantage MCP — NICKEL, COBALT, CURRENCY_EXCHANGE_RATE |
-| **Regulatory Data** | Regulations.Gov MCP — `GET /v4/documents` |
-| **Computation** | Python step — deterministic contract functions |
-| **Memory (Load)** | `GLI Contract Parameters` — shared, persistent contract config |
-| **Memory (Store)** | `Historical Pricing Data` — shared, persistent, append-mode audit log |
-| **Deployment Mode** | Chat — FileUpload, Whiteboard, Code, Math input modes supported |
+| Layer | Service | Purpose |
+|-------|---------|---------|
+| **Orchestration** | Airia Pipeline | Multi-agent sequencing, memory, conditional routing |
+| **LLM** | Gemini 2.5 Pro (via Airia) | All three agents |
+| **Repo Access** | GitHub REST API | PR diffs, file contents, manifests |
+| **Tool Execution** | AWS Lambda (Python 3.12) | License scanner, secrets scanner, PR reporter |
+| **API Gateway** | AWS API Gateway | Webhook relay: GitHub → Lambda → Airia |
+| **Audit Storage** | Amazon S3 | Compliance reports, scan history, audit trail |
+| **Alerting** | Amazon SNS | Compliance team notifications on BLOCKED verdicts |
+| **Alt. Storage** | Google Cloud Storage | Optional GCS backend via `GCS_AUDIT_BUCKET` env var |
+| **Alt. Alerting** | Google Cloud Pub/Sub | Optional Pub/Sub backend via `PUBSUB_TOPIC` env var |
+| **Secrets Mgmt** | AWS Secrets Manager | GitHub token, Airia API key storage |
 
 ---
 
 ## Quick Start
 
-See [SETUP.md](./SETUP.md) for full instructions.
+### 1. Prerequisites
+
+- Airia account with pipeline creation access
+- AWS account with Lambda, API Gateway, S3, SNS, Secrets Manager
+- GitHub repo with admin access (webhook configuration)
+- Python 3.12+ locally (for Lambda packaging)
+
+### 2. Deploy AWS Lambda Tools
 
 ```bash
-git clone https://github.com/GLI/commodity-price-analyzer.git
-# Configure credentials in Airia (see SETUP.md)
-# Import flows/commodity_analyzer.json via Airia dashboard
+cd tools/
+chmod +x deploy_all.sh
+./deploy_all.sh
 ```
 
-Then ask the agent:
+This deploys three Lambda functions and creates the API Gateway trigger.
+
+### 3. Build Airia Pipeline
+
+Open Airia visual editor and follow `docs/SETUP.md` step-by-step:
+
+1. Create new pipeline from template
+2. Add 2 more AI Operation nodes (3 total)
+3. Paste prompts from `config/airia_agent_prompts.md`
+4. Register Lambda endpoints as MCP tools
+5. Link nodes sequentially
+6. Add Memory (Write) node
+
+### 4. Configure Webhook
+
+```bash
+python3 scripts/setup_webhook.py \
+  --repo owner/repo \
+  --gateway-url https://xxx.execute-api.us-east-1.amazonaws.com/prod/compliance
 ```
-"What are our realized Ni payables on black mass this week vs LME?"
-"Has the Primary Offtaker profit share triggered this month?"
-"Show me our Li carbonate GTC position — is the floor or ceiling active?"
-"Run sensitivity: what happens to MHP margins if Ni drops $1,000/mt?"
+
+### 5. Test
+
+Create a PR with a known GPL dependency — see `examples/demo_scenarios.md`.
+
+---
+
+## Project Structure
+
+```
+pre-ipo-compliance-gate/
+├── README.md
+├── LICENSE                            # MIT
+├── .env.example                       # All required environment variables
+├── .gitignore
+│
+├── config/
+│   ├── airia_pipeline_spec.json       # Target pipeline architecture
+│   ├── airia_agent_prompts.md         # All 3 agent system prompts (copy-paste ready)
+│   ├── license_policy.yml             # SPDX license tiers: approved/review/denied
+│   ├── secrets_patterns.yml           # 30+ detection regex patterns
+│   └── compliance_rules.yml           # Verdict logic, templates, escalation rules
+│
+├── tools/
+│   ├── deploy_all.sh                  # One-command Lambda + API Gateway deployment
+│   ├── license_scanner/
+│   │   ├── handler.py                 # Lambda: fetch manifests, classify licenses
+│   │   └── requirements.txt
+│   ├── secrets_scanner/
+│   │   ├── handler.py                 # Lambda: pattern-match secrets, financial data
+│   │   └── requirements.txt
+│   └── pr_reporter/
+│       ├── handler.py                 # Lambda: post PR comment, create issue, S3 log
+│       └── requirements.txt
+│
+├── scripts/
+│   ├── setup_webhook.py               # GitHub → API Gateway webhook config
+│   ├── setup_s3.py                    # Create S3 audit bucket with versioning
+│   └── trigger_pipeline.py            # Manual Airia pipeline trigger for testing
+│
+├── docs/
+│   ├── ARCHITECTURE.md                # Design decisions, data flow, security model
+│   ├── SETUP.md                       # Step-by-step Airia + AWS setup guide
+│   ├── AIRIA_FEATURES.md              # Platform features used (for hackathon judging)
+│   └── GAP_ANALYSIS.md               # JSON export vs build log discrepancies
+│
+├── examples/
+│   ├── sample_pr_output.md            # Example BLOCKED compliance report
+│   └── demo_scenarios.md              # 3 test scenarios with setup instructions
+│
+├── DEVPOST.md                         # Full hackathon submission narrative
+└── SHORT_DESCRIPTION.md               # 200-char elevator pitch
 ```
 
 ---
 
-## Agent Metadata
+## Platform Features Used
 
-| Field | Value |
-|---|---|
-| Agent ID | `20013153-1e89-4496-adf7-27f2924ac70d` |
-| Export Version | `20260226132027_EditBraveNativeEntries` |
-| Flow Version | `3.00` |
-| State | Preview |
-| Last Updated | 2026-03-01 |
-| Contributor | Shyam Desigan |
-| Department | Everyone |
+| Airia Feature | How Used |
+|--------------|----------|
+| AI Operation nodes | 3 specialized agents with custom prompts |
+| Sequential pipeline | Agent chaining with structured JSON hand-off |
+| Memory (Write) | Compliance history storage for audit trails |
+| MCP Tool integration | 3 AWS Lambda tools registered as agent capabilities |
+| Conditional Branch | Verdict-based routing (BLOCKED → issue creation path) |
+| Model configuration | Gemini 2.5 Pro at tuned temperatures per agent |
 
----
-
-## What's Next
-
-- Add SMM and direct Fastmarkets MCP feeds; extend commodity coverage to Mn and Cu
-- ERP/treasury integration for invoice reconciliation and real-time P&L variance alerts
+| AWS Service | How Used |
+|-------------|----------|
+| Lambda | Tool execution for all 3 agents |
+| API Gateway | GitHub webhook → Airia pipeline trigger |
+| S3 | Audit trail storage with versioning |
+| SNS | BLOCKED verdict alerts to compliance team |
+| Secrets Manager | Secure credential storage |
 
 ---
 
 ## License
 
-Proprietary — GLI Internal Use Only.
+MIT — See [LICENSE](LICENSE) for details.

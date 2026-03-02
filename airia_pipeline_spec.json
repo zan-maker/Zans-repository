@@ -1,0 +1,123 @@
+{
+  "_comment": "Target pipeline architecture for Pre-IPO Compliance Gate. The exported JSON shows default state (Input → 1 AI Model → Output). This spec documents what needs to be built in the Airia visual editor.",
+
+  "pipeline": {
+    "name": "Pre-IPO Compliance Gate",
+    "id": "7bd49707-e2a1-4ddb-a246-455cbc75960d",
+    "alignment": "Vertical",
+    "state": "Preview"
+  },
+
+  "target_nodes": [
+    {
+      "order": 1,
+      "stepType": "inputStep",
+      "stepTitle": "Input",
+      "id": "eae651af-4006-42f7-accc-c18d21685729",
+      "status": "EXISTS",
+      "connects_to": "license_audit_agent",
+      "notes": "Receives PR webhook payload: { repo, pr_number, pr_url, sender }"
+    },
+    {
+      "order": 2,
+      "stepType": "AIOperation",
+      "stepTitle": "License Audit Agent",
+      "status": "NEEDS_CREATION",
+      "model": "Gemini 2.5 Pro",
+      "temperature": 0.3,
+      "prompt_source": "config/airia_agent_prompts.md → Agent 1",
+      "tools": ["license_scanner_lambda"],
+      "includeChatHistory": false,
+      "includeAttachments": true,
+      "connects_to": "secrets_scanner_agent",
+      "notes": "Create new AI Operation node. Paste Agent 1 prompt. Set temp=0.3. Assign license_scanner MCP tool."
+    },
+    {
+      "order": 3,
+      "stepType": "AIOperation",
+      "stepTitle": "Secrets & Financial Data Scanner",
+      "status": "NEEDS_CREATION",
+      "model": "Gemini 2.5 Pro",
+      "temperature": 0.3,
+      "prompt_source": "config/airia_agent_prompts.md → Agent 2",
+      "tools": ["secrets_scanner_lambda"],
+      "includeChatHistory": true,
+      "includeAttachments": true,
+      "connects_to": "compliance_reporter_agent",
+      "notes": "Create new AI Operation node. Paste Agent 2 prompt. Set temp=0.3. Enable chat history to receive Agent 1 output. Assign secrets_scanner MCP tool."
+    },
+    {
+      "order": 4,
+      "stepType": "AIOperation",
+      "stepTitle": "Compliance Report Generator",
+      "status": "REPURPOSE_EXISTING",
+      "existing_id": "096e4f2f-123c-4110-afa0-ae75cd888aea",
+      "model": "Gemini 2.5 Pro",
+      "temperature": 0.7,
+      "prompt_source": "config/airia_agent_prompts.md → Agent 3",
+      "tools": ["pr_reporter_lambda"],
+      "includeChatHistory": true,
+      "includeAttachments": true,
+      "connects_to": "memory_write",
+      "notes": "Repurpose existing 'AI Model' node. Rename to 'Compliance Report Generator'. Change temp from 1.0 → 0.7. Paste Agent 3 prompt. Assign pr_reporter MCP tool."
+    },
+    {
+      "order": 5,
+      "stepType": "Memory",
+      "stepTitle": "Compliance History (Write)",
+      "status": "NEEDS_CREATION",
+      "mode": "WRITE",
+      "shared": true,
+      "connects_to": "output",
+      "notes": "Add Memory node in Write mode. Enable shared access. Stores: PR number, scan date, verdict, finding counts, repo."
+    },
+    {
+      "order": 6,
+      "stepType": "outputStep",
+      "stepTitle": "Output",
+      "id": "10130fae-7b85-40ad-804c-893289eefa9a",
+      "status": "EXISTS",
+      "notes": "Reconnect from Memory Write (currently connected to the single AI Model node)."
+    }
+  ],
+
+  "target_flow": "Input → License Audit Agent → Secrets Scanner → Compliance Reporter → Memory Write → Output",
+
+  "tools_to_register": {
+    "license_scanner_lambda": {
+      "type": "MCP Tool (AWS Lambda)",
+      "lambda_function": "pre-ipo-license-scanner",
+      "description": "Fetches PR diff + dependency manifests from GitHub, identifies licenses, returns structured findings",
+      "assigned_to": ["License Audit Agent"]
+    },
+    "secrets_scanner_lambda": {
+      "type": "MCP Tool (AWS Lambda)",
+      "lambda_function": "pre-ipo-secrets-scanner",
+      "description": "Fetches PR file contents from GitHub, pattern-matches secrets/financial data/PII",
+      "assigned_to": ["Secrets & Financial Data Scanner"]
+    },
+    "pr_reporter_lambda": {
+      "type": "MCP Tool (AWS Lambda)",
+      "lambda_function": "pre-ipo-pr-reporter",
+      "description": "Posts compliance report as PR comment, creates blocking issues, writes audit log to S3",
+      "assigned_to": ["Compliance Report Generator"]
+    }
+  },
+
+  "build_steps": [
+    "1. Open pipeline 7bd49707-e2a1-4ddb-a246-455cbc75960d in Airia editor",
+    "2. Rename existing 'AI Model' node → 'Compliance Report Generator'",
+    "3. Set its temperature to 0.7",
+    "4. Paste Agent 3 prompt from config/airia_agent_prompts.md",
+    "5. Add new AI Operation node: 'License Audit Agent' (temp=0.3, Agent 1 prompt)",
+    "6. Add new AI Operation node: 'Secrets & Financial Data Scanner' (temp=0.3, Agent 2 prompt)",
+    "7. Delete existing connections",
+    "8. Connect: Input → License Audit → Secrets Scanner → Compliance Reporter → Output",
+    "9. Add Memory (Write) node between Compliance Reporter and Output",
+    "10. Deploy Lambda functions: cd tools/ && ./deploy_all.sh",
+    "11. Register 3 Lambda endpoints as MCP tools in Airia",
+    "12. Assign tools to respective agents",
+    "13. Save pipeline",
+    "14. Test with sample input from examples/demo_scenarios.md"
+  ]
+}

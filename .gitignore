@@ -1,0 +1,46 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Secrets & keys
+*.pem
+*.key
+*.p12
+*.pfx
+service-account*.json
+
+# Financial data (should NEVER be in repo)
+*.xlsx
+*.xls
+*.xlsm
+financial_model*
+cap_table*
+term_sheet*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pkg/
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+
+# Lambda deployment artifacts
+/tmp/*.zip
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (if testing locally)
+node_modules/
