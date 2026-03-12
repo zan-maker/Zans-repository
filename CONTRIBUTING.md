@@ -86,6 +86,11 @@ In Airia's MCP Gateway, register the new data source as a tool. You will need:
 - Parameter definitions
 - Credential type
 
+**Security requirements:**
+- DO store credentials exclusively in Airia's secrets/credential store — never hardcode API keys, tokens, or passwords in the flow definition, system prompts, or code steps
+- DO verify the new endpoint enforces authentication on every request
+- DO confirm the data source's authorization scope is limited to read-only price data
+- DO NOT disable SSL/TLS certificate verification
 ### 2. Add the tool to the AI Model (Stage 1) step
 
 In the Airia flow editor, open the AI Model step and add the new tool to `toolIds`. The model will then be able to call it.
@@ -165,3 +170,14 @@ assert result["effective_price_usd_per_mt"] == 30000
 2. Verify the JSON output structure matches what AI Model 1's system prompt expects
 
 3. Run a test query in the Airia chat interface and confirm the narrative output is coherent and numerically accurate
+
+---
+
+## Code Review and Deployment
+
+DO NOT deploy directly to the live flow without review. Required steps:
+
+- **Peer review** — have a second team member review all changes to contract logic, system prompts, and data source registrations
+- **Credential audit** — confirm no secrets, API keys, or tokens appear anywhere in the flow definition, code steps, or prompts
+- **Authorization check** — if the change adds or modifies any data source or user-facing endpoint, verify authentication and authorization are enforced end-to-end before going live
+- **CHANGELOG** — add an entry with: what changed, old value, new value, effective date, and approver
