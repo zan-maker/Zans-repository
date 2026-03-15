@@ -3,9 +3,9 @@
 # Simple GitHub upload script
 # Replace with your repository details
 
-REPO="your-username/usgs-critical-minerals-data"
+REPO="impactquadrant/usgs-critical-minerals-data"
 BRANCH="usgs-data-$(date +%Y-%m-%d)"
-GITHUB_TOKEN="your-personal-access-token"
+GITHUB_TOKEN="${GITHUB_TOKEN:?Set GITHUB_TOKEN environment variable before running}"
 
 echo "🚀 Uploading to GitHub..."
 
@@ -21,8 +21,8 @@ git add .
 # Commit
 git commit -m "USGS Critical Minerals Data - $(date +%Y-%m-%d)"
 
-# Set remote (update with your repo)
-git remote add origin "https://github.com/$REPO.git" 2>/dev/null || git remote set-url origin "https://github.com/$REPO.git"
+# Set remote with token authentication
+git remote add origin "https://$GITHUB_TOKEN@github.com/$REPO.git" 2>/dev/null || git remote set-url origin "https://$GITHUB_TOKEN@github.com/$REPO.git"
 
 # Push with token
 git push -u origin "$BRANCH"

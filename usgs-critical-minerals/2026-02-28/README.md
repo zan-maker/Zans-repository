@@ -25,13 +25,13 @@ git init
 git add .
 git commit -m "USGS Critical Minerals Data - 2026-02-28"
 git branch -M usgs-data-2026-02-28
-git remote add origin https://github.com/your-username/usgs-critical-minerals-data.git
+git remote add origin https://github.com/impactquadrant/usgs-critical-minerals-data.git
 git push -u origin usgs-data-2026-02-28
 ```
 
 ### 2. View Online
-- **Demo Link:** https://github.com/your-username/usgs-critical-minerals-data/tree/usgs-data-2026-02-28
-- **Video Demo:** https://github.com/your-username/usgs-critical-minerals-data/blob/usgs-data-2026-02-28/media/
+- **Demo Link:** https://github.com/impactquadrant/usgs-critical-minerals-data/tree/usgs-data-2026-02-28
+- **Video Demo:** https://github.com/impactquadrant/usgs-critical-minerals-data/blob/usgs-data-2026-02-28/media/
 
 ## Next Steps
 1. Add Google Cloud API key for NanoBanana screenshots
