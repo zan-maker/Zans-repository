@@ -1,119 +1,146 @@
-# 🔋 Commodity Price Analyzer
+# CritMin Compass
 
-> *Calculate the impact of commodity prices, exchange rates, and government regulations on product output price.*
+**Critical Minerals Supply Chain Intelligence Engine**
 
-[![Model](https://img.shields.io/badge/Model-Claude%20Haiku%204.5-blueviolet)](https://anthropic.com)
-[![Orchestration](https://img.shields.io/badge/Orchestration-Airia-blue)](https://airia.com)
-[![MCP Tools](https://img.shields.io/badge/MCP-AlphaVantage%20%7C%20Regulations.Gov-green)](#tools)
-[![State](https://img.shields.io/badge/State-Preview-orange)](#)
-[![Flow Version](https://img.shields.io/badge/Flow%20Version-3.00-lightgrey)](#)
+> Real-time macroeconomic, commodity, and regulatory signal fusion for
+> Lithium, Nickel, and Cobalt supply chain risk assessment — built on
+> Zerve AI for ZerveHack 2026.
 
 ---
 
-## What It Does
-
-GLI runs complex payables and offtake structures across Nickel (Ni), Cobalt (Co), Lithium (Li), and Mixed Hydroxide Precipitate (MHP). Monitoring those contract economics has historically been manual and slow. **Commodity Price Analyzer** turns term sheets into a living model that continuously re-prices GLI's contracts off real-time commodity curves.
-
-The agent:
-
-1. Pulls live Ni/Co/Li prices via **AlphaVantage MCP** and monitors regulatory risk via **Regulations.Gov MCP**
-2. Applies GLI's encoded business rules — black mass payables, Primary Offtaker MHP offtake, lithium carbonate GTCs, and Li Cycle feedstock pricing
-3. Returns a narrative interpretation: realized vs. theoretical payables, margin capture vs. WMC, profit-share trigger status, and index sensitivity
-
-A single natural-language question such as:
-
-> *"What's our Ni/Co margin vs Offtaker this month on Atoka output?"*
-
-triggers the full pipeline: **Memory Load → AI Model → Python Code → AI Model 1 → Output + Memory Store**.
-
----
-
-## Encoded Contract Structures
-
-| Contract | Index Basis | Key Rules |
-|---|---|---|
-| **Black Mass Payables** | LME 3-month Ni/Co | 85% grade multiplier; counterparties: Atoka, Li-Cycle, Redwood |
-| **Primary Offtaker MHP Offtake** | Fastmarkets MB CO-0005 monthly | 8% floor discount; 15% profit share above $20,000/mt Ni |
-| **Lithium Carbonate GTC** | Fastmarkets Li₂CO₃ 99.5% CIF | Floor $20,000/mt · Ceiling $30,000/mt |
-| **Li Cycle Feedstock** | Mixed Fastmarkets/LME composite | 92% Li @ 75% payable · 3% Ni @ 90% · 2% Co @ 90% |
-
----
-
-## Repository Structure
+## Architecture
 
 ```
-commodity-price-analyzer/
-├── README.md                   ← This file
-├── ARCHITECTURE.md             ← Airia flow diagram, node-by-node reference
-├── CONTRACT_LOGIC.md           ← Full Python business-rules code, annotated
-├── DATA_SOURCES.md             ← MCP tool config, API endpoints, symbol maps
-├── SETUP.md                    ← Installation and credential configuration
-├── USAGE.md                    ← Example queries and response walkthrough
-├── SECURITY.md                 ← Guardrails, key management, audit trail
-├── CONTRIBUTING.md             ← How to extend contracts and data sources
-├── CHANGELOG.md                ← Version history
-└── flows/
-    └── commodity_analyzer.json ← Airia orchestration flow (import via dashboard)
+┌──────────────────────────────────────────────────────────────────────────┐
+│                        CritMin Compass — Zerve DAG                      │
+├──────────────────────────────────────────────────────────────────────────┤
+│                                                                          │
+│  ┌─────────────┐  ┌──────────────────┐  ┌─────────────────────┐         │
+│  │  Block 1    │  │  Block 2         │  │  Block 5            │         │
+│  │  FRED API   │  │  Alpha Vantage   │  │  SEC EDGAR +        │         │
+│  │  Macro Data │  │  Commodity Prices│  │  API Ninjas         │         │
+│  └──────┬──────┘  └────────┬─────────┘  └──────────┬──────────┘         │
+│         │                  │                       │                     │
+│         ▼                  ▼                       ▼                     │
+│  ┌─────────────────────────────────┐   ┌───────────────────────┐        │
+│  │  Block 3                        │   │  Block 6              │        │
+│  │  PPI / INDPRO vs Commodity     │   │  Dataset Summary &    │        │
+│  │  Dual-Axis + Lead-Lag         │   │  Freshness Report     │        │
+│  └─────────────────────────────────┘   └───────────────────────┘        │
+│         │                  │                       │                     │
+│         ▼                  ▼                       ▼                     │
+│  ┌─────────────────────────────────┐   ┌───────────────────────┐        │
+│  │  Block 4                        │   │  Block 7              │        │
+│  │  GradientBoosting Forecasting  │   │  NLP Sentiment &      │        │
+│  │  12-Month + Bootstrap CI       │   │  Risk Keyword Scoring │        │
+│  └─────────────────────────────────┘   └───────────┬───────────┘        │
+│                                                     │                    │
+│                                        ┌────────────┴────────────┐      │
+│                                        ▼                         ▼      │
+│                               ┌─────────────────┐  ┌────────────────┐  │
+│                               │  Block 8        │  │  Block 9       │  │
+│                               │  Correlation    │  │  Linguistic    │  │
+│                               │  Heatmap        │  │  Drift         │  │
+│                               └─────────────────┘  └────────────────┘  │
+└──────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Tech Stack
+## Zerve Blocks
 
-| Layer | Detail |
-|---|---|
-| **Orchestration** | Airia (Flow v3.00) |
-| **Language Model** | Claude Haiku 4.5 (`claude-haiku-4-5-20251001`) — both AI steps |
-| **Market Data** | AlphaVantage MCP — NICKEL, COBALT, CURRENCY_EXCHANGE_RATE |
-| **Regulatory Data** | Regulations.Gov MCP — `GET /v4/documents` |
-| **Computation** | Python step — deterministic contract functions |
-| **Memory (Load)** | `GLI Contract Parameters` — shared, persistent contract config |
-| **Memory (Store)** | `Historical Pricing Data` — shared, persistent, append-mode audit log |
-| **Deployment Mode** | Chat — FileUpload, Whiteboard, Code, Math input modes supported |
+| Block | File | Description | Dependencies |
+|-------|------|-------------|--------------|
+| 01 | `01_fetch_fred_macro_data.py` | Ingest PPI, Industrial Production, Trade Balance from FRED | None |
+| 02 | `02_fetch_commodity_prices.py` | Ingest Li/Ni/Co proxy prices from Alpha Vantage | None |
+| 03 | `03_ppi_indpro_commodity_analysis.py` | Dual-axis charts, rolling correlations, lead-lag analysis | Blocks 1, 2 |
+| 04 | `04_commodity_price_forecasting.py` | GradientBoosting 12-month forecast with bootstrap CI | Blocks 1, 2 |
+| 05 | `05_sec_edgar_supply_chain.py` | SEC EDGAR filing search + API Ninjas fallback | None |
+| 06 | `06_dataset_summary_report.py` | Dataset freshness & summary report | Blocks 1, 2, 5 |
+| 07 | `07_nlp_sentiment_risk_analysis.py` | VADER sentiment + risk keyword scoring, 3 charts | Block 5 |
+| 08 | `08_correlation_analysis.py` | Pearson correlations, heatmap, multi-axis overlay | Blocks 1, 2, 7 |
+| 09 | `09_supply_chain_linguistic_analysis.py` | Term frequency, regulatory heatmap, language drift | Block 5 |
 
 ---
 
-## Quick Start
+## Setup
 
-See [SETUP.md](./SETUP.md) for full instructions.
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/GLI/commodity-price-analyzer.git
-# Configure credentials in Airia (see SETUP.md)
-# Import flows/commodity_analyzer.json via Airia dashboard
+git clone https://github.com/YOUR_USERNAME/critmin-compass.git
+cd critmin-compass
 ```
 
-Then ask the agent:
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
 ```
-"What are our realized Ni payables on black mass this week vs LME?"
-"Has the Primary Offtaker profit share triggered this month?"
-"Show me our Li carbonate GTC position — is the floor or ceiling active?"
-"Run sensitivity: what happens to MHP margins if Ni drops $1,000/mt?"
+
+### 3. Configure API keys
+
+Copy the example environment file and fill in your keys:
+
+```bash
+cp .env.example .env
 ```
+
+| Variable | Where to get it |
+|----------|----------------|
+| `FRED_API_KEY` | [FRED API registration](https://fred.stlouisfed.org/docs/api/api_key.html) (free) |
+| `ALPHA_VANTAGE_API_KEY` | [Alpha Vantage](https://www.alphavantage.co/support/#api-key) (free tier) |
+| `API_NINJAS_KEY` | [API Ninjas](https://api-ninjas.com/) (free tier) |
+
+### 4. Run on Zerve
+
+1. Create a new Zerve project (Python 3.10+).
+2. Create one code block per file in `zerve_blocks/`, ordered 01 through 09.
+3. Set environment variables in the Zerve canvas settings panel.
+4. Wire the DAG edges as shown in the architecture diagram above.
+5. Run blocks in order — ingestion blocks (01, 02, 05) can run in parallel.
 
 ---
 
-## Agent Metadata
+## Data Sources
 
-| Field | Value |
-|---|---|
-| Agent ID | `20013153-1e89-4496-adf7-27f2924ac70d` |
-| Export Version | `20260226132027_EditBraveNativeEntries` |
-| Flow Version | `3.00` |
-| State | Preview |
-| Last Updated | 2026-03-01 |
-| Contributor | Shyam Desigan |
-| Department | Everyone |
+| Source | API | Data Type | Refresh |
+|--------|-----|-----------|---------|
+| Federal Reserve (FRED) | REST JSON | PPI, Industrial Production, Trade Balance | Monthly |
+| Alpha Vantage | REST JSON | Commodity spot prices (proxied) | Monthly |
+| SEC EDGAR | Full-text search | 10-K / 10-Q filing metadata | Real-time |
+| API Ninjas | REST JSON | Commodity price fallback | On-demand |
 
 ---
 
-## What's Next
+## Sample Outputs
 
-- Add SMM and direct Fastmarkets MCP feeds; extend commodity coverage to Mn and Cu
-- ERP/treasury integration for invoice reconciliation and real-time P&L variance alerts
+See [`outputs/sample_output.md`](outputs/sample_output.md) for representative
+output tables from a full pipeline run.
+
+---
+
+## Known Issues
+
+- **Block 06** references `edgar_df["search_term"]` and `edgar_df["filing_date"]`
+  columns that do not exist in the actual schema produced by Block 05. The correct
+  columns are `query` and `date`. This causes a `KeyError` at runtime.
+- Alpha Vantage free tier is limited to 5 requests/minute; Block 02 includes
+  a 20-second sleep between requests.
 
 ---
 
 ## License
 
-Proprietary — GLI Internal Use Only.
+MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## Links
+
+- [Devpost Submission](https://devpost.com/software/critmin-compass) *(placeholder)*
+- [Zerve AI](https://www.zerve.ai/)
+
+---
+
+Built with [Zerve AI](https://www.zerve.ai/) for **ZerveHack 2026**.
